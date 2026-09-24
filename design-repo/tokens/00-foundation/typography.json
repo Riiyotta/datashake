@@ -1,0 +1,249 @@
+{
+  "$description": "Foundation typography.",
+  "foundation": {
+    "typography": {
+      "fontFamily": {
+        "display": {
+          "$type": "fontFamily",
+          "$value": [
+            "Altriviera",
+            "Arial",
+            "sans-serif"
+          ],
+          "$description": "Headings + testimonial quotes. PAID LICENSED font: never embed/redistribute outside a licensed Datashake context.",
+          "measuredFrom": [
+            "cite:tw-fonts",
+            "cite:idx-altriviera-face",
+            "cite:shared-altriviera-face",
+            "cite:assets-altriviera",
+            "cite:font-altriviera-file"
+          ],
+          "licence": "proprietary-paid"
+        },
+        "sans": {
+          "$type": "fontFamily",
+          "$value": [
+            "Inter",
+            "Arial",
+            "sans-serif"
+          ],
+          "$description": "Body/UI. Rendered glyphs are Google's variable Inter (latin), which wins over the Webflow Inter files.",
+          "measuredFrom": [
+            "cite:tw-fonts",
+            "cite:idx-inter-gf",
+            "cite:font-inter-gf-file"
+          ],
+          "licence": "SIL-OFL-1.1"
+        },
+        "system": {
+          "$type": "fontFamily",
+          "$value": [
+            "system-ui",
+            "-apple-system",
+            "BlinkMacSystemFont",
+            "Segoe UI",
+            "Roboto",
+            "Oxygen",
+            "Ubuntu",
+            "Cantarell",
+            "Fira Sans",
+            "Droid Sans",
+            "Helvetica Neue",
+            "sans-serif"
+          ],
+          "$description": "Body base stack for un-classed wrappers.",
+          "measuredFrom": [
+            "cite:tw-fonts",
+            "cite:idx-body-base"
+          ]
+        }
+      },
+      "fontSize": {
+        "small": {
+          "$type": "dimension",
+          "$value": "0.875rem",
+          "$description": ".text-size-small",
+          "measuredFrom": [
+            "cite:ui-type-fragments"
+          ]
+        },
+        "regular": {
+          "$type": "dimension",
+          "$value": "1rem",
+          "$description": ".text-size-regular",
+          "measuredFrom": [
+            "cite:ui-type-fragments"
+          ]
+        },
+        "medium": {
+          "$type": "dimension",
+          "$value": "1.125rem",
+          "$description": ".text-size-medium / button label",
+          "measuredFrom": [
+            "cite:ui-type-fragments",
+            "cite:ui-arrow-variants"
+          ]
+        },
+        "large-20": {
+          "$type": "dimension",
+          "$value": "1.25rem",
+          "$description": "Large text 20 (subheads, FAQ questions, tab labels).",
+          "measuredFrom": [
+            "cite:hero-copy",
+            "cite:faq-items"
+          ]
+        },
+        "large-24": {
+          "$type": "dimension",
+          "$value": "1.5rem",
+          "$description": "Large text 24 (section leads, card titles).",
+          "measuredFrom": [
+            "cite:problem-copy",
+            "cite:industries-cards"
+          ]
+        },
+        "quote-32": {
+          "$type": "dimension",
+          "$value": "2rem",
+          "$description": "Testimonial quote; also H2 at <=767.",
+          "measuredFrom": [
+            "cite:testimonials-items",
+            "cite:ui-type-fragments"
+          ]
+        },
+        "h3": {
+          "$type": "dimension",
+          "$value": "2.5rem",
+          "$description": ".heading-style-h3 (1.5rem at <=767).",
+          "measuredFrom": [
+            "cite:ui-type-fragments"
+          ]
+        },
+        "h2": {
+          "$type": "dimension",
+          "$value": "3rem",
+          "$description": ".heading-style-h2 (2rem at <=767).",
+          "measuredFrom": [
+            "cite:ui-type-fragments",
+            "cite:css-root-vars"
+          ]
+        },
+        "h1-hero": {
+          "$type": "dimension",
+          "$value": "48px",
+          "$description": "Hero H1 + rotating words; 42px <=991, 38px <=767, 2rem <=479.",
+          "measuredFrom": [
+            "cite:hero-copy"
+          ]
+        }
+      },
+      "fontWeight": {
+        "regular": {
+          "$type": "fontWeight",
+          "$value": 400,
+          "$description": "Headings (Altriviera ships 400 only), body, nav dropdown labels.",
+          "measuredFrom": [
+            "cite:tw-fonts",
+            "cite:nav-label-weight"
+          ]
+        },
+        "medium": {
+          "$type": "fontWeight",
+          "$value": 500,
+          "$description": "Buttons, card/stat titles, emphasis lines.",
+          "measuredFrom": [
+            "cite:ui-arrow-variants"
+          ]
+        }
+      },
+      "lineHeight": {
+        "none": {
+          "$type": "number",
+          "$value": 1,
+          "$description": "Buttons.",
+          "measuredFrom": [
+            "cite:ui-arrow-variants"
+          ]
+        },
+        "heading": {
+          "$type": "number",
+          "$value": 1.2,
+          "$description": "Headings.",
+          "measuredFrom": [
+            "cite:ui-type-fragments"
+          ]
+        },
+        "quote": {
+          "$type": "number",
+          "$value": 1.3,
+          "$description": "Testimonial quote / free-trial statement.",
+          "measuredFrom": [
+            "cite:testimonials-items"
+          ]
+        },
+        "body": {
+          "$type": "number",
+          "$value": 1.5,
+          "$description": "Body base.",
+          "measuredFrom": [
+            "cite:idx-body-base"
+          ]
+        }
+      },
+      "letterSpacing": {
+        "tight-1": {
+          "$type": "dimension",
+          "$value": "-0.01em",
+          "$description": "Regular/small text.",
+          "measuredFrom": [
+            "cite:ui-type-fragments"
+          ]
+        },
+        "tight-15": {
+          "$type": "dimension",
+          "$value": "-0.015em",
+          "$description": "Medium text, H2.",
+          "measuredFrom": [
+            "cite:ui-type-fragments"
+          ]
+        },
+        "tight-2": {
+          "$type": "dimension",
+          "$value": "-0.02em",
+          "$description": "Large text, H1, buttons.",
+          "measuredFrom": [
+            "cite:ui-type-fragments",
+            "cite:ui-arrow-variants"
+          ]
+        },
+        "h3": {
+          "$type": "dimension",
+          "$value": "-0.5px",
+          "$description": "H3, footer links, typed line.",
+          "measuredFrom": [
+            "cite:ui-type-fragments",
+            "cite:footer-link-hover"
+          ]
+        },
+        "tab": {
+          "$type": "dimension",
+          "$value": "-1px",
+          "$description": "Benefit tab labels + rotating words.",
+          "measuredFrom": [
+            "cite:benefits-tabs",
+            "cite:hero-copy"
+          ]
+        }
+      },
+      "fluidRoot": {
+        "$type": "formula",
+        "$value": "font-size: calc(var(--base) * 1rem + var(--coefficient) * 1vw) with bands >1440: 16->16 (1440-1920), <=1440: 13->16 (960-1440), <=960: 12->16 (479-960), <=479: 12->16 (1-479)",
+        "$description": "Every rem value rides this fluid root; never hard-code a 16px root.",
+        "measuredFrom": [
+          "cite:idx-fluid-root",
+          "cite:spec-fluid-root"
+        ]
+      }
+    }
+  }
+}

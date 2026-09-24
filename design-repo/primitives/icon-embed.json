@@ -1,0 +1,17 @@
+{
+  "id": "primitive.icon-embed",
+  "kind": "primitive",
+  "description": "Inline SVG wrapper mirroring Webflow .w-embed.",
+  "variants": {
+    "default": "Only variant."
+  },
+  "tokensUsed": [
+    "semantic.color.text.muted"
+  ],
+  "motionPatterns": [
+    "none"
+  ],
+  "measuredFrom": [
+    "cite:ui-type-fragments"
+  ]
+}

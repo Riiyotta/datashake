@@ -1,0 +1,19 @@
+{
+  "id": "primitive.lottie-player",
+  "kind": "primitive",
+  "description": "lottie-web SVG player with Webflow IX2 semantics (autoplay/loop and scroll-into-view scrub).",
+  "variants": {
+    "scrub": "IX2 scroll-into-view frame tween.",
+    "play-once": "Plays once on view.",
+    "loop": "Autoplay loop."
+  },
+  "tokensUsed": [],
+  "motionPatterns": [
+    "lottie-scroll-scrub",
+    "lottie-play-once-on-view",
+    "lottie-loop"
+  ],
+  "measuredFrom": [
+    "cite:ui-lottie"
+  ]
+}

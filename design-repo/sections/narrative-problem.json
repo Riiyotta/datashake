@@ -1,0 +1,145 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_narrative-problem (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.narrative.problem",
+  "nodeSection": "narrative.problem",
+  "category": "NARRATIVE",
+  "purpose": "State the pain (fragile multi-vendor data pipelines) before the solution band that must immediately follow it.",
+  "sourceComponent": "src/components/ProblemSection.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "eyebrow",
+      "heading",
+      "lead",
+      "body",
+      "illustration"
+    ],
+    "properties": {
+      "eyebrow": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 3,
+        "x-observedMaxWords": 2
+      },
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 9,
+        "x-observedMaxWords": 7
+      },
+      "lead": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 22,
+        "x-observedMaxWords": 17
+      },
+      "body": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 57,
+        "x-observedMaxWords": 45
+      },
+      "illustration": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/media"
+          },
+          {
+            "properties": {
+              "assetRole": {
+                "enum": [
+                  "product-lottie",
+                  "decorative-pattern"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "lottie-scroll-scrub"
+    ],
+    "reducedMotionFallback": "Lottie renders one static frame instead of scrubbing 0->93%.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:hero-lottie",
+      "cite:problem-lottie",
+      "cite:solution-lottie",
+      "cite:ui-lottie"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "8rem strip | content | 8rem strip"
+      ],
+      "measuredFrom": [
+        "cite:problem-layout"
+      ],
+      "columns": 3
+    },
+    "tablet": {
+      "layout": "stack",
+      "changes": [
+        "Strips hidden; text row stacks"
+      ],
+      "measuredFrom": [
+        "cite:problem-layout",
+        "cite:ui-strip-dividers"
+      ],
+      "columns": 1
+    },
+    "mobileLandscape": {
+      "layout": "resize",
+      "changes": [
+        "Text row padding 24px"
+      ],
+      "measuredFrom": [
+        "cite:problem-layout"
+      ],
+      "columns": 1
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "Lead 1.25rem"
+      ],
+      "measuredFrom": [
+        "cite:problem-copy"
+      ],
+      "columns": 1
+    }
+  },
+  "tokensUsed": [
+    "semantic.typography.h2",
+    "semantic.typography.lead24",
+    "semantic.color.text.muted"
+  ],
+  "accessibility": {
+    "headingLevel": 2,
+    "measuredFrom": [
+      "cite:problem-copy"
+    ]
+  },
+  "measuredFrom": [
+    "cite:problem-copy",
+    "cite:problem-body",
+    "cite:problem-lottie",
+    "cite:problem-layout"
+  ]
+}

@@ -1,0 +1,1171 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "template": "template.home-landing",
+  "route": "/",
+  "contentProvenance": "source-reproduction",
+  "sourceContentNotice": "Source content reproduced from www.datashake.com (a real, live company) for fidelity reference only. Not licensed for reuse in new pages.",
+  "nodes": [
+    {
+      "section": "shell.navbar",
+      "variant": "default",
+      "content": {
+        "brand": {
+          "assetRole": "brand-logo",
+          "assetRef": "inline:src/components/svgs.js#logoMark",
+          "alt": "home"
+        },
+        "menus": [
+          {
+            "label": "Product",
+            "columns": 1,
+            "items": [
+              {
+                "title": "Platform",
+                "description": "Explore Datashake",
+                "href": "https://www.datashake.com/platform",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f72f77ae84cbdda60514b_Frame-36432.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Enterprise",
+                "description": "Built for scale and compliance",
+                "href": "https://www.datashake.com/enterprise",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f73f4ecb0ad342279c6f9_Frame-36432.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Why Datashake",
+                "description": "See why teams choose us",
+                "href": "https://www.datashake.com/why-datashake",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695fd6144754d3af93bf2522_Frame-36432.svg",
+                  "alt": ""
+                }
+              }
+            ]
+          },
+          {
+            "label": "Solutions",
+            "columns": 2,
+            "items": [
+              {
+                "title": "Customer Experience Tools",
+                "description": "Power complete feedback intelligence",
+                "href": "https://www.datashake.com/industry/cx-platforms",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f7648758258315edacf34_Customer.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Retail",
+                "description": "Track product performance at scale",
+                "href": "https://www.datashake.com/industry/retail",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f76586e0697704383a7f8_Retail.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Social Listening",
+                "description": "Capture every mention across sources",
+                "href": "https://www.datashake.com/industry/social-listening",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f76639705a8e5b6829eb5_Social.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Pharmaceutical",
+                "description": "Unlock patient insights compliantly",
+                "href": "https://www.datashake.com/industry/pharmaceutical",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f766f655fcc9f92cd97b0_Pharmaceutical.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Reputation & Review Management",
+                "description": "Protect brand trust automatically",
+                "href": "https://www.datashake.com/industry/reputation-and-review-management",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f7679f97a0549faf533b3_Reputataion.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Finance",
+                "description": "Strengthen due diligence with behavioral data",
+                "href": "https://www.datashake.com/industry/finance",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f76814598a49a990adb85_Finance.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Marketing Automation",
+                "description": "Fuel campaigns with authentic social proof",
+                "href": "https://www.datashake.com/industry/marketing-automation",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f768c19761d095c55df4a_Marketing.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Agencies",
+                "description": "Deliver insights without data overhead",
+                "href": "https://www.datashake.com/industry/agencies",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f7696f3954786e6327188_Agencies.svg",
+                  "alt": ""
+                }
+              }
+            ]
+          },
+          {
+            "label": "Resources",
+            "columns": 1,
+            "items": [
+              {
+                "title": "Blog",
+                "description": "Insights on public data infrastructure",
+                "href": "https://www.datashake.com/blog",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f7508a1c44f588d5784eb_Frame-36432.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Dashboard template library",
+                "description": "Industry-ready analytics templates",
+                "href": "https://www.datashake.com/dashboard-template",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f7525f738456aed5590a9_tEMPLATE.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "2026 Social Data Coverage Report",
+                "description": "Get your free report",
+                "href": "https://www.datashake.com/resources/social-data-coverage-report-2026",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/69c3e9912c34b76aed113aad_Frame-36420.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Datasets",
+                "description": "Ready-to-buy social data",
+                "href": "https://www.datashake.com/datasets",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695f7508a1c44f588d5784eb_Frame-36432.svg",
+                  "alt": ""
+                }
+              }
+            ]
+          },
+          {
+            "label": "Company",
+            "columns": 1,
+            "items": [
+              {
+                "title": "About",
+                "description": "Meet the team behind Datashake",
+                "href": "https://www.datashake.com/about-us",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695fd665e46fe59b284adc9f_Frame-36432.svg",
+                  "alt": ""
+                }
+              },
+              {
+                "title": "Contact",
+                "description": "Talk to our data experts",
+                "href": "https://www.datashake.com/contact-us",
+                "icon": {
+                  "assetRole": "ui-icon",
+                  "assetRef": "public/assets/695fd67c61a3dc10c5d8d68d_Frame-36432.svg",
+                  "alt": ""
+                }
+              }
+            ]
+          }
+        ],
+        "loginCta": {
+          "label": "Login",
+          "href": "https://dashboard.datashake.com/signin"
+        },
+        "bookCta": {
+          "label": "Book a call",
+          "href": "https://www.datashake.com/demo"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "dropdown-reveal",
+          "hamburger-morph",
+          "mobile-menu-slide",
+          "nav-logo-spin"
+        ],
+        "reducedMotionFallback": "Dropdowns and the mobile overlay show/hide instantly with no translate/opacity tween; the hamburger swaps to its open state without the rotate tween; the brand mark does not spin on hover.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "hero.api-search",
+      "variant": "default",
+      "content": {
+        "announcement": {
+          "label": "The Social Data Coverage Report 2026 is here ⚡",
+          "href": "https://www.datashake.com/resources/social-data-coverage-report-2026"
+        },
+        "headingLead": "One API. One schema. Cleaned, normalized. Search and filter across",
+        "rotatingWords": [
+          "social media",
+          "review sites",
+          "app stores",
+          "forums",
+          "e-commerce platforms",
+          "ratings directories",
+          "150+ sources"
+        ],
+        "subheading": "Replace multiple vendors with one partner you can trust for comprehensive, fast and scalable data from 150+ sources.",
+        "primaryCta": {
+          "label": "Book a demo",
+          "href": "https://www.datashake.com/demo"
+        },
+        "secondaryCta": {
+          "label": "Explore the platform",
+          "href": "https://www.datashake.com/platform"
+        },
+        "illustration": {
+          "assetRole": "product-lottie",
+          "assetRef": "public/lottie/hero.json",
+          "alt": ""
+        },
+        "poster": {
+          "assetRole": "product-screenshot",
+          "assetRef": "public/assets/6938803c45536fc95cbcf5fb_Hero-Image.webp",
+          "alt": "User reviews and social media post excerpts showing reactions to new iPhone features and Nike Air Max launch, with a search result count of 384,589 and export options."
+        }
+      },
+      "motion": {
+        "patterns": [
+          "hero-word-rotator",
+          "lottie-scroll-scrub",
+          "button-hover"
+        ],
+        "reducedMotionFallback": "Rotator stays on its first visible word (no timeline); hero Lottie renders a single static frame; button hovers change colour without the arrow rotation tween.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "proof.logo-grid",
+      "variant": "default",
+      "content": {
+        "caption": "Powering data intelligence for leading platforms & global brands",
+        "logos": [
+          {
+            "label": "Customer experience",
+            "href": "https://www.datashake.com/industry/cx-platforms",
+            "logo": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/695fde2155874d4fd12d0c4d_Qualtrics-Grey.svg",
+              "alt": "Qualtrics logo"
+            },
+            "logoHover": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/695fde2155874d4fd12d0c4d_Qualtrics-Grey.svg",
+              "alt": "Qualtrics logo"
+            }
+          },
+          {
+            "label": "Reputation management",
+            "href": "https://www.datashake.com/industry/reputation-and-review-management",
+            "logo": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/695fdf576971eabc9e19d43a_Yext-Grey.svg",
+              "alt": "Yext logo"
+            },
+            "logoHover": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/695fd9af4bcc36dc8291d618_Yext-Logo.svg",
+              "alt": "Yext logo"
+            }
+          },
+          {
+            "label": "Retail",
+            "href": "https://www.datashake.com/industry/retail",
+            "logo": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/695fdfa1c2e0872bf1a3fae2_Home-Grey.svg",
+              "alt": "The Home Depot logo"
+            },
+            "logoHover": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/6938845d5dc733d389b6a1ea_Logo-item.svg",
+              "alt": "The Home Depot logo"
+            }
+          },
+          {
+            "label": "Marketing automation",
+            "href": "https://www.datashake.com/industry/marketing-automation",
+            "logo": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/696a3746c87f28ab9e71429c_Bright-Logo.svg",
+              "alt": "Brightlocal logo"
+            },
+            "logoHover": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/696a373d7cf15783304feb66_Bright-Color.svg",
+              "alt": "Brightlocal logo"
+            }
+          },
+          {
+            "label": "Agencies",
+            "href": "https://www.datashake.com/industry/agencies",
+            "logo": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/696a36646b979b2b9ba7d7c1_Epicor-Logo.svg",
+              "alt": "Epicor logo"
+            },
+            "logoHover": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/696a36ca255645d4685a09f1_Epicor-Color.svg",
+              "alt": "Epicor logo"
+            }
+          },
+          {
+            "label": "Social listening",
+            "href": "https://www.datashake.com/industry/social-listening",
+            "logo": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/695fdfe525c4cfc78899d65d_Talkwalker-Grey.svg",
+              "alt": "Talkwalker logo"
+            },
+            "logoHover": {
+              "assetRole": "customer-logo",
+              "assetRef": "public/assets/695fd9e04757b43e0508f8c6_Talkwalker-Logo.svg",
+              "alt": "Talkwalker logo"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "logo-hover-crossfade"
+        ],
+        "reducedMotionFallback": "Hover swaps the grey logo for the colour logo and shows the arrow instantly, with no cross-fade or translate.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "shell.lines-divider",
+      "variant": "base",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "Static hairline band; nothing to reduce.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "narrative.problem",
+      "variant": "default",
+      "content": {
+        "eyebrow": "The Problem",
+        "heading": "You’re making decisions on incomplete data foundations",
+        "lead": "Public data powers modern business decisions, yet most teams rely on fragile, stitched-together systems to collect it.",
+        "body": "Juggling multiple providers means your team is always fixing something. Different data formats drain engineering hours, coverage gaps mean missing critical data daily. And when a provider's API changes or a platform goes down, your entire pipeline breaks – taking insights and decisions with it.",
+        "illustration": {
+          "assetRole": "product-lottie",
+          "assetRef": "public/lottie/problem.json",
+          "alt": ""
+        }
+      },
+      "motion": {
+        "patterns": [
+          "lottie-scroll-scrub"
+        ],
+        "reducedMotionFallback": "Lottie renders one static frame instead of scrubbing 0->93%.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "narrative.solution",
+      "variant": "default",
+      "content": {
+        "eyebrow": "The Solution",
+        "heading": "Get the most complete data to power your insights",
+        "lead": "Datashake provides the reliable foundation of public data that your business has always needed.",
+        "body": "We unify 150+ social media and online review sources into one resilient API, standardizing formats and absorbing platform shifts so your pipelines never fail. Data arrives analysis-ready while your team expands coverage without compounding complexity. Infrastructure engineered for the decisions that define your businesses success.",
+        "cta": {
+          "label": "See Datashake in action",
+          "href": "https://www.datashake.com/demo"
+        },
+        "illustration": {
+          "assetRole": "product-lottie",
+          "assetRef": "public/lottie/solution.json",
+          "alt": ""
+        },
+        "stats": [
+          {
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "public/assets/6954225ff03c26feba9890d0_Uptime-Icon.svg",
+              "alt": ""
+            },
+            "title": "98.3% uptime",
+            "body": "Proven reliability across sources with proactive monitoring"
+          },
+          {
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "public/assets/69542268db277324767e7b27_Security-Icon.svg",
+              "alt": ""
+            },
+            "title": "Enterprise security",
+            "body": "Encryption at every step with compliance-ready infrastructure"
+          },
+          {
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "public/assets/6954227c05f17176c82af1b1_Scale-Icon.svg",
+              "alt": ""
+            },
+            "title": "Massive scale",
+            "body": "Scale your workflow to hundreds of millions of daily fetches"
+          },
+          {
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "public/assets/6954228708675a34854006f1_Industry-Icon.svg",
+              "alt": ""
+            },
+            "title": "Industry standard",
+            "body": "Proven reliability across sources with proactive monitoring"
+          },
+          {
+            "icon": {
+              "assetRole": "ui-icon",
+              "assetRef": "public/assets/69542291ef3d3221396413bf_Coverage-Icon.svg",
+              "alt": ""
+            },
+            "title": "Earned media coverage",
+            "body": "Detect conversations outside channels you own"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "lottie-scroll-scrub",
+          "button-hover"
+        ],
+        "reducedMotionFallback": "Lottie renders one static frame instead of scrubbing 0->98%; CTA hover changes colour without the arrow rotation tween.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "shell.lines-divider",
+      "variant": "base",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "Static hairline band; nothing to reduce.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "interactive.build-typed",
+      "variant": "default",
+      "content": {
+        "heading": "What would you build with unlimited access to public conversation data?",
+        "typedPhrases": [
+          "Real-time crisis detection system",
+          "Competitive intelligence dashboard",
+          "Customer sentiment tracker",
+          "Trend forecasting engine",
+          "Brand health monitor",
+          "Product feedback aggregator",
+          "Market research platform",
+          "Global reputation management system",
+          "Adverse event detection",
+          "Early warning system",
+          "Customer experience improvements",
+          "Detect product quality issues",
+          "Track competitor pricing",
+          "Map customer journeys",
+          "Monitor KOL conversations",
+          "Identify emerging trends"
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "typed-text-loop",
+          "p5-bar-field"
+        ],
+        "reducedMotionFallback": "Show the first phrase fully typed with a static cursor; render the bar field as a single static frame with no pointer reaction or pulse.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "shell.lines-divider",
+      "variant": "base",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "Static hairline band; nothing to reduce.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "features.reliable",
+      "variant": "default",
+      "content": {
+        "heading": "Your most reliable source of social & review data at scale",
+        "body": "Datashake powers the next generation of data-driven solutions — from customer experience and trend analytics to KYC and competitive monitoring.",
+        "checks": [
+          "Collect, normalize, and deliver data from different sources",
+          "Focus on getting insights, not managing infrastructure."
+        ],
+        "cta": {
+          "label": "Book a demo",
+          "href": "https://www.datashake.com/demo"
+        },
+        "illustration": {
+          "assetRole": "product-lottie",
+          "assetRef": "public/lottie/970-04.json",
+          "alt": ""
+        }
+      },
+      "motion": {
+        "patterns": [
+          "lottie-play-once-on-view",
+          "button-hover"
+        ],
+        "reducedMotionFallback": "970-04 renders its final frame statically; CTA hover without the arrow rotation tween.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "shell.lines-divider",
+      "variant": "base",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "Static hairline band; nothing to reduce.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "features.benefits-tabs",
+      "variant": "default",
+      "content": {
+        "tabs": [
+          {
+            "label": "Speed",
+            "accent": "yellow",
+            "title": "Get answers in seconds",
+            "body": "Access 5+ years of historical data instantly through archive search, or collect fresh conversations in real-time when you need current information. Get data how you need it, when you need it — whether you're analyzing long-term trends or responding to emerging issues.",
+            "points": [
+              "Archive search returns results in seconds",
+              "Real-time collection for emerging topics",
+              "5+ years of historical depth available instantly"
+            ],
+            "illustration": {
+              "assetRole": "product-lottie",
+              "assetRef": "public/lottie/970-15.json",
+              "alt": ""
+            }
+          },
+          {
+            "label": "Depth",
+            "accent": "blue",
+            "title": "Make confident decisions with complete data",
+            "body": "Capture full threads, replies, engagement metadata, and complete conversation history. Get everything you need to spot emerging trends, detect crisis signals, and analyze industry-wide patterns at scale. We collect all available data points, from posts and comments to metadata and user insights.",
+            "points": [
+              "Complete conversation threads and replies",
+              "Engagement data and metadata",
+              "Data volume for industry-wide trend and benchmark analysis"
+            ],
+            "illustration": {
+              "assetRole": "product-lottie",
+              "assetRef": "public/lottie/970-16.json",
+              "alt": ""
+            }
+          },
+          {
+            "label": "Coverage",
+            "accent": "orange",
+            "title": "Scale your coverage without scaling complexity",
+            "body": "Access review sites, social platforms, forums, and e-commerce channels without shopping for multiple vendors. Get data from billions of public conversations across sources, all through one trusted partner. When we add new sources based on customer needs, they become available to you automatically, without re-engineering or additional integration work.",
+            "points": [
+              "150+ sources and growing, across review sites, social platforms, forums",
+              "Multi-language and regional coverage globally",
+              "New sources added as you need them"
+            ],
+            "illustration": {
+              "assetRole": "product-lottie",
+              "assetRef": "public/lottie/970-17.json",
+              "alt": ""
+            }
+          },
+          {
+            "label": "Relevance",
+            "accent": "purple",
+            "title": "Find what matters, filter what doesn't",
+            "body": "Make better decisions with relevant data, not just more data. Precise search and filtering capabilities help you quickly find the results you’re after. We deliver clean, analysis-ready data so you can gather the strongest insights.",
+            "points": [
+              "Archive search returns results in seconds",
+              "Date range, language, and source type filtering",
+              "Advanced duplicate detection for clean results"
+            ],
+            "illustration": {
+              "assetRole": "product-lottie",
+              "assetRef": "public/lottie/970-18.json",
+              "alt": ""
+            }
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "tabs-autoadvance",
+          "lottie-loop"
+        ],
+        "reducedMotionFallback": "No auto-advance timer and no progress-bar fill; tabs change only on user action with an instant pane swap; tab Lotties show one static frame.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "shell.lines-divider",
+      "variant": "base",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "Static hairline band; nothing to reduce.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "cta.free-trial",
+      "variant": "default",
+      "content": {
+        "eyebrow": "Free Benchmark Trial",
+        "heading": "Test your use case with Datashake",
+        "headingAccent": "— for free.",
+        "lead": "We’ll run your search to show you how Datashake uncovers more data.",
+        "cta": {
+          "label": "Start your free benchmark check",
+          "href": "https://www.datashake.com/demo"
+        },
+        "statement": "Detect data gaps in your infrastructure and expand your data coverage seamlessly.",
+        "points": [
+          "Free, no-commitment benchmark test",
+          "Investigate any search request and topic",
+          "Compare results side-by-side",
+          "Expand your current source coverage"
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "button-hover"
+        ],
+        "reducedMotionFallback": "White CTA hover changes colour without the arrow rotation tween.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "shell.lines-divider",
+      "variant": "base",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "Static hairline band; nothing to reduce.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "features.industries-grid",
+      "variant": "default",
+      "content": {
+        "eyebrow": "Power Your Data",
+        "heading": "What global companies use Datashake for",
+        "intro": "From trend detection and crisis monitoring to competitive intelligence and risk assessment — we support all your use cases with the most comprehensive data coverage available.",
+        "cards": [
+          {
+            "title": "Crisis Monitoring & Risk Detection",
+            "body": "Detect potential crises before they escalate. Monitor reputation threats, product issues, and negative sentiment spikes in real-time across all channels.",
+            "image": {
+              "assetRole": "use-case-illustration",
+              "assetRef": "public/assets/693b2752e7826c75201aa9c2_Crisis-Illustration.svg",
+              "alt": "illustration depicting crises and risk monitoring from social platforms"
+            }
+          },
+          {
+            "title": "Trend Detection",
+            "body": "Identify emerging trends before they become mainstream. Track conversation volume and topic evolution across any source you need.",
+            "image": {
+              "assetRole": "use-case-illustration",
+              "assetRef": "public/assets/693aaa22543d41b64af90bdb_Benefit-Illustration.svg",
+              "alt": "illustration depicting predicted data volumes"
+            }
+          },
+          {
+            "title": "Win Competitive RFPs",
+            "body": "Win enterprise contracts with deep coverage from 150+ sources that becomes the deciding factor in RFP evaluations.",
+            "image": {
+              "assetRole": "use-case-illustration",
+              "assetRef": "public/assets/696a45da0f1229f20a28f1e4_RPFS-Illustration.webp",
+              "alt": "Diagram listing review sites and social media platforms with related content types, including E-Commerce, Product, Service, Physical Shop, Posts, User Profiles, Videos, and Reviews."
+            }
+          },
+          {
+            "title": "Close More Deals",
+            "body": "Close more deals when you integrate Datashake data. Get access to coverage that becomes undeniable competitive differentiation",
+            "image": {
+              "assetRole": "use-case-illustration",
+              "assetRef": "public/assets/693b280abb79699bcdc60aed_Deals-Illustration.svg",
+              "alt": "illustration showing deal closure increases with Datashake API"
+            }
+          },
+          {
+            "title": "Competitive Analysis",
+            "body": "Track competitive activity across all channels simultaneously. Monitor pricing, promotions, product launches, and more to compete smarter.",
+            "image": {
+              "assetRole": "use-case-illustration",
+              "assetRef": "public/assets/693b283e2069033d2ea99e8f_Competitive-Illustration.svg",
+              "alt": "illustration showing competitive analysis of data streams"
+            }
+          },
+          {
+            "title": "Retain Enterprise Customers",
+            "body": "Retains your most valuable enterprise customers by delivering the comprehensive data your clients need across global markets.",
+            "image": {
+              "assetRole": "use-case-illustration",
+              "assetRef": "public/assets/695441357de4841a1da03c74_Retain-Illustration.webp",
+              "alt": "Map of North America with orange rectangular markers indicating locations across the United States, Mexico, and the Caribbean."
+            }
+          },
+          {
+            "title": "Due Diligence & KYC",
+            "body": "Finance teams strengthen KYC processes and risk assessment with comprehensive social and review data.",
+            "image": {
+              "assetRole": "use-case-illustration",
+              "assetRef": "public/assets/69544152ed6bbdf3beee0095_Due-Illustration.webp",
+              "alt": "Task labeled 'Hire 2 software engineers to improve face ID' marked as approved, linked to a social media comment from 4 days ago stating 'iPhone 17 face ID feels much slower than my 14 Pro.'"
+            }
+          },
+          {
+            "title": "Regulatory Compliance",
+            "body": "Pharmaceutical companies monitor adverse events and post-market surveillance through complete coverage that manual monitoring can't match.",
+            "image": {
+              "assetRole": "use-case-illustration",
+              "assetRef": "public/assets/693b2866ae8a9eeb03279bd4_Compliance-Illustration.svg",
+              "alt": "illustration depicting abstract data streams being scanned"
+            }
+          },
+          {
+            "title": "Client Reporting",
+            "body": "Agencies deliver stronger client insights with comprehensive data coverage, flexible access, and predictable pricing.",
+            "image": {
+              "assetRole": "use-case-illustration",
+              "assetRef": "public/assets/695441741c57ad046429eddb_Client-Illustration.webp",
+              "alt": "Report highlighting great customer response to new features with 11,234 mentions and suggested marketing actions."
+            }
+          }
+        ],
+        "cta": {
+          "label": "Book a demo",
+          "href": "https://www.datashake.com/demo"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "button-hover"
+        ],
+        "reducedMotionFallback": "Full-width CTA hover changes colour without the arrow rotation tween.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "shell.lines-divider",
+      "variant": "base",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "Static hairline band; nothing to reduce.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "proof.testimonials",
+      "variant": "default",
+      "content": {
+        "items": [
+          {
+            "name": "Tech Lead",
+            "role": "Review Management Services",
+            "accent": "blue",
+            "attributionType": "source-verbatim",
+            "quote": "\"We’ve been using Datashake for over six years, and it’s been a big part of our business growth during that time. It has really helped improve our operations by providing consistent, reliable data that we can easily plug into our workflows.\""
+          },
+          {
+            "name": "Arkadiusz",
+            "role": "Software Engineering Manager, Software development",
+            "accent": "orange",
+            "attributionType": "source-verbatim",
+            "quote": "“Datashake delivers exceptional value through their unique features and flexible APIs. Their team is highly collaborative and responsive, making them a pleasure to work with. I highly recommend their services.”"
+          },
+          {
+            "name": "Founder & Product Lead",
+            "role": "Review Management Software",
+            "accent": "purple",
+            "attributionType": "source-verbatim",
+            "quote": "“Working with Datashake has been a game-changer for our review management platform. Their review aggregation service covers 100+ sites and saves us a huge amount of development time and maintenance. Instead of constantly building and updating our own integrations, we can stay focused on making a great product.”"
+          },
+          {
+            "name": "Senior Technical Partner Manager",
+            "role": "Brand Digital Presence & Marketing Software",
+            "accent": "yellow",
+            "attributionType": "source-verbatim",
+            "quote": "“Partnering with Datashake has been a great experience. Their customer success team is responsive, knowledgeable, and always quick to help. They’re open to evolving the product as our needs grow, and their framework makes scaling up or down extremely easy.”"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "testimonial-panel-switch"
+        ],
+        "reducedMotionFallback": "Panel switch is instant (no 0.8s width transition).",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "shell.lines-divider",
+      "variant": "base",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "Static hairline band; nothing to reduce.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "content.faq",
+      "variant": "default",
+      "content": {
+        "eyebrow": "FAQs",
+        "heading": "Your questions, answered",
+        "items": [
+          {
+            "question": "What types of data does Datashake collect?",
+            "answer": "Everything publicly available, with the depth your use case needs. Social posts, reviews, forums, news, and e-commerce data from 150+ sources. Complete threads, engagement metrics, 5+ years of history. All normalized and analysis-ready."
+          },
+          {
+            "question": "How is Datashake different from other social listening tools?",
+            "answer": "We're infrastructure, not an end-user platform. You get the raw data layer (150+ sources vs. typical 20-30) with deeper coverage, faster access, and no per-seat fees. We replace multiple vendor relationships with one reliable integration that powers your products and analytics."
+          },
+          {
+            "question": "Can Datashake access private social media content?",
+            "answer": "No, we only collect publicly available data accessible without login."
+          },
+          {
+            "question": "How quickly can I access historical data?",
+            "answer": "Instantly. Our archive search returns 5+ years of historical data in seconds with no advance setup required. If a topic becomes relevant today, you can analyze years of conversation history immediately, plus capture real-time discussions as they unfold."
+          },
+          {
+            "question": "What sources does Datashake cover?",
+            "answer": "Major social platforms, 100+ review sites, news outlets, forums, and e-commerce channels. Multi-language with global coverage. We add new sources based on customer needs and make them automatically available to everyone."
+          },
+          {
+            "question": "How does pricing work?",
+            "answer": "We use a credit-based model where you pay only for data consumed. Your per-mention cost decreases automatically as volume grows, with no per-seat fees. Get in touch for a custom proposal."
+          },
+          {
+            "question": "Do I need technical expertise to use Datashake?",
+            "answer": "Yes. Datashake is designed for technical teams building data products or analytics workflows, with integration via API, webhooks, or direct feeds. We're not a dashboard tool, but we do provide ready-made templates if you're building visualizations on top of our data."
+          },
+          {
+            "question": "Can Datashake handle enterprise-scale needs?",
+            "answer": "Absolutely. We're built to handle hundreds of millions of daily fetches with 98.3% uptime, dedicated support, custom SLAs, and compliance-ready infrastructure. Enterprise customers rely on us to power mission-critical workflows across global markets."
+          },
+          {
+            "question": "What if you don't cover a source I need?",
+            "answer": "Just tell us. We regularly add sources based on customer requests and make them available to all customers automatically, with no re-engineering required and no extra costs. Many of our current sources exist because customers asked for them."
+          },
+          {
+            "question": "How long does setup take?",
+            "answer": "Most teams are collecting data within days. We configure your sources, set up API access, and provide technical documentation to get you running quickly. Standard implementations move fast, while complex custom integrations take a bit longer – but we prioritize speed either way."
+          },
+          {
+            "question": "Can I try Datashake first?",
+            "answer": "Yes. We offer a free benchmark test using your actual queries to show you what you're missing compared to your current tools."
+          },
+          {
+            "question": "Is Datashake compliant with data privacy regulations?",
+            "answer": "Yes. We collect only public data and maintain compliance-ready infrastructure with encryption at every step."
+          },
+          {
+            "question": "What support do you provide?",
+            "answer": "Get direct access to real humans who understand data infrastructure challenges. Enterprise customers receive priority support, custom SLAs, and direct access to our data engineering team. We're invested in your long-term success, not just your initial setup."
+          },
+          {
+            "question": "Who uses Datashake?",
+            "answer": "-Software companies building customer experience platforms, competitive intelligence tools, and analytics products\n- Enterprise brands monitoring reputation and detecting emerging trends\n-Agencies delivering comprehensive data-driven client reporting\n-Finance teams conducting due diligence and risk assessment\n-Pharma companies tracking adverse events for regulatory compliance\n-Any organization that needs reliable data infrastructure at scale"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "faq-accordion"
+        ],
+        "reducedMotionFallback": "Answers expand/collapse instantly; plus icon swaps state without rotation.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "shell.lines-divider",
+      "variant": "base",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "Static hairline band; nothing to reduce.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "cta.final",
+      "variant": "default",
+      "content": {
+        "heading": "Book a call with one of our data experts",
+        "lead": "Schedule a quick call to see how Datashake can power your platform’s next leap",
+        "trustLine": "Trusted by enterprise brands and data platforms worldwide",
+        "cta": {
+          "label": "Book a demo",
+          "href": "https://www.datashake.com/demo"
+        },
+        "background": {
+          "assetRole": "decorative-pattern",
+          "assetRef": "public/assets/695442158ff7e237e5f5e875_CTA-Background.webp",
+          "alt": "White background with thin dashed green lines connecting small solid green rectangles in a stepped pattern across the image."
+        }
+      },
+      "motion": {
+        "patterns": [
+          "button-hover"
+        ],
+        "reducedMotionFallback": "CTA hover changes colour without the arrow rotation tween.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "shell.lines-divider",
+      "variant": "base",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "Static hairline band; nothing to reduce.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    },
+    {
+      "section": "shell.footer",
+      "variant": "default",
+      "content": {
+        "newsletterHeading": "Get social data insights delivered fresh",
+        "newsletterSlot": "reserved-placeholder",
+        "brand": {
+          "assetRole": "brand-logo",
+          "assetRef": "public/assets/693864b3bf7cdd4a83615647_Datashake-logo.svg",
+          "alt": "Datashake logo"
+        },
+        "socials": [
+          {
+            "platform": "linkedin",
+            "href": "https://www.linkedin.com/company/atdatashake",
+            "icon": {
+              "assetRole": "social-icon",
+              "assetRef": "inline:src/components/svgs.js#linkedin",
+              "alt": ""
+            }
+          },
+          {
+            "platform": "facebook",
+            "href": "https://www.facebook.com/datashake",
+            "icon": {
+              "assetRole": "social-icon",
+              "assetRef": "inline:src/components/svgs.js#facebook",
+              "alt": ""
+            }
+          },
+          {
+            "platform": "instagram",
+            "href": "https://www.instagram.com/datashakehq/",
+            "icon": {
+              "assetRole": "social-icon",
+              "assetRef": "inline:src/components/svgs.js#instagram",
+              "alt": ""
+            }
+          },
+          {
+            "platform": "x",
+            "href": "https://x.com/DatashakeHQ",
+            "icon": {
+              "assetRole": "social-icon",
+              "assetRef": "inline:src/components/svgs.js#x",
+              "alt": ""
+            }
+          }
+        ],
+        "cta": {
+          "label": "Book a demo",
+          "href": "https://www.datashake.com/demo"
+        },
+        "columns": [
+          {
+            "heading": "Solutions",
+            "links": [
+              {
+                "label": "Customer Experience Tools",
+                "href": "https://www.datashake.com/industry/cx-platforms"
+              },
+              {
+                "label": "Social Listening",
+                "href": "https://www.datashake.com/industry/social-listening"
+              },
+              {
+                "label": "Reputation & Review Management",
+                "href": "https://www.datashake.com/industry/reputation-and-review-management"
+              },
+              {
+                "label": "Marketing Automation",
+                "href": "https://www.datashake.com/industry/marketing-automation"
+              },
+              {
+                "label": "Retail",
+                "href": "https://www.datashake.com/industry/retail"
+              },
+              {
+                "label": "Pharmaceutical",
+                "href": "https://www.datashake.com/industry/pharmaceutical"
+              },
+              {
+                "label": "Finance",
+                "href": "https://www.datashake.com/industry/finance"
+              },
+              {
+                "label": "Agencies",
+                "href": "https://www.datashake.com/industry/agencies"
+              }
+            ]
+          },
+          {
+            "heading": "Product",
+            "links": [
+              {
+                "label": "Platform",
+                "href": "https://www.datashake.com/platform"
+              },
+              {
+                "label": "Enterprise",
+                "href": "https://www.datashake.com/enterprise"
+              },
+              {
+                "label": "Why Datashake",
+                "href": "https://www.datashake.com/why-datashake"
+              },
+              {
+                "label": "Status",
+                "href": "https://status.datashake.com/"
+              }
+            ]
+          },
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "About",
+                "href": "https://www.datashake.com/about-us"
+              },
+              {
+                "label": "Blog",
+                "href": "https://www.datashake.com/blog"
+              },
+              {
+                "label": "Book a Demo",
+                "href": "https://www.datashake.com/demo"
+              },
+              {
+                "label": "Contact",
+                "href": "https://www.datashake.com/contact-us"
+              }
+            ]
+          },
+          {
+            "heading": "Legal",
+            "links": [
+              {
+                "label": "Terms of Service",
+                "href": "https://www.datashake.com/terms-of-service"
+              },
+              {
+                "label": "Privacy Policy",
+                "href": "https://www.datashake.com/privacy-policy"
+              }
+            ]
+          }
+        ],
+        "legalLine": "All Rights Reserved © Datashake"
+      },
+      "motion": {
+        "patterns": [
+          "p5-bar-field",
+          "link-color-hover",
+          "button-hover"
+        ],
+        "reducedMotionFallback": "Bar field renders one static frame with no pulse or pointer reaction; link and button hovers change colour instantly.",
+        "fallbackSource": "prescriptive-design-repo-policy"
+      }
+    }
+  ]
+}

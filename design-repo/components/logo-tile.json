@@ -1,0 +1,18 @@
+{
+  "id": "component.logo-tile",
+  "kind": "component",
+  "description": "Linked logo tile with grey/colour cross-fade and corner arrow.",
+  "composes": [
+    "primitive.icon-embed"
+  ],
+  "tokensUsed": [
+    "component.card.logoTile.minHeight",
+    "component.card.logoTile.hoverSurface"
+  ],
+  "motionPatterns": [
+    "logo-hover-crossfade"
+  ],
+  "measuredFrom": [
+    "cite:logos-hover"
+  ]
+}

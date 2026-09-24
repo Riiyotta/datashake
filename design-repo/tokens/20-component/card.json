@@ -1,0 +1,51 @@
+{
+  "$description": "Card/tile tokens.",
+  "component": {
+    "card": {
+      "useCase": {
+        "imageHeight": {
+          "$type": "dimension",
+          "$value": "20rem",
+          "$description": "Fixed illustration frame.",
+          "measuredFrom": [
+            "cite:industries-cards"
+          ]
+        },
+        "padding": {
+          "$type": "dimension",
+          "$value": "{foundation.spacing.1-5}",
+          "$description": "Body padding.",
+          "measuredFrom": [
+            "cite:industries-cards"
+          ]
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{semantic.color.border.default}",
+          "$description": "Hairline grid.",
+          "measuredFrom": [
+            "cite:industries-cards"
+          ]
+        }
+      },
+      "logoTile": {
+        "minHeight": {
+          "$type": "dimension",
+          "$value": "140px",
+          "$description": "Tile min-height.",
+          "measuredFrom": [
+            "cite:logos-hover"
+          ]
+        },
+        "hoverSurface": {
+          "$type": "color",
+          "$value": "{semantic.color.surface.subtle}",
+          "$description": "Hover bg.",
+          "measuredFrom": [
+            "cite:logos-hover"
+          ]
+        }
+      }
+    }
+  }
+}

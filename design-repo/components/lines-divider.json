@@ -1,0 +1,18 @@
+{
+  "id": "component.lines-divider",
+  "kind": "component",
+  "description": "Hairline divider family: base band (page-level) and 8rem/3rem vertical strips (section-internal).",
+  "composes": [],
+  "tokensUsed": [
+    "component.divider.base.border",
+    "component.divider.sideStrip.width",
+    "component.divider.narrowStrip.width"
+  ],
+  "motionPatterns": [
+    "none"
+  ],
+  "measuredFrom": [
+    "cite:ui-lines-divider",
+    "cite:ui-strip-dividers"
+  ]
+}

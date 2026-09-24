@@ -1,0 +1,219 @@
+{
+  "$comment": "Rhythm/position rules JSON Schema cannot express. schema/semantic_validate.py reads severity, exceptions and parameters from THIS file at runtime, and implements exactly these rule ids (verify_all.py checks id parity both ways), so prose and enforcement cannot silently diverge. Dividers are 'transparent' for category/motion adjacency rules.",
+  "sectionCategories": {
+    "shell.navbar": "NAV",
+    "hero.api-search": "HERO",
+    "proof.logo-grid": "PROOF",
+    "shell.lines-divider": "DIVIDER",
+    "narrative.problem": "NARRATIVE",
+    "narrative.solution": "NARRATIVE",
+    "interactive.build-typed": "SHOWCASE",
+    "features.reliable": "FEATURE",
+    "features.benefits-tabs": "FEATURE",
+    "cta.free-trial": "CONVERSION",
+    "features.industries-grid": "FEATURE",
+    "proof.testimonials": "PROOF",
+    "content.faq": "FAQ",
+    "cta.final": "CONVERSION",
+    "shell.footer": "FOOTER"
+  },
+  "rules": [
+    {
+      "id": "TEMPLATE_KNOWN",
+      "severity": "error",
+      "kind": "binding",
+      "description": "PageSpec.template must exist in templates/templates.json.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "ROUTE_TEMPLATE_BINDING",
+      "severity": "error",
+      "kind": "binding",
+      "description": "source-reproduction: route must be one of the template's real routes. new-page: route must match newPageRoutePattern and must not be a real route.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "TEMPLATE_SEQUENCE_MATCH",
+      "severity": "error",
+      "kind": "sequence",
+      "keyedOn": [
+        "section",
+        "variant"
+      ],
+      "description": "nodes[] must be an in-order match of the DECLARED template's slot list: each node consumes one slot with the same (section, variant); optional slots may be skipped; required slots may not.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "ONE_PER_PAGE",
+      "severity": "error",
+      "kind": "constraint",
+      "constraint": "onePerPage",
+      "keyedOn": [
+        "section",
+        "variant"
+      ],
+      "description": "A (section, variant) whose contract sets constraints.onePerPage may appear at most once.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "MUST_START_WITH_NAVBAR",
+      "severity": "error",
+      "kind": "constraint",
+      "section": "shell.navbar",
+      "constraint": "mustBeFirst",
+      "description": "shell.navbar is node 0.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "MUST_END_WITH_FOOTER",
+      "severity": "error",
+      "kind": "constraint",
+      "section": "shell.footer",
+      "constraint": "mustBeLast",
+      "description": "shell.footer is the last node.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "HERO_FOLLOWS_NAVBAR",
+      "severity": "error",
+      "kind": "constraint",
+      "section": "hero.api-search",
+      "constraint": "mustFollowNav",
+      "description": "hero.api-search is node 1, directly after the navbar.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "FINAL_CTA_LAST_BEFORE_FOOTER",
+      "severity": "error",
+      "kind": "constraint",
+      "section": "cta.final",
+      "constraint": "mustPrecedeFooter",
+      "description": "cta.final is the last non-divider node before shell.footer.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "NO_ADJACENT_DIVIDERS",
+      "severity": "error",
+      "kind": "constraint",
+      "section": "shell.lines-divider",
+      "constraint": "noConsecutive",
+      "description": "Two shell.lines-divider nodes may never be adjacent with nothing between them (e.g. after removing an optional section, remove one of its dividers too).",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "ONE_HERO",
+      "severity": "error",
+      "kind": "category-count",
+      "category": "HERO",
+      "max": 1,
+      "exceptions": [],
+      "description": "At most one HERO-category node. No hero-less template exists (the only template requires a hero), so no exception is needed.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "DIVIDER_BETWEEN_BANDS",
+      "severity": "error",
+      "kind": "rhythm",
+      "exceptions": [
+        [
+          "shell.navbar",
+          "hero.api-search"
+        ],
+        [
+          "hero.api-search",
+          "proof.logo-grid"
+        ],
+        [
+          "narrative.problem",
+          "narrative.solution"
+        ]
+      ],
+      "description": "Every pair of consecutive non-divider nodes must have exactly one base divider between them, EXCEPT the named pairs, which must be directly adjacent with no divider (navbar->hero, hero->logo-grid, problem->solution: the real page has no divider there).",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "PROBLEM_SOLUTION_PAIR",
+      "severity": "error",
+      "kind": "pairing",
+      "pair": [
+        "narrative.problem",
+        "narrative.solution"
+      ],
+      "description": "narrative.problem and narrative.solution appear together, problem immediately followed by solution (Solution reuses Problem's layout and continues its band), or neither appears.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "NO_ADJACENT_SAME_CATEGORY",
+      "severity": "warn",
+      "kind": "rhythm",
+      "exceptions": [
+        [
+          "narrative.problem",
+          "narrative.solution"
+        ],
+        [
+          "features.reliable",
+          "features.benefits-tabs"
+        ]
+      ],
+      "description": "Consecutive non-divider nodes should not share a category, except the named real adjacencies.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "CONTINUOUS_MOTION_NOT_ADJACENT",
+      "severity": "warn",
+      "kind": "motion-budget",
+      "patterns": [
+        "hero-word-rotator",
+        "lottie-loop",
+        "typed-text-loop",
+        "p5-bar-field",
+        "tabs-autoadvance"
+      ],
+      "description": "Two consecutive non-divider nodes should not both run continuously looping motion (the real page never places them adjacently).",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "REDUCED_MOTION_FALLBACK_REQUIRED",
+      "severity": "error",
+      "kind": "motion",
+      "description": "Every node carries a non-empty motion.reducedMotionFallback (prescriptive policy; the source has none).",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "MOTION_PATTERN_ALLOWED",
+      "severity": "error",
+      "kind": "motion",
+      "description": "motion.patterns must be a subset of the section contract's motion.allowedPatterns; 'none' cannot be combined with other patterns.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "MAX_WORDS",
+      "severity": "error",
+      "kind": "content",
+      "description": "Every text field respects its section contract's maxWords.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "ASSET_ROLE_POLICY",
+      "severity": "error",
+      "kind": "asset",
+      "description": "assetRole must be in the closed allowlist and allowed for that field; must-reuse-exact => assetRef in knownAssets; may-generate-new => knownAssets or 'generate:' (new-page only); must-not-fabricate => knownAssets on source-reproduction, 'placeholder:' on new-page.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "TESTIMONIAL_ATTRIBUTION_POLICY",
+      "severity": "error",
+      "kind": "content",
+      "description": "source-reproduction testimonials are 'source-verbatim'; new-page testimonials are 'placeholder-pending-consent' and may not reuse any real source name or quote.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    },
+    {
+      "id": "REAL_COMPANY_LINKS",
+      "severity": "warn",
+      "kind": "content",
+      "description": "A new-page PageSpec linking to datashake.com URLs is flagged: all source links point at the real, live company.",
+      "templateCheck": "Checked against templates.json template.home-landing (24-slot full sequence and the minimal backbone) at write time and on every verify_all.py run (section 11)."
+    }
+  ]
+}

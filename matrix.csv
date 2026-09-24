@@ -1,0 +1,17 @@
+section,category,templates,routes,Home (single-page marketing site)
+shell.navbar,SHELL,1,1,x
+hero.home,HERO,1,1,x
+proof.logo-strip,PROOF,1,1,x
+layout.lines-divider,LAYOUT,1,1,x
+value.problem,VALUE,1,1,x
+value.solution,VALUE,1,1,x
+features.build-ideas,FEATURES,1,1,x
+features.reliable-infrastructure,FEATURES,1,1,x
+features.benefits-tabs,FEATURES,1,1,x
+conversion.free-trial,CONVERSION,1,1,x
+features.use-case-grid,FEATURES,1,1,x
+proof.testimonials,PROOF,1,1,x
+support.faq,SUPPORT,1,1,x
+conversion.book-call,CONVERSION,1,1,x
+shell.footer,SHELL,1,1,x
+ROUTE COUNT,,,1,1

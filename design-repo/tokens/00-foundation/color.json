@@ -1,0 +1,265 @@
+{
+  "$description": "Foundation colours. Every value is in tailwind.config.cjs and/or the original :root; excluded declared-but-unused values are listed in tokens/llm/token-policy.json.",
+  "foundation": {
+    "color": {
+      "black": {
+        "$type": "color",
+        "$value": "#0d0d0d",
+        "$description": "Primary ink (headings, body on light).",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "pure-black": {
+        "$type": "color",
+        "$value": "#000000",
+        "$description": "Body base colour and <=767 full-width button.",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:idx-body-base"
+        ]
+      },
+      "white": {
+        "$type": "color",
+        "$value": "#ffffff",
+        "$description": "Page background / inverse text.",
+        "measuredFrom": [
+          "cite:idx-body-base"
+        ]
+      },
+      "grey-v1": {
+        "$type": "color",
+        "$value": "#fafafa",
+        "$description": "Subtle surface (hero Lottie bed, reliable band, dropdown frame, newsletter band).",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "grey-v2": {
+        "$type": "color",
+        "$value": "#666666",
+        "$description": "Muted text, footer links, eyebrow labels.",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "border": {
+        "$type": "color",
+        "$value": "#d9d9d9",
+        "$description": "Every hairline border (0.5px).",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "dark-green": {
+        "$type": "color",
+        "$value": "#103a11",
+        "$description": "Free-trial band background.",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "green": {
+        "$type": "color",
+        "$value": "#3fe844",
+        "$description": "Brand green: primary CTA fill, rotating words, accent text.",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "blue": {
+        "$type": "color",
+        "$value": "#3981ff",
+        "$description": "Testimonial accent (card 1).",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "orange": {
+        "$type": "color",
+        "$value": "#ff930f",
+        "$description": "Testimonial accent (card 2).",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "purple": {
+        "$type": "color",
+        "$value": "#a72bff",
+        "$description": "Testimonial accent (card 3).",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "yellow": {
+        "$type": "color",
+        "$value": "#ffd521",
+        "$description": "Testimonial accent (card 4).",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "light-green": {
+        "$type": "color",
+        "$value": "#ecfdec",
+        "$description": "Final CTA band.",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "light-blue": {
+        "$type": "color",
+        "$value": "#ebf2ff",
+        "$description": "Blue tint (testimonial 1, Depth tab progress).",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "light-orange": {
+        "$type": "color",
+        "$value": "#fff4e7",
+        "$description": "Orange tint.",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "light-purple": {
+        "$type": "color",
+        "$value": "#f6eaff",
+        "$description": "Purple tint.",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "light-yellow": {
+        "$type": "color",
+        "$value": "#fffbe9",
+        "$description": "Yellow tint.",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:css-root-vars"
+        ]
+      },
+      "link": {
+        "$type": "color",
+        "$value": "#2d62ff",
+        "$description": "Base <a> colour (Webflow base layer).",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:idx-link-base"
+        ]
+      },
+      "focus": {
+        "$type": "color",
+        "$value": "#4d65ff",
+        "$description": "Focus-visible outline.",
+        "measuredFrom": [
+          "cite:tw-colors",
+          "cite:idx-focus"
+        ]
+      },
+      "green-hover": {
+        "$type": "color",
+        "$value": "#2fae33",
+        "$description": "Primary button hover fill.",
+        "measuredFrom": [
+          "cite:tw-colors"
+        ]
+      },
+      "green-icon-hover": {
+        "$type": "color",
+        "$value": "#28912b",
+        "$description": "Primary button arrow-chip hover.",
+        "measuredFrom": [
+          "cite:tw-colors"
+        ]
+      },
+      "black-hover": {
+        "$type": "color",
+        "$value": "#262626",
+        "$description": "Black button hover fill.",
+        "measuredFrom": [
+          "cite:tw-colors"
+        ]
+      },
+      "black-icon-hover": {
+        "$type": "color",
+        "$value": "#333333",
+        "$description": "Black button arrow-chip hover.",
+        "measuredFrom": [
+          "cite:tw-colors"
+        ]
+      },
+      "white-hover": {
+        "$type": "color",
+        "$value": "#f2f2f2",
+        "$description": "White button hover fill.",
+        "measuredFrom": [
+          "cite:tw-colors"
+        ]
+      },
+      "white-icon-hover": {
+        "$type": "color",
+        "$value": "#e6e6e6",
+        "$description": "White button arrow-chip hover.",
+        "measuredFrom": [
+          "cite:tw-colors"
+        ]
+      },
+      "white-15": {
+        "$type": "color",
+        "$value": "rgba(255, 255, 255, 0.15)",
+        "$description": "Dashed borders on the dark-green card grid.",
+        "measuredFrom": [
+          "cite:tw-colors"
+        ]
+      },
+      "white-3": {
+        "$type": "color",
+        "$value": "rgba(255, 255, 255, 0.03)",
+        "$description": "Glass fill of dark-green point cards.",
+        "measuredFrom": [
+          "cite:tw-colors"
+        ]
+      },
+      "bar-1": {
+        "$type": "color",
+        "$value": "#D9FADA",
+        "$description": "p5 bar-canvas palette 1.",
+        "measuredFrom": [
+          "cite:bar-canvas-palette"
+        ]
+      },
+      "bar-2": {
+        "$type": "color",
+        "$value": "#F5FEF6",
+        "$description": "p5 bar-canvas palette 2.",
+        "measuredFrom": [
+          "cite:bar-canvas-palette"
+        ]
+      },
+      "bar-3": {
+        "$type": "color",
+        "$value": "#ECFDEC",
+        "$description": "p5 bar-canvas palette 3.",
+        "measuredFrom": [
+          "cite:bar-canvas-palette"
+        ]
+      }
+    }
+  }
+}

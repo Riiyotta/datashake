@@ -1,0 +1,255 @@
+{
+  "$description": "Semantic colour roles; every $value aliases a foundation colour.",
+  "semantic": {
+    "color": {
+      "text": {
+        "primary": {
+          "$type": "color",
+          "$value": "{foundation.color.black}",
+          "$description": "Headings and primary copy.",
+          "measuredFrom": [
+            "cite:ui-type-fragments"
+          ]
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{foundation.color.grey-v2}",
+          "$description": "Secondary copy, eyebrow, footer links.",
+          "measuredFrom": [
+            "cite:ui-eyebrow",
+            "cite:css-footer-link"
+          ]
+        },
+        "inverse": {
+          "$type": "color",
+          "$value": "{foundation.color.white}",
+          "$description": "Copy on dark-green / black.",
+          "measuredFrom": [
+            "cite:freetrial-copy"
+          ]
+        },
+        "accent": {
+          "$type": "color",
+          "$value": "{foundation.color.green}",
+          "$description": "Rotating words, green eyebrow, heading accent.",
+          "measuredFrom": [
+            "cite:hero-copy",
+            "cite:freetrial-copy"
+          ]
+        },
+        "link": {
+          "$type": "color",
+          "$value": "{foundation.color.link}",
+          "$description": "Base anchor colour.",
+          "measuredFrom": [
+            "cite:idx-link-base"
+          ]
+        }
+      },
+      "surface": {
+        "page": {
+          "$type": "color",
+          "$value": "{foundation.color.white}",
+          "$description": "Page.",
+          "measuredFrom": [
+            "cite:idx-body-base"
+          ]
+        },
+        "subtle": {
+          "$type": "color",
+          "$value": "{foundation.color.grey-v1}",
+          "$description": "Grey bands/frames.",
+          "measuredFrom": [
+            "cite:reliable-layout",
+            "cite:nav-dropdown-panel"
+          ]
+        },
+        "brandDark": {
+          "$type": "color",
+          "$value": "{foundation.color.dark-green}",
+          "$description": "Free-trial band.",
+          "measuredFrom": [
+            "cite:freetrial-layout"
+          ]
+        },
+        "brandTint": {
+          "$type": "color",
+          "$value": "{foundation.color.light-green}",
+          "$description": "Final CTA band.",
+          "measuredFrom": [
+            "cite:finalcta-layout"
+          ]
+        },
+        "glass": {
+          "$type": "color",
+          "$value": "{foundation.color.white-3}",
+          "$description": "Point cards on dark green.",
+          "measuredFrom": [
+            "cite:freetrial-layout"
+          ]
+        }
+      },
+      "action": {
+        "primary": {
+          "$type": "color",
+          "$value": "{foundation.color.green}",
+          "$description": "Primary CTA fill.",
+          "measuredFrom": [
+            "cite:ui-arrow-variants"
+          ]
+        },
+        "primaryHover": {
+          "$type": "color",
+          "$value": "{foundation.color.green-hover}",
+          "$description": "Primary CTA hover.",
+          "measuredFrom": [
+            "cite:ui-arrow-variants"
+          ]
+        },
+        "dark": {
+          "$type": "color",
+          "$value": "{foundation.color.black}",
+          "$description": "Black CTA fill (full-width bar, nav Book a call).",
+          "measuredFrom": [
+            "cite:ui-arrow-variants",
+            "cite:ui-outline-variants"
+          ]
+        },
+        "darkHover": {
+          "$type": "color",
+          "$value": "{foundation.color.black-hover}",
+          "$description": "Black CTA hover.",
+          "measuredFrom": [
+            "cite:ui-arrow-variants"
+          ]
+        },
+        "light": {
+          "$type": "color",
+          "$value": "{foundation.color.white}",
+          "$description": "White CTA on dark green.",
+          "measuredFrom": [
+            "cite:ui-arrow-variants"
+          ]
+        },
+        "lightHover": {
+          "$type": "color",
+          "$value": "{foundation.color.white-hover}",
+          "$description": "White CTA hover.",
+          "measuredFrom": [
+            "cite:ui-arrow-variants"
+          ]
+        }
+      },
+      "border": {
+        "default": {
+          "$type": "color",
+          "$value": "{foundation.color.border}",
+          "$description": "Every hairline.",
+          "measuredFrom": [
+            "cite:tw-hairline"
+          ]
+        },
+        "onDark": {
+          "$type": "color",
+          "$value": "{foundation.color.white-15}",
+          "$description": "Dashed rules on dark green.",
+          "measuredFrom": [
+            "cite:freetrial-layout"
+          ]
+        }
+      },
+      "focus": {
+        "ring": {
+          "$type": "color",
+          "$value": "{foundation.color.focus}",
+          "$description": "Focus-visible outline.",
+          "measuredFrom": [
+            "cite:idx-focus"
+          ]
+        }
+      },
+      "accent": {
+        "blue": {
+          "fg": {
+            "$type": "color",
+            "$value": "{foundation.color.blue}",
+            "$description": "Testimonial accent text.",
+            "measuredFrom": [
+              "cite:testimonials-color",
+              "cite:html-testimonial-colors"
+            ]
+          },
+          "tint": {
+            "$type": "color",
+            "$value": "{foundation.color.light-blue}",
+            "$description": "Accent tint surface / tab progress.",
+            "measuredFrom": [
+              "cite:testimonials-items",
+              "cite:benefits-tabs"
+            ]
+          }
+        },
+        "orange": {
+          "fg": {
+            "$type": "color",
+            "$value": "{foundation.color.orange}",
+            "$description": "Testimonial accent text.",
+            "measuredFrom": [
+              "cite:testimonials-color",
+              "cite:html-testimonial-colors"
+            ]
+          },
+          "tint": {
+            "$type": "color",
+            "$value": "{foundation.color.light-orange}",
+            "$description": "Accent tint surface / tab progress.",
+            "measuredFrom": [
+              "cite:testimonials-items",
+              "cite:benefits-tabs"
+            ]
+          }
+        },
+        "purple": {
+          "fg": {
+            "$type": "color",
+            "$value": "{foundation.color.purple}",
+            "$description": "Testimonial accent text.",
+            "measuredFrom": [
+              "cite:testimonials-color",
+              "cite:html-testimonial-colors"
+            ]
+          },
+          "tint": {
+            "$type": "color",
+            "$value": "{foundation.color.light-purple}",
+            "$description": "Accent tint surface / tab progress.",
+            "measuredFrom": [
+              "cite:testimonials-items",
+              "cite:benefits-tabs"
+            ]
+          }
+        },
+        "yellow": {
+          "fg": {
+            "$type": "color",
+            "$value": "{foundation.color.yellow}",
+            "$description": "Testimonial accent text.",
+            "measuredFrom": [
+              "cite:testimonials-color",
+              "cite:html-testimonial-colors"
+            ]
+          },
+          "tint": {
+            "$type": "color",
+            "$value": "{foundation.color.light-yellow}",
+            "$description": "Accent tint surface / tab progress.",
+            "measuredFrom": [
+              "cite:testimonials-items",
+              "cite:benefits-tabs"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

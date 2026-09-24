@@ -1,0 +1,19 @@
+{
+  "id": "primitive.badge-dashed",
+  "kind": "primitive",
+  "description": "Dashed-hairline announcement pill on #fafafa (hero).",
+  "variants": {
+    "default": "Only variant."
+  },
+  "tokensUsed": [
+    "semantic.color.surface.subtle",
+    "semantic.color.border.default",
+    "semantic.typography.bodySmall"
+  ],
+  "motionPatterns": [
+    "none"
+  ],
+  "measuredFrom": [
+    "cite:hero-copy"
+  ]
+}

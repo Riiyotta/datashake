@@ -1,0 +1,215 @@
+{
+  "$comment": "One template per distinct page SHAPE. The source is a single-page site with exactly one route ('/'), so there is exactly one real template. Nodes are the literal src/App.jsx sequence: 14 section nodes + 10 page-level LinesDivider nodes = 24 slots. 'required' marks the minimal conversion backbone a generated page must keep (prescriptive); every other slot may be omitted, in order, subject to compatibility/graph.json. The footer's own internal trailing divider is not a slot.",
+  "measuredFrom": [
+    "cite:app-section-order",
+    "cite:app-no-divider-problem-solution",
+    "cite:single-route",
+    "cite:spec-single-route"
+  ],
+  "templates": [
+    {
+      "id": "template.home-landing",
+      "name": "Single-page marketing landing (datashake.com home)",
+      "evidenceLevel": "measured: the only real page; section order from src/App.jsx, cross-checked against the saved Webflow export",
+      "routes": [
+        "/"
+      ],
+      "newPageRoutePattern": "^/[a-z0-9]+(-[a-z0-9]+)*(/[a-z0-9]+(-[a-z0-9]+)*)*$",
+      "routeNote": "'/' is the only real route. A contentProvenance:new-page PageSpec must use a new route matching newPageRoutePattern and must not claim '/'.",
+      "nodes": [
+        {
+          "slot": 1,
+          "section": "shell.navbar",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "sourceComponent": "Navbar"
+        },
+        {
+          "slot": 2,
+          "section": "hero.api-search",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "sourceComponent": "Hero"
+        },
+        {
+          "slot": 3,
+          "section": "proof.logo-grid",
+          "variant": "default",
+          "required": false,
+          "repeatable": false,
+          "sourceComponent": "LogoSection"
+        },
+        {
+          "slot": 4,
+          "section": "shell.lines-divider",
+          "variant": "base",
+          "required": false,
+          "repeatable": true,
+          "sourceComponent": "LinesDivider"
+        },
+        {
+          "slot": 5,
+          "section": "narrative.problem",
+          "variant": "default",
+          "required": false,
+          "repeatable": false,
+          "sourceComponent": "ProblemSection"
+        },
+        {
+          "slot": 6,
+          "section": "narrative.solution",
+          "variant": "default",
+          "required": false,
+          "repeatable": false,
+          "sourceComponent": "SolutionSection"
+        },
+        {
+          "slot": 7,
+          "section": "shell.lines-divider",
+          "variant": "base",
+          "required": false,
+          "repeatable": true,
+          "sourceComponent": "LinesDivider"
+        },
+        {
+          "slot": 8,
+          "section": "interactive.build-typed",
+          "variant": "default",
+          "required": false,
+          "repeatable": false,
+          "sourceComponent": "BuildSection"
+        },
+        {
+          "slot": 9,
+          "section": "shell.lines-divider",
+          "variant": "base",
+          "required": false,
+          "repeatable": true,
+          "sourceComponent": "LinesDivider"
+        },
+        {
+          "slot": 10,
+          "section": "features.reliable",
+          "variant": "default",
+          "required": false,
+          "repeatable": false,
+          "sourceComponent": "ReliableSection"
+        },
+        {
+          "slot": 11,
+          "section": "shell.lines-divider",
+          "variant": "base",
+          "required": false,
+          "repeatable": true,
+          "sourceComponent": "LinesDivider"
+        },
+        {
+          "slot": 12,
+          "section": "features.benefits-tabs",
+          "variant": "default",
+          "required": false,
+          "repeatable": false,
+          "sourceComponent": "BenefitsTabs"
+        },
+        {
+          "slot": 13,
+          "section": "shell.lines-divider",
+          "variant": "base",
+          "required": false,
+          "repeatable": true,
+          "sourceComponent": "LinesDivider"
+        },
+        {
+          "slot": 14,
+          "section": "cta.free-trial",
+          "variant": "default",
+          "required": false,
+          "repeatable": false,
+          "sourceComponent": "FreeTrialSection"
+        },
+        {
+          "slot": 15,
+          "section": "shell.lines-divider",
+          "variant": "base",
+          "required": false,
+          "repeatable": true,
+          "sourceComponent": "LinesDivider"
+        },
+        {
+          "slot": 16,
+          "section": "features.industries-grid",
+          "variant": "default",
+          "required": false,
+          "repeatable": false,
+          "sourceComponent": "IndustriesSection"
+        },
+        {
+          "slot": 17,
+          "section": "shell.lines-divider",
+          "variant": "base",
+          "required": false,
+          "repeatable": true,
+          "sourceComponent": "LinesDivider"
+        },
+        {
+          "slot": 18,
+          "section": "proof.testimonials",
+          "variant": "default",
+          "required": false,
+          "repeatable": false,
+          "sourceComponent": "Testimonials"
+        },
+        {
+          "slot": 19,
+          "section": "shell.lines-divider",
+          "variant": "base",
+          "required": false,
+          "repeatable": true,
+          "sourceComponent": "LinesDivider"
+        },
+        {
+          "slot": 20,
+          "section": "content.faq",
+          "variant": "default",
+          "required": false,
+          "repeatable": false,
+          "sourceComponent": "Faq"
+        },
+        {
+          "slot": 21,
+          "section": "shell.lines-divider",
+          "variant": "base",
+          "required": false,
+          "repeatable": true,
+          "sourceComponent": "LinesDivider"
+        },
+        {
+          "slot": 22,
+          "section": "cta.final",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "sourceComponent": "FinalCta"
+        },
+        {
+          "slot": 23,
+          "section": "shell.lines-divider",
+          "variant": "base",
+          "required": false,
+          "repeatable": true,
+          "sourceComponent": "LinesDivider"
+        },
+        {
+          "slot": 24,
+          "section": "shell.footer",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "sourceComponent": "Footer"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "primitive.text-link",
+  "kind": "primitive",
+  "description": "Plain text link (footer column links, nav items).",
+  "variants": {
+    "footer": "#666 -> #0d0d0d over 200ms.",
+    "nav-item": "Title + description row, hover #fafafa."
+  },
+  "tokensUsed": [
+    "semantic.color.text.muted",
+    "semantic.color.text.primary"
+  ],
+  "motionPatterns": [
+    "link-color-hover"
+  ],
+  "measuredFrom": [
+    "cite:footer-link-hover",
+    "cite:css-footer-link",
+    "cite:nav-menus"
+  ]
+}

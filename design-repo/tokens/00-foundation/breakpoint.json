@@ -1,0 +1,51 @@
+{
+  "$description": "Desktop-first max-width breakpoints + fluid-root band edges.",
+  "foundation": {
+    "breakpoint": {
+      "tablet": {
+        "$type": "dimension",
+        "$value": "991px",
+        "$description": "max-width; desktop-first.",
+        "measuredFrom": [
+          "cite:tw-screens",
+          "cite:css-breakpoints-991",
+          "cite:spec-breakpoints"
+        ]
+      },
+      "mobileLandscape": {
+        "$type": "dimension",
+        "$value": "767px",
+        "$description": "max-width.",
+        "measuredFrom": [
+          "cite:tw-screens",
+          "cite:css-breakpoints-767"
+        ]
+      },
+      "mobilePortrait": {
+        "$type": "dimension",
+        "$value": "479px",
+        "$description": "max-width.",
+        "measuredFrom": [
+          "cite:tw-screens",
+          "cite:css-breakpoints-479"
+        ]
+      },
+      "fluidBand1440": {
+        "$type": "dimension",
+        "$value": "1440px",
+        "$description": "Fluid-root band edge (typography only).",
+        "measuredFrom": [
+          "cite:idx-fluid-root"
+        ]
+      },
+      "fluidBand960": {
+        "$type": "dimension",
+        "$value": "960px",
+        "$description": "Fluid-root band edge (typography only).",
+        "measuredFrom": [
+          "cite:idx-fluid-root"
+        ]
+      }
+    }
+  }
+}

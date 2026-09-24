@@ -1,0 +1,318 @@
+{
+  "$comment": "Curated, referenceable view of the token system for generators. Every ref resolves to a real $value leaf (verify_all.py section 9).",
+  "colorRoles": {
+    "text.primary": {
+      "ref": "semantic.color.text.primary"
+    },
+    "text.muted": {
+      "ref": "semantic.color.text.muted"
+    },
+    "text.inverse": {
+      "ref": "semantic.color.text.inverse"
+    },
+    "text.accent": {
+      "ref": "semantic.color.text.accent"
+    },
+    "text.link": {
+      "ref": "semantic.color.text.link"
+    },
+    "surface.page": {
+      "ref": "semantic.color.surface.page"
+    },
+    "surface.subtle": {
+      "ref": "semantic.color.surface.subtle"
+    },
+    "surface.brandDark": {
+      "ref": "semantic.color.surface.brandDark"
+    },
+    "surface.brandTint": {
+      "ref": "semantic.color.surface.brandTint"
+    },
+    "surface.glass": {
+      "ref": "semantic.color.surface.glass"
+    },
+    "action.primary": {
+      "ref": "semantic.color.action.primary"
+    },
+    "action.primaryHover": {
+      "ref": "semantic.color.action.primaryHover"
+    },
+    "action.dark": {
+      "ref": "semantic.color.action.dark"
+    },
+    "action.darkHover": {
+      "ref": "semantic.color.action.darkHover"
+    },
+    "action.light": {
+      "ref": "semantic.color.action.light"
+    },
+    "action.lightHover": {
+      "ref": "semantic.color.action.lightHover"
+    },
+    "border.default": {
+      "ref": "semantic.color.border.default"
+    },
+    "border.onDark": {
+      "ref": "semantic.color.border.onDark"
+    },
+    "focus.ring": {
+      "ref": "semantic.color.focus.ring"
+    },
+    "accent.blue.fg": {
+      "ref": "semantic.color.accent.blue.fg"
+    },
+    "accent.blue.tint": {
+      "ref": "semantic.color.accent.blue.tint"
+    },
+    "accent.orange.fg": {
+      "ref": "semantic.color.accent.orange.fg"
+    },
+    "accent.orange.tint": {
+      "ref": "semantic.color.accent.orange.tint"
+    },
+    "accent.purple.fg": {
+      "ref": "semantic.color.accent.purple.fg"
+    },
+    "accent.purple.tint": {
+      "ref": "semantic.color.accent.purple.tint"
+    },
+    "accent.yellow.fg": {
+      "ref": "semantic.color.accent.yellow.fg"
+    },
+    "accent.yellow.tint": {
+      "ref": "semantic.color.accent.yellow.tint"
+    }
+  },
+  "typeRoles": {
+    "h1": {
+      "ref": "semantic.typography.h1"
+    },
+    "h2": {
+      "ref": "semantic.typography.h2"
+    },
+    "h3": {
+      "ref": "semantic.typography.h3"
+    },
+    "quote": {
+      "ref": "semantic.typography.quote"
+    },
+    "bodyRegular": {
+      "ref": "semantic.typography.bodyRegular"
+    },
+    "bodySmall": {
+      "ref": "semantic.typography.bodySmall"
+    },
+    "bodyMedium": {
+      "ref": "semantic.typography.bodyMedium"
+    },
+    "lead20": {
+      "ref": "semantic.typography.lead20"
+    },
+    "lead24": {
+      "ref": "semantic.typography.lead24"
+    },
+    "button": {
+      "ref": "semantic.typography.button"
+    }
+  },
+  "radiusRoles": {
+    "none": {
+      "ref": "foundation.radius.none"
+    }
+  },
+  "spacingRoles": {
+    "4px": {
+      "ref": "foundation.spacing.4px"
+    },
+    "10px": {
+      "ref": "foundation.spacing.10px"
+    },
+    "12px": {
+      "ref": "foundation.spacing.12px"
+    },
+    "0-5": {
+      "ref": "foundation.spacing.0-5"
+    },
+    "1": {
+      "ref": "foundation.spacing.1"
+    },
+    "1-25": {
+      "ref": "foundation.spacing.1-25"
+    },
+    "1-5": {
+      "ref": "foundation.spacing.1-5"
+    },
+    "2": {
+      "ref": "foundation.spacing.2"
+    },
+    "3": {
+      "ref": "foundation.spacing.3"
+    },
+    "4-5": {
+      "ref": "foundation.spacing.4-5"
+    },
+    "5": {
+      "ref": "foundation.spacing.5"
+    },
+    "6": {
+      "ref": "foundation.spacing.6"
+    }
+  },
+  "layoutRoles": {
+    "container.maxWidth": {
+      "ref": "layout.container.maxWidth"
+    },
+    "gutter.desktop": {
+      "ref": "layout.gutter.desktop"
+    },
+    "gutter.tablet": {
+      "ref": "layout.gutter.tablet"
+    },
+    "gutter.mobileLandscape": {
+      "ref": "layout.gutter.mobileLandscape"
+    },
+    "sectionPadding.desktop": {
+      "ref": "layout.sectionPadding.desktop"
+    },
+    "sectionPadding.tablet": {
+      "ref": "layout.sectionPadding.tablet"
+    },
+    "sectionPadding.mobilePortrait": {
+      "ref": "layout.sectionPadding.mobilePortrait"
+    },
+    "sideRails": {
+      "ref": "layout.sideRails"
+    },
+    "navOffset": {
+      "ref": "layout.navOffset"
+    }
+  },
+  "motionDurations": {
+    "instant": {
+      "ref": "foundation.motion.duration.instant"
+    },
+    "100": {
+      "ref": "foundation.motion.duration.100"
+    },
+    "150": {
+      "ref": "foundation.motion.duration.150"
+    },
+    "200": {
+      "ref": "foundation.motion.duration.200"
+    },
+    "250": {
+      "ref": "foundation.motion.duration.250"
+    },
+    "300": {
+      "ref": "foundation.motion.duration.300"
+    },
+    "400": {
+      "ref": "foundation.motion.duration.400"
+    },
+    "500": {
+      "ref": "foundation.motion.duration.500"
+    },
+    "800": {
+      "ref": "foundation.motion.duration.800"
+    },
+    "1000": {
+      "ref": "foundation.motion.duration.1000"
+    },
+    "8000": {
+      "ref": "foundation.motion.duration.8000"
+    },
+    "10000": {
+      "ref": "foundation.motion.duration.10000"
+    },
+    "15000": {
+      "ref": "foundation.motion.duration.15000"
+    },
+    "20000": {
+      "ref": "foundation.motion.duration.20000"
+    }
+  },
+  "motionEasings": {
+    "linear": {
+      "ref": "foundation.motion.easing.linear"
+    },
+    "ease": {
+      "ref": "foundation.motion.easing.ease"
+    },
+    "easeIn": {
+      "ref": "foundation.motion.easing.easeIn"
+    },
+    "expoInOut": {
+      "ref": "foundation.motion.easing.expoInOut"
+    }
+  },
+  "motionPatterns": {
+    "none": {
+      "ref": "patterns.none"
+    },
+    "dropdown-reveal": {
+      "ref": "patterns.dropdown-reveal"
+    },
+    "hamburger-morph": {
+      "ref": "patterns.hamburger-morph"
+    },
+    "mobile-menu-slide": {
+      "ref": "patterns.mobile-menu-slide"
+    },
+    "hero-word-rotator": {
+      "ref": "patterns.hero-word-rotator"
+    },
+    "lottie-scroll-scrub": {
+      "ref": "patterns.lottie-scroll-scrub"
+    },
+    "lottie-play-once-on-view": {
+      "ref": "patterns.lottie-play-once-on-view"
+    },
+    "lottie-loop": {
+      "ref": "patterns.lottie-loop"
+    },
+    "nav-logo-spin": {
+      "ref": "patterns.nav-logo-spin"
+    },
+    "logo-hover-crossfade": {
+      "ref": "patterns.logo-hover-crossfade"
+    },
+    "button-hover": {
+      "ref": "patterns.button-hover"
+    },
+    "typed-text-loop": {
+      "ref": "patterns.typed-text-loop"
+    },
+    "p5-bar-field": {
+      "ref": "patterns.p5-bar-field"
+    },
+    "tabs-autoadvance": {
+      "ref": "patterns.tabs-autoadvance"
+    },
+    "testimonial-panel-switch": {
+      "ref": "patterns.testimonial-panel-switch"
+    },
+    "faq-accordion": {
+      "ref": "patterns.faq-accordion"
+    },
+    "link-color-hover": {
+      "ref": "patterns.link-color-hover"
+    }
+  },
+  "breakpoints": {
+    "tablet": {
+      "ref": "foundation.breakpoint.tablet"
+    },
+    "mobileLandscape": {
+      "ref": "foundation.breakpoint.mobileLandscape"
+    },
+    "mobilePortrait": {
+      "ref": "foundation.breakpoint.mobilePortrait"
+    },
+    "fluidBand1440": {
+      "ref": "foundation.breakpoint.fluidBand1440"
+    },
+    "fluidBand960": {
+      "ref": "foundation.breakpoint.fluidBand960"
+    }
+  }
+}

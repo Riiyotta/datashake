@@ -1,0 +1,378 @@
+{
+  "$description": "Motion durations/easings plus the closed pattern vocabulary. GSAP/ScrollTrigger are loaded on live but register zero triggers: there are NO scroll-reveal patterns. The original has no prefers-reduced-motion handling; every reducedMotionFallback in this repo is prescriptive design-repo policy.",
+  "foundation": {
+    "motion": {
+      "duration": {
+        "instant": {
+          "$type": "duration",
+          "$value": "0ms",
+          "$description": "Reduced-motion target.",
+          "measuredFrom": [
+            "cite:spec-no-reduced-motion"
+          ]
+        },
+        "100": {
+          "$type": "duration",
+          "$value": "100ms",
+          "$description": "Tab pane fade-out.",
+          "measuredFrom": [
+            "cite:benefits-consts"
+          ]
+        },
+        "150": {
+          "$type": "duration",
+          "$value": "150ms",
+          "$description": "FAQ close.",
+          "measuredFrom": [
+            "cite:faq-timing"
+          ]
+        },
+        "200": {
+          "$type": "duration",
+          "$value": "200ms",
+          "$description": "Button hover-out, footer link, dropdown toggle colour close.",
+          "measuredFrom": [
+            "cite:ui-arrow-variants",
+            "cite:footer-link-hover"
+          ]
+        },
+        "250": {
+          "$type": "duration",
+          "$value": "250ms",
+          "$description": "FAQ open, hamburger close.",
+          "measuredFrom": [
+            "cite:faq-timing",
+            "cite:nav-hamburger"
+          ]
+        },
+        "300": {
+          "$type": "duration",
+          "$value": "300ms",
+          "$description": "Hover-in, logo tile, dropdown open, tab pane fade-in.",
+          "measuredFrom": [
+            "cite:logos-hover",
+            "cite:nav-dropdown-timing",
+            "cite:benefits-consts"
+          ]
+        },
+        "400": {
+          "$type": "duration",
+          "$value": "400ms",
+          "$description": "Mobile menu slide.",
+          "measuredFrom": [
+            "cite:nav-mobile-400"
+          ]
+        },
+        "500": {
+          "$type": "duration",
+          "$value": "500ms",
+          "$description": "Hamburger open; navbar brand-mark spin.",
+          "measuredFrom": [
+            "cite:nav-hamburger",
+            "cite:nav-brand-rotate-src"
+          ]
+        },
+        "800": {
+          "$type": "duration",
+          "$value": "800ms",
+          "$description": "Testimonial switch.",
+          "measuredFrom": [
+            "cite:testimonials-transition"
+          ]
+        },
+        "1000": {
+          "$type": "duration",
+          "$value": "1000ms",
+          "$description": "Rotator hold and step; cursor blink.",
+          "measuredFrom": [
+            "cite:hero-rotator-timing",
+            "cite:idx-cursor-blink"
+          ]
+        },
+        "8000": {
+          "$type": "duration",
+          "$value": "8000ms",
+          "$description": "Benefits tab auto-advance.",
+          "measuredFrom": [
+            "cite:benefits-consts",
+            "cite:html-tab-speed"
+          ]
+        },
+        "10000": {
+          "$type": "duration",
+          "$value": "10000ms",
+          "$description": "Problem Lottie scrub.",
+          "measuredFrom": [
+            "cite:problem-lottie"
+          ]
+        },
+        "15000": {
+          "$type": "duration",
+          "$value": "15000ms",
+          "$description": "Solution Lottie scrub.",
+          "measuredFrom": [
+            "cite:solution-lottie"
+          ]
+        },
+        "20000": {
+          "$type": "duration",
+          "$value": "20000ms",
+          "$description": "Hero Lottie scrub.",
+          "measuredFrom": [
+            "cite:hero-lottie"
+          ]
+        }
+      },
+      "easing": {
+        "linear": {
+          "$type": "cubicBezier",
+          "$value": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "$description": "IX2 '' easing.",
+          "measuredFrom": [
+            "cite:motion-easings"
+          ]
+        },
+        "ease": {
+          "$type": "cubicBezier",
+          "$value": [
+            0.25,
+            0.1,
+            0.25,
+            1
+          ],
+          "$description": "CSS/IX2 ease.",
+          "measuredFrom": [
+            "cite:motion-easings",
+            "cite:motion-ease-map"
+          ]
+        },
+        "easeIn": {
+          "$type": "cubicBezier",
+          "$value": [
+            0.42,
+            0,
+            1,
+            1
+          ],
+          "$description": "IX2 easeIn.",
+          "measuredFrom": [
+            "cite:motion-easings",
+            "cite:motion-ease-map"
+          ]
+        },
+        "expoInOut": {
+          "$type": "gsapEase",
+          "$value": "expo.inOut",
+          "$description": "GSAP ease for the hero rotator step.",
+          "measuredFrom": [
+            "cite:hero-rotator-timing",
+            "cite:html-rotator-script"
+          ]
+        }
+      }
+    }
+  },
+  "patterns": {
+    "none": {
+      "description": "Static; no motion.",
+      "measuredFrom": [
+        "cite:spec-no-scrolltrigger"
+      ]
+    },
+    "dropdown-reveal": {
+      "description": "Hover (desktop) / tap (<=991) dropdown: list translateY -50px->0 + opacity 0->1, 300ms ease-in; toggle colour #666->#0d0d0d 300ms ease; close hides the list at once and fades the toggle colour back in 200ms ease-in.",
+      "durations": [
+        "{foundation.motion.duration.300}",
+        "{foundation.motion.duration.200}"
+      ],
+      "easing": [
+        "{foundation.motion.easing.easeIn}",
+        "{foundation.motion.easing.ease}"
+      ],
+      "continuous": false,
+      "measuredFrom": [
+        "cite:nav-dropdown-timing"
+      ]
+    },
+    "hamburger-morph": {
+      "description": "Two lines rotate into an X: open 500ms linear, close 250ms ease-in.",
+      "durations": [
+        "{foundation.motion.duration.500}",
+        "{foundation.motion.duration.250}"
+      ],
+      "continuous": false,
+      "measuredFrom": [
+        "cite:nav-hamburger"
+      ]
+    },
+    "mobile-menu-slide": {
+      "description": "Overlay menu slides from translateY(-100%) to 0 over 400ms ease; page scroll locked.",
+      "durations": [
+        "{foundation.motion.duration.400}"
+      ],
+      "continuous": false,
+      "measuredFrom": [
+        "cite:nav-mobile-400",
+        "cite:nav-slide"
+      ]
+    },
+    "hero-word-rotator": {
+      "description": "GSAP timeline, repeat -1: per word 1s hold then 1s expo.inOut translateY by one item height (53px desktop, 38/48px <=768, 36px <=480).",
+      "durations": [
+        "{foundation.motion.duration.1000}"
+      ],
+      "easing": [
+        "{foundation.motion.easing.expoInOut}"
+      ],
+      "continuous": true,
+      "measuredFrom": [
+        "cite:hero-rotator-timing",
+        "cite:hero-item-height",
+        "cite:html-rotator-script"
+      ]
+    },
+    "lottie-scroll-scrub": {
+      "description": "IX2 scroll-into-view (fires once): jump to frame 0, then tween frames to a % of the animation over a fixed wall-clock duration. Hero 93%/20s linear, problem 93%/10s linear, solution 98%/15s easeIn.",
+      "continuous": false,
+      "measuredFrom": [
+        "cite:ui-lottie",
+        "cite:hero-lottie",
+        "cite:problem-lottie",
+        "cite:solution-lottie"
+      ]
+    },
+    "lottie-play-once-on-view": {
+      "description": "Plays once at native length when 30%-inset viewport band is entered, after a 200ms delay (970-04).",
+      "continuous": false,
+      "measuredFrom": [
+        "cite:reliable-lottie"
+      ]
+    },
+    "lottie-loop": {
+      "description": "Autoplay + loop; restarts from frame 0 on first view, pauses off-screen (the four benefit-tab Lotties).",
+      "continuous": true,
+      "measuredFrom": [
+        "cite:benefits-lottie-loop",
+        "cite:ui-lottie"
+      ]
+    },
+    "nav-logo-spin": {
+      "description": "Hovering the navbar home link spins the brand mark 360deg over 500ms ease (live: full turn between ~33ms and ~484ms after hover). Navbar brand mark only; never applied to logo-strip tiles.",
+      "durations": [
+        "{foundation.motion.duration.500}"
+      ],
+      "easing": [
+        "{foundation.motion.easing.ease}"
+      ],
+      "continuous": false,
+      "measuredFrom": [
+        "cite:nav-brand-rotate-src",
+        "live:nav-logo-spin"
+      ]
+    },
+    "logo-hover-crossfade": {
+      "description": "Logo-strip tile hover: background -> #fafafa, grey->colour logo opacity cross-fade and corner arrow opacity + translateY(10px->0), all 300ms ease. The logo-strip tiles do not rotate (the 360deg spin belongs only to the navbar brand mark, nav-logo-spin).",
+      "durations": [
+        "{foundation.motion.duration.300}"
+      ],
+      "continuous": false,
+      "measuredFrom": [
+        "cite:logos-hover",
+        "cite:spec-logo-hover"
+      ]
+    },
+    "button-hover": {
+      "description": "Fill/colour transition 200ms out / 300ms in (ease); arrow chip rotates -90deg; dashed outline button solidifies its edge and darkens its label in 300ms.",
+      "durations": [
+        "{foundation.motion.duration.200}",
+        "{foundation.motion.duration.300}"
+      ],
+      "continuous": false,
+      "measuredFrom": [
+        "cite:ui-arrow-variants",
+        "cite:ui-arrow-rotate",
+        "cite:html-arrow-rotate",
+        "cite:idx-dashed-button"
+      ]
+    },
+    "typed-text-loop": {
+      "description": "Typed.js loop over the phrase list: typeSpeed 45, backSpeed 25, backDelay 400, startDelay 250 (observed on live as roughly 66ms/char typed and 33ms/char deleted); CSS '|' cursor blinks over 1s.",
+      "continuous": true,
+      "measuredFrom": [
+        "cite:build-typed-options",
+        "cite:html-typed-options",
+        "cite:idx-cursor-blink"
+      ]
+    },
+    "p5-bar-field": {
+      "description": "p5 canvas of 12px bars with 4px gaps in palette #D9FADA/#F5FEF6/#ECFDEC; idle alpha pulse + colour lerp; bars within 150px of the pointer scale to 1.3x; random layout per load.",
+      "continuous": true,
+      "measuredFrom": [
+        "cite:bar-canvas-spec",
+        "cite:bar-canvas-palette",
+        "cite:bar-canvas-hover",
+        "cite:bar-canvas-random"
+      ]
+    },
+    "tabs-autoadvance": {
+      "description": "Auto-advance every 8s with a linear 0->100% progress bar on the active tab; pane fade out 100ms / in 300ms (ease); any click/focus restarts the timer.",
+      "durations": [
+        "{foundation.motion.duration.8000}",
+        "{foundation.motion.duration.100}",
+        "{foundation.motion.duration.300}"
+      ],
+      "continuous": true,
+      "measuredFrom": [
+        "cite:benefits-motion",
+        "cite:benefits-consts",
+        "cite:html-tab-speed"
+      ]
+    },
+    "testimonial-panel-switch": {
+      "description": "Desktop-only (>=992px) click: tab strip collapses and panel width expands, 0.8s ease.",
+      "durations": [
+        "{foundation.motion.duration.800}"
+      ],
+      "continuous": false,
+      "measuredFrom": [
+        "cite:testimonials-transition",
+        "cite:testimonials-desktop-only"
+      ]
+    },
+    "faq-accordion": {
+      "description": "Height tween: open 250ms easeIn, close 150ms easeIn; plus icon rotates 45deg on the same timing; border colour fades with it.",
+      "durations": [
+        "{foundation.motion.duration.250}",
+        "{foundation.motion.duration.150}"
+      ],
+      "easing": [
+        "{foundation.motion.easing.easeIn}"
+      ],
+      "continuous": false,
+      "measuredFrom": [
+        "cite:faq-timing",
+        "cite:faq-icon"
+      ]
+    },
+    "link-color-hover": {
+      "description": "Footer links #666 -> #0d0d0d over 200ms ease.",
+      "durations": [
+        "{foundation.motion.duration.200}"
+      ],
+      "continuous": false,
+      "measuredFrom": [
+        "cite:footer-link-hover",
+        "cite:css-footer-link"
+      ]
+    }
+  },
+  "measuredFrom": [
+    "cite:spec-no-scrolltrigger",
+    "cite:spec-no-reduced-motion"
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_cta-final (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.cta.final",
+  "nodeSection": "cta.final",
+  "category": "CONVERSION",
+  "purpose": "Closing conversion band immediately before the footer.",
+  "sourceComponent": "src/components/FinalCta.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "heading",
+      "lead",
+      "trustLine",
+      "cta",
+      "background"
+    ],
+    "properties": {
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 12,
+        "x-observedMaxWords": 9
+      },
+      "lead": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 18,
+        "x-observedMaxWords": 14
+      },
+      "trustLine": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 10,
+        "x-observedMaxWords": 8
+      },
+      "cta": {
+        "$ref": "#/definitions/cta"
+      },
+      "background": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/media"
+          },
+          {
+            "properties": {
+              "assetRole": {
+                "enum": [
+                  "decorative-pattern"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecedeFooter": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "button-hover"
+    ],
+    "reducedMotionFallback": "CTA hover changes colour without the arrow rotation tween.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:html-arrow-rotate",
+      "cite:idx-dashed-button",
+      "cite:ui-arrow-rotate",
+      "cite:ui-arrow-variants"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "550px light-green band, centred 34.375rem column"
+      ],
+      "measuredFrom": [
+        "cite:finalcta-layout"
+      ]
+    },
+    "tablet": {
+      "layout": "resize",
+      "changes": [
+        "Column full width, 1.5rem padding"
+      ],
+      "measuredFrom": [
+        "cite:finalcta-copy"
+      ]
+    },
+    "mobileLandscape": {
+      "layout": "resize",
+      "changes": [
+        "Height auto, 6rem bottom padding"
+      ],
+      "measuredFrom": [
+        "cite:finalcta-layout"
+      ]
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "3rem top/bottom padding"
+      ],
+      "measuredFrom": [
+        "cite:finalcta-layout"
+      ]
+    }
+  },
+  "tokensUsed": [
+    "semantic.color.surface.brandTint",
+    "semantic.typography.h2",
+    "semantic.typography.bodyMedium"
+  ],
+  "accessibility": {
+    "headingLevel": 2,
+    "measuredFrom": [
+      "cite:finalcta-copy"
+    ]
+  },
+  "measuredFrom": [
+    "cite:finalcta-copy",
+    "cite:finalcta-layout",
+    "cite:finalcta-bg"
+  ]
+}

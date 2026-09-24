@@ -1,0 +1,18 @@
+{
+  "id": "component.check-row",
+  "kind": "component",
+  "description": "Icon + medium text row with dashed bottom rule.",
+  "composes": [
+    "primitive.icon-embed"
+  ],
+  "tokensUsed": [
+    "semantic.typography.bodyMedium",
+    "foundation.border.styleDashed"
+  ],
+  "motionPatterns": [
+    "none"
+  ],
+  "measuredFrom": [
+    "cite:reliable-copy"
+  ]
+}

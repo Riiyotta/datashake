@@ -1,0 +1,143 @@
+{
+  "$description": "The only theme (the source has no dark mode). Resolves every semantic token to a concrete foundation value. verify_all.py re-derives each and fails on drift.",
+  "theme": "light",
+  "resolved": {
+    "semantic.color.text.primary": "#0d0d0d",
+    "semantic.color.text.muted": "#666666",
+    "semantic.color.text.inverse": "#ffffff",
+    "semantic.color.text.accent": "#3fe844",
+    "semantic.color.text.link": "#2d62ff",
+    "semantic.color.surface.page": "#ffffff",
+    "semantic.color.surface.subtle": "#fafafa",
+    "semantic.color.surface.brandDark": "#103a11",
+    "semantic.color.surface.brandTint": "#ecfdec",
+    "semantic.color.surface.glass": "rgba(255, 255, 255, 0.03)",
+    "semantic.color.action.primary": "#3fe844",
+    "semantic.color.action.primaryHover": "#2fae33",
+    "semantic.color.action.dark": "#0d0d0d",
+    "semantic.color.action.darkHover": "#262626",
+    "semantic.color.action.light": "#ffffff",
+    "semantic.color.action.lightHover": "#f2f2f2",
+    "semantic.color.border.default": "#d9d9d9",
+    "semantic.color.border.onDark": "rgba(255, 255, 255, 0.15)",
+    "semantic.color.focus.ring": "#4d65ff",
+    "semantic.color.accent.blue.fg": "#3981ff",
+    "semantic.color.accent.blue.tint": "#ebf2ff",
+    "semantic.color.accent.orange.fg": "#ff930f",
+    "semantic.color.accent.orange.tint": "#fff4e7",
+    "semantic.color.accent.purple.fg": "#a72bff",
+    "semantic.color.accent.purple.tint": "#f6eaff",
+    "semantic.color.accent.yellow.fg": "#ffd521",
+    "semantic.color.accent.yellow.tint": "#fffbe9",
+    "semantic.typography.h1": {
+      "fontFamily": [
+        "Altriviera",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "48px",
+      "fontWeight": 400,
+      "lineHeight": 1.2,
+      "letterSpacing": "-0.02em"
+    },
+    "semantic.typography.h2": {
+      "fontFamily": [
+        "Altriviera",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "3rem",
+      "fontWeight": 400,
+      "lineHeight": 1.2,
+      "letterSpacing": "-0.015em"
+    },
+    "semantic.typography.h3": {
+      "fontFamily": [
+        "Altriviera",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "2.5rem",
+      "fontWeight": 400,
+      "lineHeight": 1.2,
+      "letterSpacing": "-0.5px"
+    },
+    "semantic.typography.quote": {
+      "fontFamily": [
+        "Altriviera",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "2rem",
+      "fontWeight": 400,
+      "lineHeight": 1.3,
+      "letterSpacing": "-0.02em"
+    },
+    "semantic.typography.bodyRegular": {
+      "fontFamily": [
+        "Inter",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "1rem",
+      "fontWeight": 400,
+      "lineHeight": 1.5,
+      "letterSpacing": "-0.01em"
+    },
+    "semantic.typography.bodySmall": {
+      "fontFamily": [
+        "Inter",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "0.875rem",
+      "fontWeight": 400,
+      "lineHeight": 1.5,
+      "letterSpacing": "-0.01em"
+    },
+    "semantic.typography.bodyMedium": {
+      "fontFamily": [
+        "Inter",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "1.125rem",
+      "fontWeight": 400,
+      "lineHeight": 1.5,
+      "letterSpacing": "-0.015em"
+    },
+    "semantic.typography.lead20": {
+      "fontFamily": [
+        "Inter",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "1.25rem",
+      "fontWeight": 400,
+      "lineHeight": 1.5,
+      "letterSpacing": "-0.02em"
+    },
+    "semantic.typography.lead24": {
+      "fontFamily": [
+        "Inter",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "1.5rem",
+      "fontWeight": 400,
+      "lineHeight": 1.5,
+      "letterSpacing": "-0.02em"
+    },
+    "semantic.typography.button": {
+      "fontFamily": [
+        "Inter",
+        "Arial",
+        "sans-serif"
+      ],
+      "fontSize": "1.125rem",
+      "fontWeight": 500,
+      "lineHeight": 1,
+      "letterSpacing": "-0.02em"
+    }
+  }
+}

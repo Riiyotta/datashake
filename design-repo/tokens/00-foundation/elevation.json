@@ -1,0 +1,23 @@
+{
+  "$description": "Elevation: none. The only depth effect is a 5px backdrop blur.",
+  "foundation": {
+    "elevation": {
+      "none": {
+        "$type": "shadow",
+        "$value": "none",
+        "$description": "No box-shadows in the design system.",
+        "measuredFrom": [
+          "cite:spec-no-shadows"
+        ]
+      },
+      "glass-blur": {
+        "$type": "dimension",
+        "$value": "5px",
+        "$description": "backdrop-filter blur on dark-green point cards (the only depth effect).",
+        "measuredFrom": [
+          "cite:freetrial-layout"
+        ]
+      }
+    }
+  }
+}

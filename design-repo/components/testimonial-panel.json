@@ -1,0 +1,17 @@
+{
+  "id": "component.testimonial-panel",
+  "kind": "component",
+  "description": "Vertical-label tab + accent-tinted quote panel with edge art.",
+  "composes": [],
+  "tokensUsed": [
+    "semantic.typography.quote",
+    "semantic.color.accent.orange.fg"
+  ],
+  "motionPatterns": [
+    "testimonial-panel-switch"
+  ],
+  "measuredFrom": [
+    "cite:testimonials-items",
+    "cite:testimonials-color"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_shell-lines-divider (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.shell.lines-divider",
+  "nodeSection": "shell.lines-divider",
+  "category": "DIVIDER",
+  "purpose": "Full-width hairline band that separates content bands; the page's main rhythm device (10 page-level instances).",
+  "sourceComponent": "src/components/ui.jsx#LinesDivider",
+  "variants": {
+    "base": {
+      "pageLevel": true,
+      "description": "Full-width band between sections (data-wf--lines-divider--variant=base)."
+    },
+    "horizontal-10rem": {
+      "pageLevel": false,
+      "description": "8rem vertical strip used INSIDE narrative.problem / narrative.solution; never a PageSpec node."
+    },
+    "horizontal-3rem": {
+      "pageLevel": false,
+      "description": "3rem vertical strip used INSIDE features.industries-grid; never a PageSpec node."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [],
+    "properties": {}
+  },
+  "constraints": {
+    "onePerPage": false,
+    "noConsecutive": true,
+    "repeatable": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "Static hairline band; nothing to reduce.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:spec-no-scrolltrigger"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "min-height 1px (image-driven ~72px)"
+      ],
+      "measuredFrom": [
+        "cite:ui-lines-divider"
+      ]
+    },
+    "tablet": {
+      "layout": "resize",
+      "changes": [
+        "min-height 4rem"
+      ],
+      "measuredFrom": [
+        "cite:ui-lines-divider"
+      ]
+    },
+    "mobileLandscape": {
+      "layout": "unchanged",
+      "changes": [],
+      "measuredFrom": [
+        "cite:ui-lines-divider"
+      ]
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "min-height 3.5rem"
+      ],
+      "measuredFrom": [
+        "cite:ui-lines-divider"
+      ]
+    }
+  },
+  "tokensUsed": [
+    "component.divider.base.border",
+    "component.divider.base.minHeightTablet"
+  ],
+  "accessibility": {
+    "note": "Decorative: image alt=''.",
+    "measuredFrom": [
+      "cite:ui-lines-divider"
+    ]
+  },
+  "measuredFrom": [
+    "cite:ui-lines-divider",
+    "cite:ui-strip-dividers",
+    "cite:html-divider-variants",
+    "cite:app-section-order"
+  ]
+}

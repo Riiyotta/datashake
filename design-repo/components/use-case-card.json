@@ -1,0 +1,16 @@
+{
+  "id": "component.use-case-card",
+  "kind": "component",
+  "description": "20rem illustration frame over title + body.",
+  "composes": [],
+  "tokensUsed": [
+    "component.card.useCase.imageHeight",
+    "component.card.useCase.padding"
+  ],
+  "motionPatterns": [
+    "none"
+  ],
+  "measuredFrom": [
+    "cite:industries-cards"
+  ]
+}

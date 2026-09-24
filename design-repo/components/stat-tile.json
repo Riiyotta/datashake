@@ -1,0 +1,18 @@
+{
+  "id": "component.stat-tile",
+  "kind": "component",
+  "description": "40px icon, medium title, body; hairline-separated.",
+  "composes": [
+    "primitive.icon-embed"
+  ],
+  "tokensUsed": [
+    "semantic.typography.bodyMedium",
+    "semantic.color.border.default"
+  ],
+  "motionPatterns": [
+    "none"
+  ],
+  "measuredFrom": [
+    "cite:solution-stats"
+  ]
+}

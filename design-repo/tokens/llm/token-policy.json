@@ -1,0 +1,88 @@
+{
+  "$comment": "What is enforced vs convention. Category keys are the exact token-catalog.json keys (verify_all.py checks).",
+  "rawValueRestrictions": {
+    "colorRoles": {
+      "enforcement": "convention",
+      "rule": "Reference colorRoles; never emit raw hex. Only the foundation palette exists."
+    },
+    "typeRoles": {
+      "enforcement": "convention",
+      "rule": "Headings use display (Altriviera, licensed), body uses sans (Inter)."
+    },
+    "radiusRoles": {
+      "enforcement": "convention",
+      "rule": "Radius is always 0. Rounded corners are off-brand."
+    },
+    "spacingRoles": {
+      "enforcement": "convention",
+      "rule": "Use the observed rem scale; rem rides the fluid root."
+    },
+    "layoutRoles": {
+      "enforcement": "convention",
+      "rule": "Every band sits inside the 90rem container between 0.5px side rails."
+    },
+    "motionDurations": {
+      "enforcement": "convention",
+      "rule": "Use only measured durations."
+    },
+    "motionEasings": {
+      "enforcement": "convention",
+      "rule": "Use only measured easings."
+    },
+    "motionPatterns": {
+      "enforcement": "machine-checked",
+      "rule": "PageSpec motion.patterns is a closed enum per section (schema) and a subset of the contract's allowedPatterns (semantic_validate.py MOTION_PATTERN_ALLOWED)."
+    },
+    "breakpoints": {
+      "enforcement": "convention",
+      "rule": "Desktop-first max-width breakpoints 991/767/479."
+    }
+  },
+  "overrides": {
+    "pageSpecTokenOverrides": "none",
+    "note": "A PageSpec has NO per-instance style/token override field: styling is owned by section/component contracts. There is therefore nothing token-related to mutate at the PageSpec layer; token drift is guarded at the catalog/policy layer by verify_all.py."
+  },
+  "excludedTokens": [
+    {
+      "value": "#c0392b (red)",
+      "reason": "Declared in tailwind.config.cjs and :root but used by no src utility class; only appears baked into two eyebrow SVG files.",
+      "measuredFrom": [
+        "cite:tw-colors",
+        "cite:css-root-vars"
+      ]
+    },
+    {
+      "value": "#dddddd (dropdown)",
+      "reason": "Declared in tailwind.config.cjs but unused; the original dropdown-list background is #ddd0 (transparent).",
+      "measuredFrom": [
+        "cite:tw-colors",
+        "cite:css-dropdown-transparent"
+      ]
+    },
+    {
+      "value": "70rem (narrow container)",
+      "reason": "Declared maxWidth.narrow is not used by any src section.",
+      "measuredFrom": [
+        "cite:tw-maxwidth"
+      ]
+    },
+    {
+      "value": "WhatsApp widget radius/shadow",
+      "reason": "Third-party widget, out of scope.",
+      "measuredFrom": [
+        "cite:spec-whatsapp"
+      ]
+    }
+  ],
+  "fontLicensing": {
+    "display": "Altriviera is a paid, licensed font. Do not embed, subset or redistribute it in generated output; fall back to Arial, sans-serif where no licence exists.",
+    "sans": "Inter (SIL OFL 1.1)."
+  },
+  "resolutionOrder": [
+    "foundation",
+    "theme (light only)",
+    "semantic",
+    "component",
+    "responsive (section contracts)"
+  ]
+}

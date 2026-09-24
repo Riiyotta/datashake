@@ -1,0 +1,1788 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "datashake-design-repo/pagespec.schema.json",
+  "title": "Datashake PageSpec",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pageSpecVersion",
+    "template",
+    "route",
+    "contentProvenance",
+    "nodes"
+  ],
+  "properties": {
+    "pageSpecVersion": {
+      "const": "1.0.0"
+    },
+    "template": {
+      "enum": [
+        "template.home-landing"
+      ]
+    },
+    "route": {
+      "type": "string",
+      "pattern": "^/([a-z0-9]+(-[a-z0-9]+)*(/[a-z0-9]+(-[a-z0-9]+)*)*)?$"
+    },
+    "contentProvenance": {
+      "enum": [
+        "source-reproduction",
+        "new-page"
+      ]
+    },
+    "sourceContentNotice": {
+      "const": "Source content reproduced from www.datashake.com (a real, live company) for fidelity reference only. Not licensed for reuse in new pages."
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/node"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "contentProvenance": {
+            "const": "source-reproduction"
+          }
+        },
+        "required": [
+          "contentProvenance"
+        ]
+      },
+      "then": {
+        "required": [
+          "sourceContentNotice"
+        ]
+      }
+    }
+  ],
+  "definitions": {
+    "assetRole": {
+      "enum": [
+        "brand-logo",
+        "customer-logo",
+        "product-screenshot",
+        "product-lottie",
+        "use-case-illustration",
+        "ui-icon",
+        "social-icon",
+        "decorative-pattern"
+      ]
+    },
+    "href": {
+      "type": "string",
+      "pattern": "^(https://|/|#)"
+    },
+    "media": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assetRole",
+        "assetRef"
+      ],
+      "properties": {
+        "assetRole": {
+          "$ref": "#/definitions/assetRole"
+        },
+        "assetRef": {
+          "type": "string",
+          "pattern": "^(public/|inline:|generate:|placeholder:)"
+        },
+        "alt": {
+          "type": "string",
+          "maxWords": 44,
+          "x-observedMaxWords": 35
+        }
+      }
+    },
+    "cta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "href"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 7,
+          "x-observedMaxWords": 5
+        },
+        "href": {
+          "$ref": "#/definitions/href"
+        }
+      }
+    },
+    "motion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback",
+        "fallbackSource"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "none",
+              "dropdown-reveal",
+              "hamburger-morph",
+              "mobile-menu-slide",
+              "hero-word-rotator",
+              "lottie-scroll-scrub",
+              "lottie-play-once-on-view",
+              "lottie-loop",
+              "nav-logo-spin",
+              "logo-hover-crossfade",
+              "button-hover",
+              "typed-text-loop",
+              "p5-bar-field",
+              "tabs-autoadvance",
+              "testimonial-panel-switch",
+              "faq-accordion",
+              "link-color-hover"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "string",
+          "minLength": 8
+        },
+        "fallbackSource": {
+          "const": "prescriptive-design-repo-policy"
+        }
+      }
+    },
+    "content_shell-navbar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "brand",
+        "menus",
+        "loginCta",
+        "bookCta"
+      ],
+      "properties": {
+        "brand": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "brand-logo"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "menus": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "columns",
+              "items"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 2,
+                "x-observedMaxWords": 1
+              },
+              "columns": {
+                "enum": [
+                  1,
+                  2
+                ]
+              },
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 8,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "title",
+                    "description",
+                    "href",
+                    "icon"
+                  ],
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxWords": 7,
+                      "x-observedMaxWords": 5
+                    },
+                    "description": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxWords": 8,
+                      "x-observedMaxWords": 6
+                    },
+                    "href": {
+                      "$ref": "#/definitions/href"
+                    },
+                    "icon": {
+                      "allOf": [
+                        {
+                          "$ref": "#/definitions/media"
+                        },
+                        {
+                          "properties": {
+                            "assetRole": {
+                              "enum": [
+                                "ui-icon"
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "loginCta": {
+          "$ref": "#/definitions/cta"
+        },
+        "bookCta": {
+          "$ref": "#/definitions/cta"
+        }
+      }
+    },
+    "content_hero-api-search": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "announcement",
+        "headingLead",
+        "rotatingWords",
+        "subheading",
+        "primaryCta",
+        "secondaryCta",
+        "illustration",
+        "poster"
+      ],
+      "properties": {
+        "announcement": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "href"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 12,
+              "x-observedMaxWords": 9
+            },
+            "href": {
+              "$ref": "#/definitions/href"
+            }
+          }
+        },
+        "headingLead": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 13,
+          "x-observedMaxWords": 10
+        },
+        "rotatingWords": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 7,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 3,
+            "x-observedMaxWords": 2
+          }
+        },
+        "subheading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 23,
+          "x-observedMaxWords": 18
+        },
+        "primaryCta": {
+          "$ref": "#/definitions/cta"
+        },
+        "secondaryCta": {
+          "$ref": "#/definitions/cta"
+        },
+        "illustration": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "product-lottie",
+                    "decorative-pattern"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "poster": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "product-screenshot",
+                    "decorative-pattern"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "content_proof-logo-grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "caption",
+        "logos"
+      ],
+      "properties": {
+        "caption": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 12,
+          "x-observedMaxWords": 9
+        },
+        "logos": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "href",
+              "logo",
+              "logoHover"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 3,
+                "x-observedMaxWords": 2
+              },
+              "href": {
+                "$ref": "#/definitions/href"
+              },
+              "logo": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "customer-logo"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "logoHover": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "customer-logo"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "content_shell-lines-divider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {}
+    },
+    "content_narrative-problem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eyebrow",
+        "heading",
+        "lead",
+        "body",
+        "illustration"
+      ],
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 3,
+          "x-observedMaxWords": 2
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 9,
+          "x-observedMaxWords": 7
+        },
+        "lead": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 22,
+          "x-observedMaxWords": 17
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 57,
+          "x-observedMaxWords": 45
+        },
+        "illustration": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "product-lottie",
+                    "decorative-pattern"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "content_narrative-solution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eyebrow",
+        "heading",
+        "lead",
+        "body",
+        "cta",
+        "illustration",
+        "stats"
+      ],
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 3,
+          "x-observedMaxWords": 2
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 12,
+          "x-observedMaxWords": 9
+        },
+        "lead": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 18,
+          "x-observedMaxWords": 14
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 57,
+          "x-observedMaxWords": 45
+        },
+        "cta": {
+          "$ref": "#/definitions/cta"
+        },
+        "illustration": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "product-lottie",
+                    "decorative-pattern"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "stats": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "icon",
+              "title",
+              "body"
+            ],
+            "properties": {
+              "icon": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "ui-icon"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 4,
+                "x-observedMaxWords": 3
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 13,
+                "x-observedMaxWords": 10
+              }
+            }
+          }
+        }
+      }
+    },
+    "content_interactive-build-typed": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heading",
+        "typedPhrases"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 14,
+          "x-observedMaxWords": 11
+        },
+        "typedPhrases": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 16,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 5,
+            "x-observedMaxWords": 4
+          }
+        }
+      }
+    },
+    "content_features-reliable": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heading",
+        "body",
+        "checks",
+        "cta",
+        "illustration"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 14,
+          "x-observedMaxWords": 11
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 25,
+          "x-observedMaxWords": 20
+        },
+        "checks": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 10,
+            "x-observedMaxWords": 8
+          }
+        },
+        "cta": {
+          "$ref": "#/definitions/cta"
+        },
+        "illustration": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "product-lottie",
+                    "decorative-pattern"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "content_features-benefits-tabs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tabs"
+      ],
+      "properties": {
+        "tabs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "accent",
+              "title",
+              "body",
+              "points",
+              "illustration"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 2,
+                "x-observedMaxWords": 1
+              },
+              "accent": {
+                "enum": [
+                  "blue",
+                  "orange",
+                  "purple",
+                  "yellow"
+                ]
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 8,
+                "x-observedMaxWords": 6
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 62,
+                "x-observedMaxWords": 49
+              },
+              "points": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxWords": 13,
+                  "x-observedMaxWords": 10
+                }
+              },
+              "illustration": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "product-lottie",
+                          "decorative-pattern"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "content_cta-free-trial": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eyebrow",
+        "heading",
+        "headingAccent",
+        "lead",
+        "cta",
+        "statement",
+        "points"
+      ],
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 4,
+          "x-observedMaxWords": 3
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 8,
+          "x-observedMaxWords": 6
+        },
+        "headingAccent": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 4,
+          "x-observedMaxWords": 3
+        },
+        "lead": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 15,
+          "x-observedMaxWords": 12
+        },
+        "cta": {
+          "$ref": "#/definitions/cta"
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 15,
+          "x-observedMaxWords": 12
+        },
+        "points": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 8,
+            "x-observedMaxWords": 6
+          }
+        }
+      }
+    },
+    "content_features-industries-grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eyebrow",
+        "heading",
+        "intro",
+        "cards",
+        "cta"
+      ],
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 4,
+          "x-observedMaxWords": 3
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 8,
+          "x-observedMaxWords": 6
+        },
+        "intro": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 33,
+          "x-observedMaxWords": 26
+        },
+        "cards": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 9,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "title",
+              "body",
+              "image"
+            ],
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 7,
+                "x-observedMaxWords": 5
+              },
+              "body": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 25,
+                "x-observedMaxWords": 20
+              },
+              "image": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "use-case-illustration",
+                          "decorative-pattern"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "cta": {
+          "$ref": "#/definitions/cta"
+        }
+      }
+    },
+    "content_proof-testimonials": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "items"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "role",
+              "quote",
+              "accent",
+              "attributionType"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 5,
+                "x-observedMaxWords": 4
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 8,
+                "x-observedMaxWords": 6
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 60,
+                "x-observedMaxWords": 48
+              },
+              "accent": {
+                "enum": [
+                  "blue",
+                  "orange",
+                  "purple",
+                  "yellow"
+                ]
+              },
+              "attributionType": {
+                "enum": [
+                  "source-verbatim",
+                  "placeholder-pending-consent"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "content_content-faq": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eyebrow",
+        "heading",
+        "items"
+      ],
+      "properties": {
+        "eyebrow": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 2,
+          "x-observedMaxWords": 1
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 4,
+          "x-observedMaxWords": 3
+        },
+        "items": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 14,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "question",
+              "answer"
+            ],
+            "properties": {
+              "question": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 12,
+                "x-observedMaxWords": 9
+              },
+              "answer": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 65,
+                "x-observedMaxWords": 52
+              }
+            }
+          }
+        }
+      }
+    },
+    "content_cta-final": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heading",
+        "lead",
+        "trustLine",
+        "cta",
+        "background"
+      ],
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 12,
+          "x-observedMaxWords": 9
+        },
+        "lead": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 18,
+          "x-observedMaxWords": 14
+        },
+        "trustLine": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 10,
+          "x-observedMaxWords": 8
+        },
+        "cta": {
+          "$ref": "#/definitions/cta"
+        },
+        "background": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "decorative-pattern"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "content_shell-footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "newsletterHeading",
+        "newsletterSlot",
+        "brand",
+        "socials",
+        "cta",
+        "columns",
+        "legalLine"
+      ],
+      "properties": {
+        "newsletterHeading": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 8,
+          "x-observedMaxWords": 6
+        },
+        "newsletterSlot": {
+          "const": "reserved-placeholder"
+        },
+        "brand": {
+          "allOf": [
+            {
+              "$ref": "#/definitions/media"
+            },
+            {
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "brand-logo"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "socials": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "platform",
+              "href",
+              "icon"
+            ],
+            "properties": {
+              "platform": {
+                "enum": [
+                  "linkedin",
+                  "facebook",
+                  "instagram",
+                  "x"
+                ]
+              },
+              "href": {
+                "$ref": "#/definitions/href"
+              },
+              "icon": {
+                "allOf": [
+                  {
+                    "$ref": "#/definitions/media"
+                  },
+                  {
+                    "properties": {
+                      "assetRole": {
+                        "enum": [
+                          "social-icon"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "cta": {
+          "$ref": "#/definitions/cta"
+        },
+        "columns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "heading",
+              "links"
+            ],
+            "properties": {
+              "heading": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 2,
+                "x-observedMaxWords": 1
+              },
+              "links": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 8,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "label",
+                    "href"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxWords": 5,
+                      "x-observedMaxWords": 4
+                    },
+                    "href": {
+                      "$ref": "#/definitions/href"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "legalLine": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 7,
+          "x-observedMaxWords": 5
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "section",
+        "variant",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "section": {
+          "enum": [
+            "shell.navbar",
+            "hero.api-search",
+            "proof.logo-grid",
+            "shell.lines-divider",
+            "narrative.problem",
+            "narrative.solution",
+            "interactive.build-typed",
+            "features.reliable",
+            "features.benefits-tabs",
+            "cta.free-trial",
+            "features.industries-grid",
+            "proof.testimonials",
+            "content.faq",
+            "cta.final",
+            "shell.footer"
+          ]
+        },
+        "variant": {
+          "type": "string"
+        },
+        "content": {
+          "type": "object"
+        },
+        "motion": {
+          "$ref": "#/definitions/motion"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "shell.navbar"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_shell-navbar"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "dropdown-reveal",
+                        "hamburger-morph",
+                        "mobile-menu-slide",
+                        "nav-logo-spin"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "hero.api-search"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_hero-api-search"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "hero-word-rotator",
+                        "lottie-scroll-scrub",
+                        "button-hover"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "proof.logo-grid"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_proof-logo-grid"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "logo-hover-crossfade"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "shell.lines-divider"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "base"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_shell-lines-divider"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "none"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "narrative.problem"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_narrative-problem"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "lottie-scroll-scrub"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "narrative.solution"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_narrative-solution"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "lottie-scroll-scrub",
+                        "button-hover"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "interactive.build-typed"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_interactive-build-typed"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "typed-text-loop",
+                        "p5-bar-field"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "features.reliable"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_features-reliable"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "lottie-play-once-on-view",
+                        "button-hover"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "features.benefits-tabs"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_features-benefits-tabs"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "tabs-autoadvance",
+                        "lottie-loop"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "cta.free-trial"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_cta-free-trial"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "button-hover"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "features.industries-grid"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_features-industries-grid"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "button-hover"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "proof.testimonials"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_proof-testimonials"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "testimonial-panel-switch"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "content.faq"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_content-faq"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "faq-accordion"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "cta.final"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_cta-final"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "button-hover"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "shell.footer"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_shell-footer"
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "p5-bar-field",
+                        "link-color-hover",
+                        "button-hover"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

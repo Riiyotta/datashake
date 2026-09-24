@@ -1,0 +1,20 @@
+{
+  "id": "primitive.eyebrow",
+  "kind": "primitive",
+  "description": "Small section label flanked by two 14px icon caps.",
+  "variants": {
+    "grey": "#666 label.",
+    "green": "Green label on dark green."
+  },
+  "tokensUsed": [
+    "semantic.color.text.muted",
+    "semantic.color.text.accent",
+    "semantic.typography.bodyRegular"
+  ],
+  "motionPatterns": [
+    "none"
+  ],
+  "measuredFrom": [
+    "cite:ui-eyebrow"
+  ]
+}

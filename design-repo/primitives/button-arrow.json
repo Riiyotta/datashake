@@ -1,0 +1,24 @@
+{
+  "id": "primitive.button-arrow",
+  "kind": "primitive",
+  "description": "Primary CTA: label + 32px arrow chip that rotates -90deg on hover.",
+  "variants": {
+    "base": "Green fill (default).",
+    "footer": "Green, gap 0.",
+    "white": "White on dark green.",
+    "fullWidth": "Black full-width bar."
+  },
+  "tokensUsed": [
+    "component.button.arrow.base.background",
+    "component.button.arrow.radius",
+    "semantic.typography.button"
+  ],
+  "motionPatterns": [
+    "button-hover"
+  ],
+  "measuredFrom": [
+    "cite:ui-arrow-variants",
+    "cite:ui-arrow-rotate",
+    "cite:html-arrow-rotate"
+  ]
+}

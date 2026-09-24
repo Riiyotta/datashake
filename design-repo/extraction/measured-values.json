@@ -1,0 +1,1211 @@
+{
+  "$comment": "Citation ledger. The ONLY place that points outside design-repo/. Paths are relative to the source project root (the parent of design-repo/). 'lines' null = existence-only citation (binary). 'quote' must appear (whitespace-normalised) inside the cited range; verify_all.py checks bounds AND quote, and degrades to warnings when the sibling source tree is absent.",
+  "sourceProjectRelativeToThisRepo": "..",
+  "sourceProject": {
+    "name": "datashake-clone",
+    "liveSite": "https://www.datashake.com/",
+    "gitRepo": false
+  },
+  "citations": [
+    {
+      "id": "stack-declared",
+      "path": "package.json",
+      "lines": "11-24",
+      "quote": "\"p5\": \"1.9.0\"",
+      "claim": "Declared dependency ranges (gsap ^3.12.5, lottie-web ^5.12.2, p5 1.9.0, react/react-dom ^18.3.1, typed.js ^2.1.0; tailwindcss ^3.4.4, vite ^5.3.1)."
+    },
+    {
+      "id": "stack-react",
+      "path": "node_modules/react/package.json",
+      "lines": "7",
+      "quote": "\"version\": \"18.3.1\"",
+      "claim": "Installed react 18.3.1."
+    },
+    {
+      "id": "stack-react-dom",
+      "path": "node_modules/react-dom/package.json",
+      "lines": "3",
+      "quote": "\"version\": \"18.3.1\"",
+      "claim": "Installed react-dom 18.3.1."
+    },
+    {
+      "id": "stack-vite",
+      "path": "node_modules/vite/package.json",
+      "lines": "3",
+      "quote": "\"version\": \"5.4.21\"",
+      "claim": "Installed vite 5.4.21."
+    },
+    {
+      "id": "stack-tailwind",
+      "path": "node_modules/tailwindcss/package.json",
+      "lines": "3",
+      "quote": "\"version\": \"3.4.19\"",
+      "claim": "Installed tailwindcss 3.4.19."
+    },
+    {
+      "id": "stack-gsap",
+      "path": "node_modules/gsap/package.json",
+      "lines": "3",
+      "quote": "\"version\": \"3.15.0\"",
+      "claim": "Installed gsap 3.15.0."
+    },
+    {
+      "id": "stack-lottie",
+      "path": "node_modules/lottie-web/package.json",
+      "lines": "3",
+      "quote": "\"version\": \"5.13.0\"",
+      "claim": "Installed lottie-web 5.13.0."
+    },
+    {
+      "id": "stack-typed",
+      "path": "node_modules/typed.js/package.json",
+      "lines": "3",
+      "quote": "\"version\": \"2.1.0\"",
+      "claim": "Installed typed.js 2.1.0."
+    },
+    {
+      "id": "stack-p5",
+      "path": "node_modules/p5/package.json",
+      "lines": "27",
+      "quote": "\"version\": \"1.9.0\"",
+      "claim": "Installed p5 1.9.0."
+    },
+    {
+      "id": "single-route",
+      "path": "src/main.jsx",
+      "lines": "1-10",
+      "quote": "<App />",
+      "claim": "No router: main.jsx mounts <App /> directly, so the only route is '/'."
+    },
+    {
+      "id": "spec-single-route",
+      "path": "CLONE_SPEC.md",
+      "lines": "5",
+      "quote": "one route: `/`",
+      "claim": "Recon states the source is a single-page site with one route."
+    },
+    {
+      "id": "app-section-order",
+      "path": "src/App.jsx",
+      "lines": "19-50",
+      "quote": "<LinesDivider />",
+      "claim": "Real section order: Navbar, Hero, LogoSection, divider, Problem, Solution, then divider-preceded Build/Reliable/BenefitsTabs/FreeTrial/Industries/Testimonials/Faq, divider, FinalCta, divider, Footer."
+    },
+    {
+      "id": "app-no-divider-problem-solution",
+      "path": "src/App.jsx",
+      "lines": "17-18",
+      "quote": "There is no divider between",
+      "claim": "Explicit note: no divider between Problem and Solution; footer carries its own trailing divider."
+    },
+    {
+      "id": "html-divider-variants",
+      "path": "Social & Review Data Infrastructure _ Datashake.html",
+      "lines": "866-868",
+      "quote": "horizontal-10rem",
+      "claim": "Saved export uses data-wf--lines-divider--variant (base / horizontal-10rem / horizontal-3rem)."
+    },
+    {
+      "id": "tw-screens",
+      "path": "tailwind.config.cjs",
+      "lines": "7-12",
+      "quote": "tablet: { max: '991px' }",
+      "claim": "Desktop-first max-width screens: tablet <=991, mobile-l <=767, mobile-p <=479."
+    },
+    {
+      "id": "tw-colors",
+      "path": "tailwind.config.cjs",
+      "lines": "14-45",
+      "quote": "green: '#3fe844'",
+      "claim": "Color palette incl. hover states and white-15/white-3 alphas."
+    },
+    {
+      "id": "tw-fonts",
+      "path": "tailwind.config.cjs",
+      "lines": "49-66",
+      "quote": "display: ['Altriviera', 'Arial', 'sans-serif']",
+      "claim": "Font stacks: display Altriviera, sans Inter, system stack."
+    },
+    {
+      "id": "tw-maxwidth",
+      "path": "tailwind.config.cjs",
+      "lines": "67-70",
+      "quote": "container: '90rem'",
+      "claim": "Container max-width 90rem, narrow 70rem."
+    },
+    {
+      "id": "tw-hairline",
+      "path": "tailwind.config.cjs",
+      "lines": "71-73",
+      "quote": "hair: '0.5px'",
+      "claim": "0.5px hairline border width."
+    },
+    {
+      "id": "css-root-vars",
+      "path": "Social & Review Data Infrastructure _ Datashake_files/datashake-staging.webflow.69385e18d68663814109c1d2.4ed07c329.opt.css",
+      "lines": "9-33",
+      "quote": "--green: #3fe844;",
+      "claim": "Original Webflow :root color variables (cross-check of the Tailwind palette)."
+    },
+    {
+      "id": "css-radius-zero",
+      "path": "Social & Review Data Infrastructure _ Datashake_files/datashake-staging.webflow.69385e18d68663814109c1d2.4ed07c329.opt.css",
+      "lines": "596-605",
+      "quote": "border-radius: 0;",
+      "claim": "Buttons declare border-radius 0 (the only radius values in the page CSS are 0)."
+    },
+    {
+      "id": "spec-radius-zero",
+      "path": "CLONE_SPEC.md",
+      "lines": "22",
+      "quote": "Border-radius is 0px everywhere",
+      "claim": "Measured: radius 0 everywhere except the out-of-scope third-party WhatsApp widget."
+    },
+    {
+      "id": "spec-no-shadows",
+      "path": "CLONE_SPEC.md",
+      "lines": "23",
+      "quote": "No cards/sections in the main design use shadows",
+      "claim": "No box-shadows in the design system."
+    },
+    {
+      "id": "css-breakpoints-991",
+      "path": "Social & Review Data Infrastructure _ Datashake_files/datashake-staging.webflow.69385e18d68663814109c1d2.4ed07c329.opt.css",
+      "lines": "3034",
+      "quote": "@media screen and (max-width: 991px)",
+      "claim": "Webflow tablet breakpoint."
+    },
+    {
+      "id": "css-breakpoints-767",
+      "path": "Social & Review Data Infrastructure _ Datashake_files/datashake-staging.webflow.69385e18d68663814109c1d2.4ed07c329.opt.css",
+      "lines": "4029",
+      "quote": "@media screen and (max-width: 767px)",
+      "claim": "Webflow mobile-landscape breakpoint."
+    },
+    {
+      "id": "css-breakpoints-479",
+      "path": "Social & Review Data Infrastructure _ Datashake_files/datashake-staging.webflow.69385e18d68663814109c1d2.4ed07c329.opt.css",
+      "lines": "4678",
+      "quote": "@media screen and (max-width: 479px)",
+      "claim": "Webflow mobile-portrait breakpoint."
+    },
+    {
+      "id": "idx-altriviera-face",
+      "path": "src/index.css",
+      "lines": "1-7",
+      "quote": "font-family: 'Altriviera';",
+      "claim": "Self-hosted Altriviera 400 face (paid/licensed display font)."
+    },
+    {
+      "id": "shared-altriviera-face",
+      "path": "Social & Review Data Infrastructure _ Datashake_files/datashake-staging.webflow.shared.da4fed70c.css",
+      "lines": "2072-2078",
+      "quote": "ALTRiviera-Regular-BF6527666de181e.woff2",
+      "claim": "Original serves Altriviera from Webflow CDN under a mangled family name."
+    },
+    {
+      "id": "idx-inter-gf",
+      "path": "src/index.css",
+      "lines": "22-34",
+      "quote": "Inter-Latin-Variable-GF.woff2",
+      "claim": "Body Inter actually rendered on live = Google variable Inter (latin), which wins over the Webflow Inter files."
+    },
+    {
+      "id": "idx-fluid-root",
+      "path": "src/index.css",
+      "lines": "40-60",
+      "quote": "--font-from: 16;",
+      "claim": "Fluid root font-size formula with 1440/960/479 interpolation bands."
+    },
+    {
+      "id": "idx-body-base",
+      "path": "src/index.css",
+      "lines": "65-75",
+      "quote": "font-family: theme('fontFamily.system');",
+      "claim": "Body base: system stack, #000, 1rem/1.5."
+    },
+    {
+      "id": "idx-link-base",
+      "path": "src/index.css",
+      "lines": "77-79",
+      "quote": "color: theme('colors.link');",
+      "claim": "Base link color #2d62ff."
+    },
+    {
+      "id": "idx-focus",
+      "path": "src/index.css",
+      "lines": "92-95",
+      "quote": "outline: 0.125rem solid theme('colors.focus');",
+      "claim": "Focus-visible outline 0.125rem #4d65ff."
+    },
+    {
+      "id": "idx-dashed-button",
+      "path": "src/index.css",
+      "lines": "100-117",
+      "quote": "repeating-linear-gradient(-13deg",
+      "claim": "Dashed-edge outline button drawn with repeating gradients; hover solidifies the edge and text goes #666 -> #0d0d0d over 300ms."
+    },
+    {
+      "id": "idx-cursor-blink",
+      "path": "src/index.css",
+      "lines": "119-129",
+      "quote": "animation: ds-blink 1s infinite;",
+      "claim": "Typed cursor '|' blinks over 1s."
+    },
+    {
+      "id": "ui-type-fragments",
+      "path": "src/components/ui.jsx",
+      "lines": "10-17",
+      "quote": "// .heading-style-h2",
+      "claim": "Type roles: regular 1rem, small .875rem, medium 1.125rem, large; H2 3rem/1.2/-0.015em -> 2rem at <=767; H3 2.5rem/1.2/-0.5px -> 1.5rem."
+    },
+    {
+      "id": "ui-layout-fragments",
+      "path": "src/components/ui.jsx",
+      "lines": "20-23",
+      "quote": "PADDING_GLOBAL",
+      "claim": "Page gutter 2.5rem / 1.25rem (tablet) / .75rem (mobile-l); container 90rem; padding-3rem 3/2/1.5rem."
+    },
+    {
+      "id": "ui-arrow-variants",
+      "path": "src/components/ui.jsx",
+      "lines": "32-57",
+      "quote": "bg-green text-black hover:bg-green-hover",
+      "claim": "Arrow button: Inter 500 1.125rem, 1.5rem x .75rem padding, radius none; variants base/footer/white/fullWidth with 200ms (out) / 300ms (in) background transitions."
+    },
+    {
+      "id": "ui-arrow-rotate",
+      "path": "src/components/ui.jsx",
+      "lines": "60-71",
+      "quote": "group-hover:-rotate-90",
+      "claim": "Arrow icon rotates -90deg on button hover."
+    },
+    {
+      "id": "html-arrow-rotate",
+      "path": "Social & Review Data Infrastructure _ Datashake.html",
+      "lines": "557",
+      "quote": "rotate(-90deg)",
+      "claim": "Original global-styles embed rotates the button arrow -90deg on hover."
+    },
+    {
+      "id": "ui-outline-variants",
+      "path": "src/components/ui.jsx",
+      "lines": "73-97",
+      "quote": "btn-outline-dashed",
+      "claim": "Outline button variants base/small/black/blackMobile, 0.5px border, 56px min height."
+    },
+    {
+      "id": "ui-eyebrow",
+      "path": "src/components/ui.jsx",
+      "lines": "100-108",
+      "quote": "export function Eyebrow",
+      "claim": "Eyebrow: two 14px icons around a 1rem label, grey (#666) or green variant."
+    },
+    {
+      "id": "ui-lines-divider",
+      "path": "src/components/ui.jsx",
+      "lines": "114-132",
+      "quote": "export function LinesDivider()",
+      "claim": "Base divider: full-width hairline band with Line-Divider.svg, min-height 1px -> 4rem (tablet) -> 3.5rem (mobile-p)."
+    },
+    {
+      "id": "ui-strip-dividers",
+      "path": "src/components/ui.jsx",
+      "lines": "134-185",
+      "quote": "variant=\"horizontal-10rem\"",
+      "claim": "Section-internal vertical strip dividers (8rem / 3rem), hidden <=991."
+    },
+    {
+      "id": "ui-lottie",
+      "path": "src/components/ui.jsx",
+      "lines": "187-199",
+      "quote": "SCROLL_INTO_VIEW",
+      "claim": "Lottie player semantics: autoplay elements restart on first view and pause off-screen; ix = IX2 scroll-into-view tween of frames to `to`% over `duration`."
+    },
+    {
+      "id": "motion-easings",
+      "path": "src/lib/motion.js",
+      "lines": "1-2",
+      "quote": "\"easeIn\" = cubic-bezier(0.42, 0, 1, 1)",
+      "claim": "IX2 easing map: '' = linear, easeIn = cubic-bezier(0.42,0,1,1), ease = cubic-bezier(0.25,0.1,0.25,1)."
+    },
+    {
+      "id": "motion-ease-map",
+      "path": "src/lib/motion.js",
+      "lines": "39-43",
+      "quote": "easeIn: cubicBezier(0.42, 0, 1, 1),",
+      "claim": "EASE lookup used by every IX2 tween."
+    },
+    {
+      "id": "nav-menus",
+      "path": "src/components/Navbar.jsx",
+      "lines": "5-44",
+      "quote": "label: 'Solutions',",
+      "claim": "Four dropdown menus with title/description/icon items; Solutions uses a 2-column grid."
+    },
+    {
+      "id": "nav-dropdown-timing",
+      "path": "src/components/Navbar.jsx",
+      "lines": "60-64",
+      "quote": "300ms ease-in, starting the same frame",
+      "claim": "Dropdown open: list translateY -50px->0 + opacity 0->1 300ms ease-in, toggle color 300ms ease; close: list hidden at once, toggle color 200ms ease-in."
+    },
+    {
+      "id": "nav-label-weight",
+      "path": "src/components/Navbar.jsx",
+      "lines": "106",
+      "quote": "font-normal",
+      "claim": "Dropdown toggle labels are Inter 400 (not 500)."
+    },
+    {
+      "id": "nav-dropdown-panel",
+      "path": "src/components/Navbar.jsx",
+      "lines": "115-116",
+      "quote": "bg-grey-v1 p-[10px]",
+      "claim": "Dropdown panel: dashed hairline, #fafafa frame with 10px padding around a white inner box."
+    },
+    {
+      "id": "nav-buttons",
+      "path": "src/components/Navbar.jsx",
+      "lines": "156-163",
+      "quote": "Book a call",
+      "claim": "Nav CTAs: Login (outline small) + Book a call (black)."
+    },
+    {
+      "id": "nav-mobile-400",
+      "path": "src/components/Navbar.jsx",
+      "lines": "171-172",
+      "quote": "data-duration=\"400\"",
+      "claim": "Mobile menu slides down from translateY(-100%) over 400ms; page scroll locked while open."
+    },
+    {
+      "id": "nav-brand-rotate-src",
+      "path": "src/components/Navbar.jsx",
+      "lines": "224",
+      "quote": "group-hover:rotate-[360deg] group-hover:transition-transform group-hover:duration-500 group-hover:ease-[ease]",
+      "claim": "Navbar brand mark spins 360deg on hover of the home link, 500ms ease. Confirmed on live (live:nav-logo-spin); absent from the saved export because Webflow applies it at runtime."
+    },
+    {
+      "id": "nav-hamburger",
+      "path": "src/components/Navbar.jsx",
+      "lines": "258-259",
+      "quote": "Navbar-Close: back to 0 in 250ms ease-in",
+      "claim": "Hamburger morph: open 500ms (linear), close 250ms ease-in."
+    },
+    {
+      "id": "nav-slide",
+      "path": "src/components/Navbar.jsx",
+      "lines": "283-284",
+      "quote": "duration-[400ms]",
+      "claim": "Overlay slide transition 400ms."
+    },
+    {
+      "id": "nav-tablet-collapse",
+      "path": "src/components/Navbar.jsx",
+      "lines": "229-231",
+      "quote": "Webflow collapses it at",
+      "claim": "Desktop menu hidden at <=991; hamburger overlay instead."
+    },
+    {
+      "id": "css-dropdown-transparent",
+      "path": "Social & Review Data Infrastructure _ Datashake_files/datashake-staging.webflow.69385e18d68663814109c1d2.4ed07c329.opt.css",
+      "lines": "2808-2812",
+      "quote": "background-color: #ddd0;",
+      "claim": "Original .dropdown-list background is #ddd with 0 alpha (transparent), not solid #dddddd."
+    },
+    {
+      "id": "css-nav-menu-link",
+      "path": "Social & Review Data Infrastructure _ Datashake_files/datashake-staging.webflow.69385e18d68663814109c1d2.4ed07c329.opt.css",
+      "lines": "868-875",
+      "quote": "font-weight: 500;",
+      "claim": "Stylesheet .nav_menu_link declares 500 (the spec's source); the dropdown toggles themselves render 400 (see nav-label-weight)."
+    },
+    {
+      "id": "hero-words",
+      "path": "src/components/Hero.jsx",
+      "lines": "7-16",
+      "quote": "'customer conversations',",
+      "claim": "Rotating word list in DOM order; first item is the hidden leading item."
+    },
+    {
+      "id": "hero-rotator-timing",
+      "path": "src/components/Hero.jsx",
+      "lines": "18-20",
+      "quote": "ease: \"expo.inOut\", delay: 1",
+      "claim": "Per step: 1s hold (delay) then 1s expo.inOut translate by one item height; repeat -1; rebuilt on resize (250ms debounce)."
+    },
+    {
+      "id": "hero-item-height",
+      "path": "src/components/Hero.jsx",
+      "lines": "21-28",
+      "quote": "if (width <= 480) return 36",
+      "claim": "Item height 53px desktop, 38/48px <=768 (landscape/portrait), 36px <=480."
+    },
+    {
+      "id": "hero-hidden-first",
+      "path": "src/components/Hero.jsx",
+      "lines": "101",
+      "quote": "'!hidden'",
+      "claim": "Index 0 (and its clone) are hidden, so 7 words are ever visible."
+    },
+    {
+      "id": "html-rotate-hide",
+      "path": "Social & Review Data Infrastructure _ Datashake.html",
+      "lines": "830",
+      "quote": "rotate-item hide",
+      "claim": "Original DOM marks the first rotate item 'hide'."
+    },
+    {
+      "id": "html-rotator-script",
+      "path": "Social & Review Data Infrastructure _ Datashake.html",
+      "lines": "1818-1860",
+      "quote": "ease: \"expo.inOut\",",
+      "claim": "Original inline GSAP rotator script."
+    },
+    {
+      "id": "hero-copy",
+      "path": "src/components/Hero.jsx",
+      "lines": "90-117",
+      "quote": "One API. One schema. Cleaned, normalized. Search and filter across",
+      "claim": "Hero copy: announcement pill, H1 lead, subheading, two CTAs."
+    },
+    {
+      "id": "hero-lottie",
+      "path": "src/components/Hero.jsx",
+      "lines": "125-126",
+      "quote": "ix={{ to: 93, duration: 20000 }}",
+      "claim": "Hero Lottie: on scroll into view, frames 0->93% over 20s linear."
+    },
+    {
+      "id": "hero-poster",
+      "path": "src/components/Hero.jsx",
+      "lines": "128-133",
+      "quote": "6938803c45536fc95cbcf5fb_Hero-Image.webp",
+      "claim": "Hero product screenshot (depicts real iPhone/Nike review content) under the Lottie."
+    },
+    {
+      "id": "hero-grid",
+      "path": "src/components/Hero.jsx",
+      "lines": "78",
+      "quote": "grid-cols-[1fr_1fr] auto-cols-fr gap-0 w-full tablet:grid-cols-[1fr]",
+      "claim": "Hero 2 columns -> 1 at <=991."
+    },
+    {
+      "id": "logos-data",
+      "path": "src/components/LogoSection.jsx",
+      "lines": "6-13",
+      "quote": "'Qualtrics logo'",
+      "claim": "Six real third-party logos (Qualtrics, Yext, The Home Depot, BrightLocal, Epicor, Talkwalker) with grey default + colour hover images."
+    },
+    {
+      "id": "logos-caption",
+      "path": "src/components/LogoSection.jsx",
+      "lines": "22",
+      "quote": "Powering data intelligence for leading platforms",
+      "claim": "Logo row caption."
+    },
+    {
+      "id": "logos-grid",
+      "path": "src/components/LogoSection.jsx",
+      "lines": "25",
+      "quote": "grid-cols-[1fr_1fr_1fr_1fr_1fr_1fr] auto-cols-fr gap-0 tablet:grid-cols-[1fr_1fr]",
+      "claim": "6 columns -> 2 at <=991."
+    },
+    {
+      "id": "logos-hover",
+      "path": "src/components/LogoSection.jsx",
+      "lines": "33-56",
+      "quote": "group-hover:opacity-100 transition-opacity duration-300",
+      "claim": "Hover: bg -> #fafafa, colour image cross-fade and arrow opacity/translateY(10px->0), all 300ms ease; the logo-strip tiles do not rotate (the only hover spin is the navbar brand mark, pattern nav-logo-spin)."
+    },
+    {
+      "id": "html-brightlocal",
+      "path": "Social & Review Data Infrastructure _ Datashake.html",
+      "lines": "860",
+      "quote": "alt=\"Brightlocal logo\"",
+      "claim": "The 'Bright' logo is BrightLocal (alt text), not Bright Data."
+    },
+    {
+      "id": "spec-logo-hover",
+      "path": "CLONE_SPEC.md",
+      "lines": "197",
+      "quote": "cross-fades a grayscale image to a colored version",
+      "claim": "Recon: logo hover = 300ms opacity cross-fade, background 300ms, arrow opacity/transform 300ms."
+    },
+    {
+      "id": "problem-copy",
+      "path": "src/components/ProblemSection.jsx",
+      "lines": "19-27",
+      "quote": "The Problem",
+      "claim": "Problem eyebrow/H2/lead."
+    },
+    {
+      "id": "problem-body",
+      "path": "src/components/ProblemSection.jsx",
+      "lines": "43-45",
+      "quote": "Juggling multiple providers",
+      "claim": "Problem body copy."
+    },
+    {
+      "id": "problem-lottie",
+      "path": "src/components/ProblemSection.jsx",
+      "lines": "36-37",
+      "quote": "ix={{ to: 93, duration: 10000 }}",
+      "claim": "Problem Lottie: 0->93% over 10s linear on scroll into view."
+    },
+    {
+      "id": "problem-layout",
+      "path": "src/components/ProblemSection.jsx",
+      "lines": "6-10",
+      "quote": "tablet:grid-cols-[1fr]",
+      "claim": "3-column strip grid (8rem | 1fr | 8rem) -> 1 column; text row stacks at <=991."
+    },
+    {
+      "id": "solution-stats",
+      "path": "src/components/SolutionSection.jsx",
+      "lines": "4-10",
+      "quote": "'98.3% uptime'",
+      "claim": "Five stat tiles (icon, title, body)."
+    },
+    {
+      "id": "solution-copy",
+      "path": "src/components/SolutionSection.jsx",
+      "lines": "19-27",
+      "quote": "The Solution",
+      "claim": "Solution eyebrow/H2/lead."
+    },
+    {
+      "id": "solution-lottie",
+      "path": "src/components/SolutionSection.jsx",
+      "lines": "35-36",
+      "quote": "ix={{ to: 98, duration: 15000, ease: 'easeIn' }}",
+      "claim": "Solution Lottie: 0->98% over 15s easeIn."
+    },
+    {
+      "id": "solution-body-cta",
+      "path": "src/components/SolutionSection.jsx",
+      "lines": "41-47",
+      "quote": "See Datashake in action",
+      "claim": "Solution body + CTA."
+    },
+    {
+      "id": "solution-stats-grid",
+      "path": "src/components/SolutionSection.jsx",
+      "lines": "53",
+      "quote": "grid-cols-[1fr_1fr_1fr_1fr_1fr] auto-cols-fr gap-0 tablet:grid-cols-[1fr]",
+      "claim": "Stats 5 columns -> 1 at <=991."
+    },
+    {
+      "id": "solution-shares-problem-grid",
+      "path": "src/components/SolutionSection.jsx",
+      "lines": "2",
+      "quote": "import { GAP_3COL, SIZE_600, TEXT_ROW } from './ProblemSection.jsx'",
+      "claim": "Solution reuses Problem's layout primitives: the two sections are one continuous narrative band."
+    },
+    {
+      "id": "build-typed-options",
+      "path": "src/components/BuildSection.jsx",
+      "lines": "7-34",
+      "quote": "typeSpeed: 45,",
+      "claim": "Typed.js options verbatim: 16 strings, typeSpeed 45, backSpeed 25, backDelay 400, startDelay 250, loop."
+    },
+    {
+      "id": "html-typed-options",
+      "path": "Social & Review Data Infrastructure _ Datashake.html",
+      "lines": "893-901",
+      "quote": "typeSpeed: 45,",
+      "claim": "Original inline Typed options (the saved HTML does contain them)."
+    },
+    {
+      "id": "build-heading",
+      "path": "src/components/BuildSection.jsx",
+      "lines": "50",
+      "quote": "What would you build with unlimited access to public conversation data?",
+      "claim": "Build H2."
+    },
+    {
+      "id": "build-layout",
+      "path": "src/components/BuildSection.jsx",
+      "lines": "47-49",
+      "quote": "min-h-[430px]",
+      "claim": "Centered 700px column, 430px min height -> 350px at <=767; width 70vw at <=767."
+    },
+    {
+      "id": "build-canvas",
+      "path": "src/components/BuildSection.jsx",
+      "lines": "57-59",
+      "quote": "BarCanvas variant=\"build\"",
+      "claim": "p5 bar canvas fills the top half of the Build band."
+    },
+    {
+      "id": "bar-canvas-spec",
+      "path": "src/components/BarCanvas.jsx",
+      "lines": "4-14",
+      "quote": "12px columns, 4px gap",
+      "claim": "Bars 12px wide, 4px gap, heights [20,25,15,35], idle alpha pulse + colour lerp."
+    },
+    {
+      "id": "bar-canvas-palette",
+      "path": "src/components/BarCanvas.jsx",
+      "lines": "49",
+      "quote": "p.color('#D9FADA')",
+      "claim": "Bar palette #D9FADA / #F5FEF6 / #ECFDEC."
+    },
+    {
+      "id": "bar-canvas-hover",
+      "path": "src/components/BarCanvas.jsx",
+      "lines": "121-124",
+      "quote": "const maxInfluence = 150",
+      "claim": "Bars within 150px of the pointer scale up to 1.3x."
+    },
+    {
+      "id": "bar-canvas-random",
+      "path": "src/components/BarCanvas.jsx",
+      "lines": "27",
+      "quote": "p.randomSeed(42 + Math.random() * 1000)",
+      "claim": "Random bar layout per load."
+    },
+    {
+      "id": "reliable-copy",
+      "path": "src/components/ReliableSection.jsx",
+      "lines": "22-34",
+      "quote": "Your most reliable source of social &amp; review data at scale",
+      "claim": "Reliable H2, body, 2 check rows, CTA."
+    },
+    {
+      "id": "reliable-lottie",
+      "path": "src/components/ReliableSection.jsx",
+      "lines": "41-42",
+      "quote": "ix={{ offset: 30, delay: 200, to: 100, duration: 'auto' }}",
+      "claim": "970-04 plays once on view with a 30% inset and 200ms delay at native length."
+    },
+    {
+      "id": "reliable-layout",
+      "path": "src/components/ReliableSection.jsx",
+      "lines": "19-20",
+      "quote": "tablet:grid-cols-[1fr]",
+      "claim": "Grey band, 2 columns -> 1; illustration becomes static full width at <=991."
+    },
+    {
+      "id": "benefits-tabs",
+      "path": "src/components/BenefitsTabs.jsx",
+      "lines": "6-56",
+      "quote": "label: 'Speed',",
+      "claim": "Four tabs (Speed/Depth/Coverage/Relevance) each with accent, title, body, 3 points, looping Lottie."
+    },
+    {
+      "id": "benefits-motion",
+      "path": "src/components/BenefitsTabs.jsx",
+      "lines": "58-68",
+      "quote": "grows to 100% over 8000ms linear",
+      "claim": "Auto-advance every 8s, progress bar 0->100% linear; pane fade out 100ms / in 300ms."
+    },
+    {
+      "id": "benefits-consts",
+      "path": "src/components/BenefitsTabs.jsx",
+      "lines": "69-71",
+      "quote": "const SPEED = 8000",
+      "claim": "SPEED 8000, OUT_MS 100, IN_MS 300."
+    },
+    {
+      "id": "benefits-strip",
+      "path": "src/components/BenefitsTabs.jsx",
+      "lines": "196",
+      "quote": "tablet:flex tablet:overflow-auto",
+      "claim": "Tab strip: 4-column grid -> horizontally scrolling strip at <=991."
+    },
+    {
+      "id": "benefits-lottie-loop",
+      "path": "src/components/BenefitsTabs.jsx",
+      "lines": "271",
+      "quote": "autoplay loop",
+      "claim": "Tab Lotties autoplay and loop."
+    },
+    {
+      "id": "html-tab-speed",
+      "path": "Social & Review Data Infrastructure _ Datashake.html",
+      "lines": "921",
+      "quote": "fb-tabs-speed=\"8000\"",
+      "claim": "Original Flowbase tab rotation speed 8000ms."
+    },
+    {
+      "id": "freetrial-quirk",
+      "path": "src/components/FreeTrialSection.jsx",
+      "lines": "4-8",
+      "quote": "18px / opacity .7",
+      "claim": "Free-trial H2 renders 18px at 70% opacity because .text-color-white out-cascades the heading class (real quirk)."
+    },
+    {
+      "id": "css-text-color-white",
+      "path": "Social & Review Data Infrastructure _ Datashake_files/datashake-staging.webflow.69385e18d68663814109c1d2.4ed07c329.opt.css",
+      "lines": "2283-2289",
+      "quote": "opacity: .7;",
+      "claim": "Original .text-color-white: opacity .7, 1.125rem, centered."
+    },
+    {
+      "id": "html-freetrial-h2",
+      "path": "Social & Review Data Infrastructure _ Datashake.html",
+      "lines": "1059",
+      "quote": "heading-style-h2 text-color-white",
+      "claim": "Original free-trial H2 carries both classes."
+    },
+    {
+      "id": "freetrial-points",
+      "path": "src/components/FreeTrialSection.jsx",
+      "lines": "10-15",
+      "quote": "'Free, no-commitment benchmark test',",
+      "claim": "Four benchmark points."
+    },
+    {
+      "id": "freetrial-copy",
+      "path": "src/components/FreeTrialSection.jsx",
+      "lines": "27-52",
+      "quote": "Start your free benchmark check",
+      "claim": "Free-trial eyebrow, heading + green accent, lead, white CTA, statement."
+    },
+    {
+      "id": "freetrial-layout",
+      "path": "src/components/FreeTrialSection.jsx",
+      "lines": "22-24",
+      "quote": "bg-dark-green",
+      "claim": "Dark-green band, 2 columns -> 1 at <=991."
+    },
+    {
+      "id": "industries-cards",
+      "path": "src/components/IndustriesSection.jsx",
+      "lines": "4-14",
+      "quote": "'Crisis Monitoring & Risk Detection'",
+      "claim": "Nine use-case cards with proprietary illustrations."
+    },
+    {
+      "id": "industries-header",
+      "path": "src/components/IndustriesSection.jsx",
+      "lines": "22-36",
+      "quote": "What global companies use Datashake for",
+      "claim": "Industries eyebrow/H2/intro."
+    },
+    {
+      "id": "industries-grid",
+      "path": "src/components/IndustriesSection.jsx",
+      "lines": "43",
+      "quote": "tablet:grid-cols-[1fr_1fr] mobile-p:grid-cols-[1fr]",
+      "claim": "Cards 3 columns -> 2 (<=991) -> 1 (<=479)."
+    },
+    {
+      "id": "industries-cta",
+      "path": "src/components/IndustriesSection.jsx",
+      "lines": "66-69",
+      "quote": "variant=\"fullWidth\"",
+      "claim": "Full-width black Book a demo bar closes the section."
+    },
+    {
+      "id": "testimonials-color",
+      "path": "src/components/Testimonials.jsx",
+      "lines": "4-5",
+      "quote": "each variant's accent color",
+      "claim": "Labels use each card's own accent colour (blue/orange/purple/yellow)."
+    },
+    {
+      "id": "html-testimonial-colors",
+      "path": "Social & Review Data Infrastructure _ Datashake.html",
+      "lines": "1087",
+      "quote": "text-color-orange",
+      "claim": "Original testimonial markup applies text-color-blue/orange/purple/yellow per card."
+    },
+    {
+      "id": "testimonials-items",
+      "path": "src/components/Testimonials.jsx",
+      "lines": "6-47",
+      "quote": "name: 'Arkadiusz',",
+      "claim": "Four real testimonials (one named individual, three by role), accent per card."
+    },
+    {
+      "id": "testimonials-desktop-only",
+      "path": "src/components/Testimonials.jsx",
+      "lines": "53-57",
+      "quote": "(min-width: 992px)",
+      "claim": "Click-to-switch bound only at >=992px."
+    },
+    {
+      "id": "testimonials-transition",
+      "path": "src/components/Testimonials.jsx",
+      "lines": "74",
+      "quote": "duration-[800ms] ease-[ease]",
+      "claim": "Panel/tab switch 0.8s ease."
+    },
+    {
+      "id": "testimonials-layout",
+      "path": "src/components/Testimonials.jsx",
+      "lines": "63",
+      "quote": "tablet:flex-col",
+      "claim": "Horizontal 500px accordion -> vertical stack; tab links hidden at <=991."
+    },
+    {
+      "id": "faq-items",
+      "path": "src/components/Faq.jsx",
+      "lines": "5-34",
+      "quote": "'What types of data does Datashake collect?'",
+      "claim": "14 FAQ question/answer pairs."
+    },
+    {
+      "id": "faq-timing",
+      "path": "src/components/Faq.jsx",
+      "lines": "36-37",
+      "quote": "height 250ms ease-in",
+      "claim": "Open 250ms easeIn, close 150ms easeIn."
+    },
+    {
+      "id": "faq-icon",
+      "path": "src/components/Faq.jsx",
+      "lines": "100-101",
+      "quote": "transform 250ms ease-in",
+      "claim": "Plus icon rotates 45deg in 250ms / back in 150ms."
+    },
+    {
+      "id": "faq-grid",
+      "path": "src/components/Faq.jsx",
+      "lines": "122",
+      "quote": "grid-cols-[1fr_1.5fr]",
+      "claim": "1fr | 1.5fr -> 1 column at <=991."
+    },
+    {
+      "id": "faq-heading",
+      "path": "src/components/Faq.jsx",
+      "lines": "125-132",
+      "quote": "Your questions,",
+      "claim": "FAQ eyebrow + H2."
+    },
+    {
+      "id": "html-faq-jsonld",
+      "path": "Social & Review Data Infrastructure _ Datashake.html",
+      "lines": "37",
+      "quote": "\"@type\": \"FAQPage\"",
+      "claim": "Original embeds FAQPage JSON-LD."
+    },
+    {
+      "id": "finalcta-copy",
+      "path": "src/components/FinalCta.jsx",
+      "lines": "12-19",
+      "quote": "Book a call with one of our data experts",
+      "claim": "Final CTA heading, lead, trust line, button."
+    },
+    {
+      "id": "finalcta-layout",
+      "path": "src/components/FinalCta.jsx",
+      "lines": "8",
+      "quote": "bg-light-green",
+      "claim": "Light-green 550px band -> auto height at <=767."
+    },
+    {
+      "id": "finalcta-bg",
+      "path": "src/components/FinalCta.jsx",
+      "lines": "24-26",
+      "quote": "695442158ff7e237e5f5e875_CTA-Background.webp",
+      "claim": "Decorative dashed-green pattern background."
+    },
+    {
+      "id": "footer-columns",
+      "path": "src/components/Footer.jsx",
+      "lines": "5-44",
+      "quote": "'Solutions',",
+      "claim": "Four headed link columns: Solutions, Product, Company, Legal."
+    },
+    {
+      "id": "footer-socials",
+      "path": "src/components/Footer.jsx",
+      "lines": "46-51",
+      "quote": "linkedin.com/company/atdatashake",
+      "claim": "Four social links."
+    },
+    {
+      "id": "footer-newsletter",
+      "path": "src/components/Footer.jsx",
+      "lines": "59-60",
+      "quote": "Get social data insights delivered fresh",
+      "claim": "Newsletter heading."
+    },
+    {
+      "id": "footer-hubspot",
+      "path": "src/components/Footer.jsx",
+      "lines": "62-71",
+      "quote": "HubSpot newsletter form intentionally not embedded",
+      "claim": "HubSpot form replaced by a reserved-height placeholder slot."
+    },
+    {
+      "id": "html-hubspot",
+      "path": "Social & Review Data Infrastructure _ Datashake.html",
+      "lines": "1117",
+      "quote": "hubspot-wrapper",
+      "claim": "Original footer hosts a HubSpot form wrapper."
+    },
+    {
+      "id": "footer-grid",
+      "path": "src/components/Footer.jsx",
+      "lines": "73",
+      "quote": "grid-cols-[.4fr_1fr]",
+      "claim": ".4fr | 1fr -> 1 column at <=991; link columns stack at <=479."
+    },
+    {
+      "id": "footer-legal",
+      "path": "src/components/Footer.jsx",
+      "lines": "108",
+      "quote": "All Rights Reserved",
+      "claim": "Legal line (hidden <=991)."
+    },
+    {
+      "id": "footer-link-hover",
+      "path": "src/components/Footer.jsx",
+      "lines": "124",
+      "quote": "text-grey-v2 no-underline transition-colors duration-200",
+      "claim": "Footer links #666 -> #0d0d0d over 200ms."
+    },
+    {
+      "id": "css-footer-link",
+      "path": "Social & Review Data Infrastructure _ Datashake_files/datashake-staging.webflow.69385e18d68663814109c1d2.4ed07c329.opt.css",
+      "lines": "2433-2439",
+      "quote": "color: var(--grey-v2);",
+      "claim": "Original .footer-link colour is grey-v2 with 0.2s transition (not #2d62ff)."
+    },
+    {
+      "id": "footer-canvas",
+      "path": "src/components/Footer.jsx",
+      "lines": "136-137",
+      "quote": "BarCanvas variant=\"footer\"",
+      "claim": "Bottom-up p5 bar canvas, 150px tall."
+    },
+    {
+      "id": "footer-trailing-divider",
+      "path": "src/components/Footer.jsx",
+      "lines": "141",
+      "quote": "<LinesDivider />",
+      "claim": "Footer renders its own trailing divider internally."
+    },
+    {
+      "id": "spec-no-scrolltrigger",
+      "path": "CLONE_SPEC.md",
+      "lines": "20",
+      "quote": "returns 0 registered triggers",
+      "claim": "GSAP + ScrollTrigger load but register zero triggers: no scroll-reveal effects exist."
+    },
+    {
+      "id": "spec-no-reduced-motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "294",
+      "quote": "fallback: none exists",
+      "claim": "Original has no prefers-reduced-motion handling."
+    },
+    {
+      "id": "spec-whatsapp",
+      "path": "CLONE_SPEC.md",
+      "lines": "310",
+      "quote": "WhatsApp chat bubble",
+      "claim": "Third-party WhatsApp widget: out of scope."
+    },
+    {
+      "id": "spec-fluid-root",
+      "path": "CLONE_SPEC.md",
+      "lines": "44-83",
+      "quote": "Fluid rem scaling",
+      "claim": "Recon measurement of the fluid root."
+    },
+    {
+      "id": "spec-breakpoints",
+      "path": "CLONE_SPEC.md",
+      "lines": "31-36",
+      "quote": "| Tablet | 991px | |",
+      "claim": "Recon breakpoint table."
+    },
+    {
+      "id": "assets-altriviera",
+      "path": "CLONE_SPEC_ASSETS.md",
+      "lines": "74",
+      "quote": "no substitute available",
+      "claim": "Altriviera is a paid custom font with no public substitute."
+    },
+    {
+      "id": "spec-wrong-inter",
+      "path": "CLONE_SPEC.md",
+      "lines": "13-15",
+      "quote": "served from **Webflow's own CDN**",
+      "claim": "SUPERSEDED: spec says live Inter comes from the Webflow files; later QA (src/index.css:22-34) shows Google variable Inter wins for Latin."
+    },
+    {
+      "id": "spec-wrong-testimonial-color",
+      "path": "CLONE_SPEC.md",
+      "lines": "136",
+      "quote": "always `rgb(45, 98, 255)`",
+      "claim": "SUPERSEDED: spec says testimonial labels are always #2d62ff; src + saved HTML show per-card accent colours."
+    },
+    {
+      "id": "spec-wrong-nav-weight",
+      "path": "CLONE_SPEC.md",
+      "lines": "245",
+      "quote": "`.nav_menu_link` is Inter 500",
+      "claim": "SUPERSEDED: dropdown labels render Inter 400."
+    },
+    {
+      "id": "spec-wrong-typed",
+      "path": "CLONE_SPEC.md",
+      "lines": "271",
+      "quote": "Build should use Typed.js defaults",
+      "claim": "SUPERSEDED: the full options object is in the saved HTML (typeSpeed 45, backSpeed 25, backDelay 400)."
+    },
+    {
+      "id": "spec-wrong-faq",
+      "path": "CLONE_SPEC.md",
+      "lines": "284",
+      "quote": "~400–500ms, ease-out",
+      "claim": "SUPERSEDED: FAQ is 250ms easeIn open / 150ms easeIn close."
+    },
+    {
+      "id": "spec-wrong-lottie",
+      "path": "CLONE_SPEC.md",
+      "lines": "273",
+      "quote": "These do not autoplay/loop continuously",
+      "claim": "SUPERSEDED: hero/problem/solution are IX2 scroll-into-view scrubs; 970-04 plays once on view; the four tab Lotties loop."
+    },
+    {
+      "id": "spec-wrong-words",
+      "path": "CLONE_SPEC.md",
+      "lines": "259",
+      "quote": "cycles through 8 words",
+      "claim": "IMPRECISE: the first word is a hidden DOM item; 7 words are ever visible."
+    },
+    {
+      "id": "spec-wrong-problem-cards",
+      "path": "CLONE_SPEC.md",
+      "lines": "200",
+      "quote": "laid out as benefit/problem cards",
+      "claim": "WRONG: those illustrations belong to the Industries section, not Problem."
+    },
+    {
+      "id": "spec-wrong-industry-icons",
+      "path": "CLONE_SPEC.md",
+      "lines": "206",
+      "quote": "Grid of 8 industry icons with labels",
+      "claim": "WRONG: the 8 industry icons are nav Solutions dropdown icons; the Industries section is 9 illustrated use-case cards."
+    },
+    {
+      "id": "spec-wrong-footer",
+      "path": "CLONE_SPEC.md",
+      "lines": "231",
+      "quote": "Transparent background (inherits page white), link color `#2d62ff`",
+      "claim": "WRONG: footer links are #666 in 4 headed columns; newsletter band is #fafafa."
+    },
+    {
+      "id": "spec-wrong-finalcta",
+      "path": "CLONE_SPEC.md",
+      "lines": "228",
+      "quote": "transparent/inherited section background",
+      "claim": "WRONG: final CTA band is #ecfdec with a patterned background image."
+    },
+    {
+      "id": "spec-wrong-dropdown-bg",
+      "path": "CLONE_SPEC.md",
+      "lines": "238",
+      "quote": "`bg: #dddddd` outer / `#fafafa` inner",
+      "claim": "WRONG: outer list is transparent (#ddd0); frame #fafafa; inner white."
+    },
+    {
+      "id": "spec-imprecise-faq-count",
+      "path": "CLONE_SPEC.md",
+      "lines": "225",
+      "quote": "4+ Q&A pairs visible in source",
+      "claim": "IMPRECISE: src/components/Faq.jsx:5-34 holds exactly 14 Q&A items (a separate QA report's 19 is also wrong)."
+    },
+    {
+      "id": "assets-wrong-bright",
+      "path": "CLONE_SPEC_ASSETS.md",
+      "lines": "63",
+      "quote": "Logo marquee — Bright Data",
+      "claim": "WRONG: the logo is BrightLocal (saved HTML alt text + wordmark)."
+    },
+    {
+      "id": "assets-wrong-play-once",
+      "path": "CLONE_SPEC_ASSETS.md",
+      "lines": "91",
+      "quote": "they play once on load",
+      "claim": "SUPERSEDED: see spec-wrong-lottie."
+    },
+    {
+      "id": "font-altriviera-file",
+      "path": "public/fonts/Altriviera-Regular.woff2",
+      "lines": null,
+      "quote": null,
+      "claim": "Licensed Altriviera font binary shipped in the clone (licence status unknown for redistribution)."
+    },
+    {
+      "id": "font-inter-gf-file",
+      "path": "public/fonts/Inter-Latin-Variable-GF.woff2",
+      "lines": null,
+      "quote": null,
+      "claim": "Google variable Inter latin subset (OFL)."
+    },
+    {
+      "id": "lottie-dir",
+      "path": "public/lottie/hero.json",
+      "lines": null,
+      "quote": null,
+      "claim": "Proprietary Lottie animation data (8 files in public/lottie/)."
+    }
+  ],
+  "unmeasured": [
+    {
+      "item": "Typed.js effective cadence ~66ms/char typed, ~33ms/char deleted",
+      "evidence": "Measured on live during this build session's QA pass (not stored in a project file). The configured options (typeSpeed 45 / backSpeed 25) ARE cited (cite:build-typed-options, cite:html-typed-options); the effective ms/char include Typed.js's humanize jitter.",
+      "recordedAs": "session-live-measurement"
+    },
+    {
+      "item": "Every motion reducedMotionFallback",
+      "evidence": "The original has no prefers-reduced-motion handling (cite:spec-no-reduced-motion).",
+      "recordedAs": "prescriptive-design-repo-policy"
+    },
+    {
+      "item": "maxWords budgets",
+      "evidence": "Real observed counts from the example; the 1.25x headroom is policy.",
+      "recordedAs": "prescriptive-design-repo-policy"
+    },
+    {
+      "item": "Template required/optional slot split and new-page route pattern",
+      "evidence": "The source has one page with all 24 nodes; which slots a generated page may drop is policy.",
+      "recordedAs": "prescriptive-design-repo-policy"
+    }
+  ],
+  "liveMeasurements": [
+    {
+      "id": "nav-logo-spin",
+      "date": "2026-09-24",
+      "viewport": "1440px",
+      "target": "a[aria-label=\"home\"] (navbar brand mark)",
+      "method": "Playwright requestAnimationFrame sampling on hover; angle = atan2 of the computed transform matrix (360deg wraps to 0).",
+      "live": {
+        "rotatedFrames": 28,
+        "firstMs": 33,
+        "lastMs": 484,
+        "peakAngleSamplesDeg": [
+          7,
+          134,
+          98,
+          34,
+          6
+        ]
+      },
+      "clone": {
+        "rotatedFrames": 28,
+        "firstMs": 29,
+        "lastMs": 479,
+        "peakAngleSamplesDeg": [
+          7,
+          134,
+          98,
+          34,
+          6
+        ]
+      },
+      "conclusion": "Full 360deg spin in ~450-500ms, ease; clone matches live. Not in the saved export because Webflow applies it at runtime. Distinct from the logo-strip tiles, which do not rotate.",
+      "measuredFrom": [
+        "cite:nav-brand-rotate-src"
+      ]
+    }
+  ]
+}

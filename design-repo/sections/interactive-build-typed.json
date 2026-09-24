@@ -1,0 +1,122 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_interactive-build-typed (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.interactive.build-typed",
+  "nodeSection": "interactive.build-typed",
+  "category": "SHOWCASE",
+  "purpose": "Invite the reader to imagine use cases with a typed rotating phrase over an interactive bar field.",
+  "sourceComponent": "src/components/BuildSection.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "heading",
+      "typedPhrases"
+    ],
+    "properties": {
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 14,
+        "x-observedMaxWords": 11
+      },
+      "typedPhrases": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 16,
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 5,
+          "x-observedMaxWords": 4
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "typed-text-loop",
+      "p5-bar-field"
+    ],
+    "reducedMotionFallback": "Show the first phrase fully typed with a static cursor; render the bar field as a single static frame with no pointer reaction or pulse.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:bar-canvas-hover",
+      "cite:bar-canvas-palette",
+      "cite:bar-canvas-random",
+      "cite:bar-canvas-spec",
+      "cite:build-typed-options",
+      "cite:html-typed-options",
+      "cite:idx-cursor-blink"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "Centered 700px column, min-height 430px"
+      ],
+      "measuredFrom": [
+        "cite:build-layout"
+      ]
+    },
+    "tablet": {
+      "layout": "resize",
+      "changes": [
+        "Column side padding 2rem"
+      ],
+      "measuredFrom": [
+        "cite:build-layout"
+      ]
+    },
+    "mobileLandscape": {
+      "layout": "resize",
+      "changes": [
+        "Column 70vw; min-height 350px"
+      ],
+      "measuredFrom": [
+        "cite:build-layout"
+      ]
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "Typed line 80vw"
+      ],
+      "measuredFrom": [
+        "cite:build-typed-options"
+      ]
+    }
+  },
+  "tokensUsed": [
+    "semantic.typography.h2",
+    "semantic.color.text.accent",
+    "foundation.color.bar-1",
+    "foundation.color.bar-2",
+    "foundation.color.bar-3",
+    "foundation.border.accent"
+  ],
+  "accessibility": {
+    "headingLevel": 2,
+    "note": "Typed text is decorative; the H2 carries the message.",
+    "measuredFrom": [
+      "cite:build-heading"
+    ]
+  },
+  "measuredFrom": [
+    "cite:build-heading",
+    "cite:build-typed-options",
+    "cite:html-typed-options",
+    "cite:build-canvas",
+    "cite:bar-canvas-spec"
+  ]
+}

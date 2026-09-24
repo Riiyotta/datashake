@@ -1,0 +1,157 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_cta-free-trial (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.cta.free-trial",
+  "nodeSection": "cta.free-trial",
+  "category": "CONVERSION",
+  "purpose": "Mid-page conversion: offer a free benchmark trial on a dark-green band.",
+  "sourceComponent": "src/components/FreeTrialSection.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "eyebrow",
+      "heading",
+      "headingAccent",
+      "lead",
+      "cta",
+      "statement",
+      "points"
+    ],
+    "properties": {
+      "eyebrow": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 4,
+        "x-observedMaxWords": 3
+      },
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 8,
+        "x-observedMaxWords": 6
+      },
+      "headingAccent": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 4,
+        "x-observedMaxWords": 3
+      },
+      "lead": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 15,
+        "x-observedMaxWords": 12
+      },
+      "cta": {
+        "$ref": "#/definitions/cta"
+      },
+      "statement": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 15,
+        "x-observedMaxWords": 12
+      },
+      "points": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 4,
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 8,
+          "x-observedMaxWords": 6
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "button-hover"
+    ],
+    "reducedMotionFallback": "White CTA hover changes colour without the arrow rotation tween.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:html-arrow-rotate",
+      "cite:idx-dashed-button",
+      "cite:ui-arrow-rotate",
+      "cite:ui-arrow-variants"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "2 columns; points 2x2 glass cards"
+      ],
+      "measuredFrom": [
+        "cite:freetrial-layout"
+      ],
+      "columns": 2
+    },
+    "tablet": {
+      "layout": "stack",
+      "changes": [
+        "1 column; points 1 column"
+      ],
+      "measuredFrom": [
+        "cite:freetrial-layout"
+      ],
+      "columns": 1
+    },
+    "mobileLandscape": {
+      "layout": "resize",
+      "changes": [
+        "Heading 2rem (the 18px quirk only applies above 767)"
+      ],
+      "measuredFrom": [
+        "cite:freetrial-copy"
+      ],
+      "columns": 1
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "Gap 2.5rem"
+      ],
+      "measuredFrom": [
+        "cite:freetrial-layout"
+      ],
+      "columns": 1
+    }
+  },
+  "tokensUsed": [
+    "semantic.color.surface.brandDark",
+    "semantic.color.text.inverse",
+    "semantic.color.border.onDark",
+    "semantic.color.surface.glass",
+    "foundation.elevation.glass-blur"
+  ],
+  "accessibility": {
+    "headingLevel": 2,
+    "note": "70% white on #103a11; check contrast when changing copy size.",
+    "measuredFrom": [
+      "cite:freetrial-quirk"
+    ]
+  },
+  "measuredFrom": [
+    "cite:freetrial-quirk",
+    "cite:css-text-color-white",
+    "cite:html-freetrial-h2",
+    "cite:freetrial-copy",
+    "cite:freetrial-points",
+    "cite:freetrial-layout"
+  ],
+  "notes": [
+    "Real quirk kept for fidelity: the heading renders at 18px / 70% opacity (not H2 size) above 767px because .text-color-white out-cascades .heading-style-h2."
+  ]
+}

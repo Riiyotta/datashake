@@ -1,0 +1,19 @@
+{
+  "id": "component.bar-canvas",
+  "kind": "component",
+  "description": "p5 bar field (top-down in Build, bottom-up in Footer).",
+  "composes": [],
+  "tokensUsed": [
+    "foundation.color.bar-1",
+    "foundation.color.bar-2",
+    "foundation.color.bar-3"
+  ],
+  "motionPatterns": [
+    "p5-bar-field"
+  ],
+  "measuredFrom": [
+    "cite:bar-canvas-spec",
+    "cite:bar-canvas-palette",
+    "cite:bar-canvas-hover"
+  ]
+}

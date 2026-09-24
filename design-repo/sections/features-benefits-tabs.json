@@ -1,0 +1,178 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_features-benefits-tabs (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.features.benefits-tabs",
+  "nodeSection": "features.benefits-tabs",
+  "category": "FEATURE",
+  "purpose": "Explain four benefit pillars (Speed/Depth/Coverage/Relevance) in an auto-advancing tab set.",
+  "sourceComponent": "src/components/BenefitsTabs.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "tabs"
+    ],
+    "properties": {
+      "tabs": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 4,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "accent",
+            "title",
+            "body",
+            "points",
+            "illustration"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 2,
+              "x-observedMaxWords": 1
+            },
+            "accent": {
+              "enum": [
+                "blue",
+                "orange",
+                "purple",
+                "yellow"
+              ]
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 8,
+              "x-observedMaxWords": 6
+            },
+            "body": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 62,
+              "x-observedMaxWords": 49
+            },
+            "points": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 3,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxWords": 13,
+                "x-observedMaxWords": 10
+              }
+            },
+            "illustration": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/media"
+                },
+                {
+                  "properties": {
+                    "assetRole": {
+                      "enum": [
+                        "product-lottie",
+                        "decorative-pattern"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "tabs-autoadvance",
+      "lottie-loop"
+    ],
+    "reducedMotionFallback": "No auto-advance timer and no progress-bar fill; tabs change only on user action with an instant pane swap; tab Lotties show one static frame.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:benefits-consts",
+      "cite:benefits-lottie-loop",
+      "cite:benefits-motion",
+      "cite:html-tab-speed",
+      "cite:ui-lottie"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "4-column tab grid over a 2-column pane"
+      ],
+      "measuredFrom": [
+        "cite:benefits-strip"
+      ],
+      "columns": 4
+    },
+    "tablet": {
+      "layout": "scroll-strip",
+      "changes": [
+        "Tabs become a 200px-wide horizontally scrolling strip; pane 1 column"
+      ],
+      "measuredFrom": [
+        "cite:benefits-strip"
+      ],
+      "columns": 1
+    },
+    "mobileLandscape": {
+      "layout": "scroll-strip",
+      "changes": [
+        "Strip auto-centres the active tab below 768px"
+      ],
+      "measuredFrom": [
+        "cite:benefits-motion"
+      ],
+      "columns": 1
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "Tab icons 20px"
+      ],
+      "measuredFrom": [
+        "cite:benefits-tabs"
+      ],
+      "columns": 1
+    }
+  },
+  "tokensUsed": [
+    "semantic.color.accent.yellow.tint",
+    "semantic.color.accent.blue.tint",
+    "semantic.color.accent.orange.tint",
+    "semantic.color.accent.purple.tint",
+    "semantic.typography.h3"
+  ],
+  "accessibility": {
+    "pattern": "WAI-ARIA tabs (role=tablist/tab/tabpanel, aria-selected, roving tabindex).",
+    "measuredFrom": [
+      "cite:benefits-motion"
+    ]
+  },
+  "measuredFrom": [
+    "cite:benefits-tabs",
+    "cite:benefits-motion",
+    "cite:benefits-consts",
+    "cite:benefits-strip",
+    "cite:benefits-lottie-loop",
+    "cite:html-tab-speed"
+  ]
+}

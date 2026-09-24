@@ -1,0 +1,113 @@
+{
+  "$description": "Component-scoped button tokens.",
+  "component": {
+    "button": {
+      "arrow": {
+        "base": {
+          "background": {
+            "$type": "color",
+            "$value": "{semantic.color.action.primary}",
+            "$description": "Green fill.",
+            "measuredFrom": [
+              "cite:ui-arrow-variants"
+            ]
+          },
+          "backgroundHover": {
+            "$type": "color",
+            "$value": "{semantic.color.action.primaryHover}",
+            "$description": "Hover fill.",
+            "measuredFrom": [
+              "cite:ui-arrow-variants"
+            ]
+          },
+          "label": {
+            "$type": "color",
+            "$value": "{semantic.color.text.primary}",
+            "$description": "Label.",
+            "measuredFrom": [
+              "cite:ui-arrow-variants"
+            ]
+          }
+        },
+        "white": {
+          "background": {
+            "$type": "color",
+            "$value": "{semantic.color.action.light}",
+            "$description": "White fill on dark green.",
+            "measuredFrom": [
+              "cite:ui-arrow-variants"
+            ]
+          },
+          "backgroundHover": {
+            "$type": "color",
+            "$value": "{semantic.color.action.lightHover}",
+            "$description": "Hover.",
+            "measuredFrom": [
+              "cite:ui-arrow-variants"
+            ]
+          }
+        },
+        "fullWidth": {
+          "background": {
+            "$type": "color",
+            "$value": "{semantic.color.action.dark}",
+            "$description": "Full-width black bar.",
+            "measuredFrom": [
+              "cite:ui-arrow-variants"
+            ]
+          },
+          "backgroundHover": {
+            "$type": "color",
+            "$value": "{semantic.color.action.darkHover}",
+            "$description": "Hover.",
+            "measuredFrom": [
+              "cite:ui-arrow-variants"
+            ]
+          }
+        },
+        "paddingX": {
+          "$type": "dimension",
+          "$value": "{foundation.spacing.1-5}",
+          "$description": "1.5rem.",
+          "measuredFrom": [
+            "cite:ui-arrow-variants"
+          ]
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{foundation.radius.none}",
+          "$description": "0.",
+          "measuredFrom": [
+            "cite:css-radius-zero"
+          ]
+        }
+      },
+      "outline": {
+        "border": {
+          "$type": "color",
+          "$value": "{semantic.color.border.default}",
+          "$description": "Dashed-edge outline.",
+          "measuredFrom": [
+            "cite:idx-dashed-button"
+          ]
+        },
+        "label": {
+          "$type": "color",
+          "$value": "{semantic.color.text.muted}",
+          "$description": "#666 -> #0d0d0d on hover.",
+          "measuredFrom": [
+            "cite:idx-dashed-button"
+          ]
+        },
+        "minHeight": {
+          "$type": "dimension",
+          "$value": "56px",
+          "$description": "50px at <=767.",
+          "measuredFrom": [
+            "cite:ui-outline-variants"
+          ]
+        }
+      }
+    }
+  }
+}

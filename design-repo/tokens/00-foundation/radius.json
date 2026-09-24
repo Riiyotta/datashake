@@ -1,0 +1,16 @@
+{
+  "$description": "Radius scale: a single value, 0.",
+  "foundation": {
+    "radius": {
+      "none": {
+        "$type": "dimension",
+        "$value": "0",
+        "$description": "The only radius in the design system. Rounded shapes exist only in the out-of-scope third-party WhatsApp widget.",
+        "measuredFrom": [
+          "cite:css-radius-zero",
+          "cite:spec-radius-zero"
+        ]
+      }
+    }
+  }
+}

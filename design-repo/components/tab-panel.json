@@ -1,0 +1,21 @@
+{
+  "id": "component.tab-panel",
+  "kind": "component",
+  "description": "Benefit tab link with progress fill + two-column pane.",
+  "composes": [
+    "component.check-row",
+    "primitive.lottie-player"
+  ],
+  "tokensUsed": [
+    "semantic.color.accent.blue.tint",
+    "semantic.typography.h3"
+  ],
+  "motionPatterns": [
+    "tabs-autoadvance",
+    "lottie-loop"
+  ],
+  "measuredFrom": [
+    "cite:benefits-tabs",
+    "cite:benefits-motion"
+  ]
+}

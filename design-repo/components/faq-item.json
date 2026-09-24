@@ -1,0 +1,20 @@
+{
+  "id": "component.faq-item",
+  "kind": "component",
+  "description": "Question row with 80px plus-icon column; height-animated answer.",
+  "composes": [
+    "primitive.icon-embed"
+  ],
+  "tokensUsed": [
+    "semantic.typography.lead20",
+    "foundation.border.styleDashed"
+  ],
+  "motionPatterns": [
+    "faq-accordion"
+  ],
+  "measuredFrom": [
+    "cite:faq-items",
+    "cite:faq-timing",
+    "cite:faq-icon"
+  ]
+}

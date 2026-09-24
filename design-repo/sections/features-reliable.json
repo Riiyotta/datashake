@@ -1,0 +1,145 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_features-reliable (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.features.reliable",
+  "nodeSection": "features.reliable",
+  "category": "FEATURE",
+  "purpose": "Position Datashake as the most reliable data source with two check points and a demo CTA.",
+  "sourceComponent": "src/components/ReliableSection.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "heading",
+      "body",
+      "checks",
+      "cta",
+      "illustration"
+    ],
+    "properties": {
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 14,
+        "x-observedMaxWords": 11
+      },
+      "body": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 25,
+        "x-observedMaxWords": 20
+      },
+      "checks": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 4,
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 10,
+          "x-observedMaxWords": 8
+        }
+      },
+      "cta": {
+        "$ref": "#/definitions/cta"
+      },
+      "illustration": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/media"
+          },
+          {
+            "properties": {
+              "assetRole": {
+                "enum": [
+                  "product-lottie",
+                  "decorative-pattern"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "lottie-play-once-on-view",
+      "button-hover"
+    ],
+    "reducedMotionFallback": "970-04 renders its final frame statically; CTA hover without the arrow rotation tween.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:html-arrow-rotate",
+      "cite:idx-dashed-button",
+      "cite:reliable-lottie",
+      "cite:ui-arrow-rotate",
+      "cite:ui-arrow-variants"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "Grey band; copy left, illustration absolutely positioned bottom-right 50%"
+      ],
+      "measuredFrom": [
+        "cite:reliable-layout"
+      ],
+      "columns": 2
+    },
+    "tablet": {
+      "layout": "stack",
+      "changes": [
+        "Illustration becomes static, full width, below copy"
+      ],
+      "measuredFrom": [
+        "cite:reliable-layout"
+      ],
+      "columns": 1
+    },
+    "mobileLandscape": {
+      "layout": "unchanged",
+      "changes": [],
+      "measuredFrom": [
+        "cite:reliable-layout"
+      ],
+      "columns": 1
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "Body 1.125rem"
+      ],
+      "measuredFrom": [
+        "cite:reliable-copy"
+      ],
+      "columns": 1
+    }
+  },
+  "tokensUsed": [
+    "semantic.color.surface.subtle",
+    "semantic.typography.h2",
+    "semantic.typography.bodyMedium"
+  ],
+  "accessibility": {
+    "headingLevel": 2,
+    "measuredFrom": [
+      "cite:reliable-copy"
+    ]
+  },
+  "measuredFrom": [
+    "cite:reliable-copy",
+    "cite:reliable-lottie",
+    "cite:reliable-layout"
+  ]
+}

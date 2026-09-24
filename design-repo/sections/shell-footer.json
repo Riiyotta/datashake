@@ -1,0 +1,246 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_shell-footer (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.shell.footer",
+  "nodeSection": "shell.footer",
+  "category": "FOOTER",
+  "purpose": "Newsletter band, brand + socials + demo CTA, four headed link columns, and a bottom bar field. Renders its own trailing divider.",
+  "sourceComponent": "src/components/Footer.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "newsletterHeading",
+      "newsletterSlot",
+      "brand",
+      "socials",
+      "cta",
+      "columns",
+      "legalLine"
+    ],
+    "properties": {
+      "newsletterHeading": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 8,
+        "x-observedMaxWords": 6
+      },
+      "newsletterSlot": {
+        "const": "reserved-placeholder"
+      },
+      "brand": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/media"
+          },
+          {
+            "properties": {
+              "assetRole": {
+                "enum": [
+                  "brand-logo"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "socials": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 4,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "platform",
+            "href",
+            "icon"
+          ],
+          "properties": {
+            "platform": {
+              "enum": [
+                "linkedin",
+                "facebook",
+                "instagram",
+                "x"
+              ]
+            },
+            "href": {
+              "$ref": "#/definitions/href"
+            },
+            "icon": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/media"
+                },
+                {
+                  "properties": {
+                    "assetRole": {
+                      "enum": [
+                        "social-icon"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "cta": {
+        "$ref": "#/definitions/cta"
+      },
+      "columns": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 4,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "heading",
+            "links"
+          ],
+          "properties": {
+            "heading": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 2,
+              "x-observedMaxWords": 1
+            },
+            "links": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 8,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxWords": 5,
+                    "x-observedMaxWords": 4
+                  },
+                  "href": {
+                    "$ref": "#/definitions/href"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "legalLine": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 7,
+        "x-observedMaxWords": 5
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustBeLast": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "p5-bar-field",
+      "link-color-hover",
+      "button-hover"
+    ],
+    "reducedMotionFallback": "Bar field renders one static frame with no pulse or pointer reaction; link and button hovers change colour instantly.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:bar-canvas-hover",
+      "cite:bar-canvas-palette",
+      "cite:bar-canvas-random",
+      "cite:bar-canvas-spec",
+      "cite:css-footer-link",
+      "cite:footer-link-hover",
+      "cite:html-arrow-rotate",
+      "cite:idx-dashed-button",
+      "cite:ui-arrow-rotate",
+      "cite:ui-arrow-variants"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        ".4fr brand column | 1fr link columns"
+      ],
+      "measuredFrom": [
+        "cite:footer-grid"
+      ],
+      "columns": 2
+    },
+    "tablet": {
+      "layout": "stack",
+      "changes": [
+        "1 column; newsletter band stacks; legal bar hidden"
+      ],
+      "measuredFrom": [
+        "cite:footer-grid",
+        "cite:footer-legal"
+      ],
+      "columns": 1
+    },
+    "mobileLandscape": {
+      "layout": "unchanged",
+      "changes": [],
+      "measuredFrom": [
+        "cite:footer-grid"
+      ],
+      "columns": 1
+    },
+    "mobilePortrait": {
+      "layout": "stack",
+      "changes": [
+        "Link columns stack vertically with 3rem gap"
+      ],
+      "measuredFrom": [
+        "cite:footer-grid"
+      ],
+      "columns": 1
+    }
+  },
+  "tokensUsed": [
+    "semantic.color.surface.subtle",
+    "semantic.color.text.muted",
+    "semantic.color.text.primary",
+    "foundation.color.bar-1"
+  ],
+  "accessibility": {
+    "landmark": "contentinfo",
+    "note": "Newsletter form is a reserved-height placeholder (the HubSpot embed is intentionally not reproduced).",
+    "measuredFrom": [
+      "cite:footer-hubspot"
+    ]
+  },
+  "measuredFrom": [
+    "cite:footer-columns",
+    "cite:footer-socials",
+    "cite:footer-newsletter",
+    "cite:footer-hubspot",
+    "cite:html-hubspot",
+    "cite:footer-grid",
+    "cite:footer-link-hover",
+    "cite:css-footer-link",
+    "cite:footer-canvas",
+    "cite:footer-trailing-divider"
+  ],
+  "notes": [
+    "The footer's own trailing LinesDivider is internal to this section (Footer.jsx:141) and is not a PageSpec node."
+  ]
+}

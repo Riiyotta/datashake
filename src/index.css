@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'Altriviera';
+  src: url('/fonts/Altriviera-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* The live page also loads Google Fonts' Inter (css2 ?family=Inter:wght@400;500;600) from the
+   newsletter embed, AFTER the Webflow faces. For the latin unicode-range the later faces win,
+   so the glyphs actually rendered on live are Google's variable Inter v20 (verified via CDP
+   getPlatformFontsForNode: "Inter-Regular_Medium"), not the Webflow Inter 3.x files above.
+   Self-hosted copy of that latin subset; must stay after the faces above. */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Latin-Variable-GF.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fluid root font-size — mirrors the original's inline style exactly. */
+:root {
+  --font-from: 16;
+  --font-to: 16;
+  --vw-from: calc(1440 / 100);
+  --vw-to: calc(1920 / 100);
+  --coefficient: calc((var(--font-to) - var(--font-from)) / (var(--vw-to) - var(--vw-from)));
+  --base: calc((var(--font-from) - var(--vw-from) * var(--coefficient)) / 16);
+}
+html {
+  font-size: calc(var(--base) * 1rem + var(--coefficient) * 1vw);
+}
+@media screen and (max-width: 1440px) {
+  :root { --font-from: 13; --font-to: 16; --vw-from: calc(960 / 100); --vw-to: calc(1440 / 100); }
+}
+@media screen and (max-width: 960px) {
+  :root { --font-from: 12; --font-to: 16; --vw-from: calc(479 / 100); --vw-to: calc(960 / 100); }
+}
+@media screen and (max-width: 479px) {
+  :root { --font-from: 12; --font-to: 16; --vw-from: calc(1 / 100); --vw-to: calc(479 / 100); }
+}
+
+@layer base {
+  /* Original body (page CSS): system-ui stack, #000, 1rem / 1.5. Every text role sets
+     its own family; this matters for un-classed wrappers (e.g. the inline-SVG line boxes). */
+  body {
+    margin: 0;
+    background-color: #fff;
+    color: theme('colors.pure-black');
+    font-family: theme('fontFamily.system');
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  /* Webflow base: links default to the brand link blue. */
+  a {
+    color: theme('colors.link');
+  }
+  /* Webflow base: images are inline-block / middle, SVGs are inline and fill their embed box.
+     The inline SVG baseline gap is part of the original's measured Lottie container heights. */
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  svg {
+    display: inline;
+    vertical-align: baseline;
+    width: 100%;
+    height: 100%;
+  }
+  *[tabindex]:focus-visible {
+    outline: 0.125rem solid theme('colors.focus');
+    outline-offset: 0.125rem;
+  }
+}
+
+@layer components {
+  /* [data-wf--button-outline--variant="base" | "small"] dashed-edge outline button */
+  .btn-outline-dashed {
+    background-image: repeating-linear-gradient(-13deg, #d9d9d9, #d9d9d9 11px, transparent 11px, transparent 18px, #d9d9d9 18px),
+      repeating-linear-gradient(77deg, #d9d9d9, #d9d9d9 11px, transparent 11px, transparent 15px, #d9d9d9 18px),
+      repeating-linear-gradient(167deg, #d9d9d9, #d9d9d9 11px, transparent 11px, transparent 15px, #d9d9d9 18px),
+      repeating-linear-gradient(257deg, #d9d9d9, #d9d9d9 11px, transparent 11px, transparent 18px, #d9d9d9 18px);
+    background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+    color: theme('colors.grey-v2');
+    transition: color 300ms ease;
+  }
+  .btn-outline-dashed:hover {
+    background-image: repeating-linear-gradient(-13deg, #d9d9d9, #d9d9d9 11px, transparent 11px, transparent 0px, #d9d9d9 0px),
+      repeating-linear-gradient(77deg, #d9d9d9, #d9d9d9 11px, transparent 11px, transparent 0px, #d9d9d9 0px),
+      repeating-linear-gradient(167deg, #d9d9d9, #d9d9d9 11px, transparent 0px, transparent 0px, #d9d9d9 0px),
+      repeating-linear-gradient(257deg, #d9d9d9, #d9d9d9 11px, transparent 0px, transparent 0px, #d9d9d9 0px);
+    color: theme('colors.black');
+  }
+
+  /* .typed-words::after cursor from the original type-embed <style> */
+  .typed-cursor-css::after {
+    content: '|';
+    display: inline;
+    animation: ds-blink 1s infinite;
+  }
+  @keyframes ds-blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}

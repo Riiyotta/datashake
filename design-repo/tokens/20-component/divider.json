@@ -1,0 +1,53 @@
+{
+  "$description": "Divider tokens (base band + section-internal strips).",
+  "component": {
+    "divider": {
+      "base": {
+        "border": {
+          "$type": "color",
+          "$value": "{semantic.color.border.default}",
+          "$description": "Top+bottom hairline.",
+          "measuredFrom": [
+            "cite:ui-lines-divider"
+          ]
+        },
+        "minHeightTablet": {
+          "$type": "dimension",
+          "$value": "4rem",
+          "$description": "<=991.",
+          "measuredFrom": [
+            "cite:ui-lines-divider"
+          ]
+        },
+        "minHeightMobilePortrait": {
+          "$type": "dimension",
+          "$value": "3.5rem",
+          "$description": "<=479.",
+          "measuredFrom": [
+            "cite:ui-lines-divider"
+          ]
+        }
+      },
+      "sideStrip": {
+        "width": {
+          "$type": "dimension",
+          "$value": "8rem",
+          "$description": "Section-internal vertical strip (Problem/Solution).",
+          "measuredFrom": [
+            "cite:ui-strip-dividers"
+          ]
+        }
+      },
+      "narrowStrip": {
+        "width": {
+          "$type": "dimension",
+          "$value": "3rem",
+          "$description": "Section-internal vertical strip (Industries).",
+          "measuredFrom": [
+            "cite:ui-strip-dividers"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "component.word-rotator",
+  "kind": "component",
+  "description": "GSAP vertical word rotator appended to the H1.",
+  "composes": [],
+  "tokensUsed": [
+    "semantic.color.text.accent",
+    "semantic.typography.h1"
+  ],
+  "motionPatterns": [
+    "hero-word-rotator"
+  ],
+  "measuredFrom": [
+    "cite:hero-rotator-timing",
+    "cite:hero-item-height"
+  ]
+}

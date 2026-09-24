@@ -1,0 +1,147 @@
+{
+  "$description": "Semantic type roles; composite values alias foundation typography.",
+  "semantic": {
+    "typography": {
+      "h1": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{foundation.typography.fontFamily.display}",
+          "fontSize": "{foundation.typography.fontSize.h1-hero}",
+          "fontWeight": "{foundation.typography.fontWeight.regular}",
+          "lineHeight": "{foundation.typography.lineHeight.heading}",
+          "letterSpacing": "{foundation.typography.letterSpacing.tight-2}"
+        },
+        "$description": "Semantic type role 'h1'.",
+        "measuredFrom": [
+          "cite:hero-copy"
+        ]
+      },
+      "h2": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{foundation.typography.fontFamily.display}",
+          "fontSize": "{foundation.typography.fontSize.h2}",
+          "fontWeight": "{foundation.typography.fontWeight.regular}",
+          "lineHeight": "{foundation.typography.lineHeight.heading}",
+          "letterSpacing": "{foundation.typography.letterSpacing.tight-15}"
+        },
+        "$description": "Semantic type role 'h2'.",
+        "measuredFrom": [
+          "cite:ui-type-fragments"
+        ]
+      },
+      "h3": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{foundation.typography.fontFamily.display}",
+          "fontSize": "{foundation.typography.fontSize.h3}",
+          "fontWeight": "{foundation.typography.fontWeight.regular}",
+          "lineHeight": "{foundation.typography.lineHeight.heading}",
+          "letterSpacing": "{foundation.typography.letterSpacing.h3}"
+        },
+        "$description": "Semantic type role 'h3'.",
+        "measuredFrom": [
+          "cite:ui-type-fragments"
+        ]
+      },
+      "quote": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{foundation.typography.fontFamily.display}",
+          "fontSize": "{foundation.typography.fontSize.quote-32}",
+          "fontWeight": "{foundation.typography.fontWeight.regular}",
+          "lineHeight": "{foundation.typography.lineHeight.quote}",
+          "letterSpacing": "{foundation.typography.letterSpacing.tight-2}"
+        },
+        "$description": "Semantic type role 'quote'.",
+        "measuredFrom": [
+          "cite:testimonials-items"
+        ]
+      },
+      "bodyRegular": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{foundation.typography.fontFamily.sans}",
+          "fontSize": "{foundation.typography.fontSize.regular}",
+          "fontWeight": "{foundation.typography.fontWeight.regular}",
+          "lineHeight": "{foundation.typography.lineHeight.body}",
+          "letterSpacing": "{foundation.typography.letterSpacing.tight-1}"
+        },
+        "$description": "Semantic type role 'bodyRegular'.",
+        "measuredFrom": [
+          "cite:ui-type-fragments"
+        ]
+      },
+      "bodySmall": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{foundation.typography.fontFamily.sans}",
+          "fontSize": "{foundation.typography.fontSize.small}",
+          "fontWeight": "{foundation.typography.fontWeight.regular}",
+          "lineHeight": "{foundation.typography.lineHeight.body}",
+          "letterSpacing": "{foundation.typography.letterSpacing.tight-1}"
+        },
+        "$description": "Semantic type role 'bodySmall'.",
+        "measuredFrom": [
+          "cite:ui-type-fragments"
+        ]
+      },
+      "bodyMedium": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{foundation.typography.fontFamily.sans}",
+          "fontSize": "{foundation.typography.fontSize.medium}",
+          "fontWeight": "{foundation.typography.fontWeight.regular}",
+          "lineHeight": "{foundation.typography.lineHeight.body}",
+          "letterSpacing": "{foundation.typography.letterSpacing.tight-15}"
+        },
+        "$description": "Semantic type role 'bodyMedium'.",
+        "measuredFrom": [
+          "cite:ui-type-fragments"
+        ]
+      },
+      "lead20": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{foundation.typography.fontFamily.sans}",
+          "fontSize": "{foundation.typography.fontSize.large-20}",
+          "fontWeight": "{foundation.typography.fontWeight.regular}",
+          "lineHeight": "{foundation.typography.lineHeight.body}",
+          "letterSpacing": "{foundation.typography.letterSpacing.tight-2}"
+        },
+        "$description": "Semantic type role 'lead20'.",
+        "measuredFrom": [
+          "cite:hero-copy"
+        ]
+      },
+      "lead24": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{foundation.typography.fontFamily.sans}",
+          "fontSize": "{foundation.typography.fontSize.large-24}",
+          "fontWeight": "{foundation.typography.fontWeight.regular}",
+          "lineHeight": "{foundation.typography.lineHeight.body}",
+          "letterSpacing": "{foundation.typography.letterSpacing.tight-2}"
+        },
+        "$description": "Semantic type role 'lead24'.",
+        "measuredFrom": [
+          "cite:problem-copy"
+        ]
+      },
+      "button": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{foundation.typography.fontFamily.sans}",
+          "fontSize": "{foundation.typography.fontSize.medium}",
+          "fontWeight": "{foundation.typography.fontWeight.medium}",
+          "lineHeight": "{foundation.typography.lineHeight.none}",
+          "letterSpacing": "{foundation.typography.letterSpacing.tight-2}"
+        },
+        "$description": "Semantic type role 'button'.",
+        "measuredFrom": [
+          "cite:ui-arrow-variants"
+        ]
+      }
+    }
+  }
+}

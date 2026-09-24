@@ -1,0 +1,388 @@
+{
+  "$comment": "Closed list of every primitive/component/section a generator may instantiate, the settable node properties, and the closed assetRole registry. Parity with files on disk and with the schema is enforced by extraction/verify_all.py.",
+  "allowlistVersion": "1.0.0",
+  "nodeSettableProperties": [
+    "section",
+    "variant",
+    "content",
+    "motion"
+  ],
+  "motionSettableProperties": [
+    "patterns",
+    "reducedMotionFallback",
+    "fallbackSource"
+  ],
+  "pageSettableProperties": [
+    "pageSpecVersion",
+    "template",
+    "route",
+    "contentProvenance",
+    "sourceContentNotice",
+    "nodes"
+  ],
+  "primitives": {
+    "primitive.button-arrow": {
+      "contractFile": "primitives/button-arrow.json"
+    },
+    "primitive.button-outline": {
+      "contractFile": "primitives/button-outline.json"
+    },
+    "primitive.eyebrow": {
+      "contractFile": "primitives/eyebrow.json"
+    },
+    "primitive.badge-dashed": {
+      "contractFile": "primitives/badge-dashed.json"
+    },
+    "primitive.icon-embed": {
+      "contractFile": "primitives/icon-embed.json"
+    },
+    "primitive.text-link": {
+      "contractFile": "primitives/text-link.json"
+    },
+    "primitive.lottie-player": {
+      "contractFile": "primitives/lottie-player.json"
+    }
+  },
+  "components": {
+    "component.check-row": {
+      "contractFile": "components/check-row.json"
+    },
+    "component.nav-dropdown": {
+      "contractFile": "components/nav-dropdown.json"
+    },
+    "component.logo-tile": {
+      "contractFile": "components/logo-tile.json"
+    },
+    "component.stat-tile": {
+      "contractFile": "components/stat-tile.json"
+    },
+    "component.use-case-card": {
+      "contractFile": "components/use-case-card.json"
+    },
+    "component.faq-item": {
+      "contractFile": "components/faq-item.json"
+    },
+    "component.tab-panel": {
+      "contractFile": "components/tab-panel.json"
+    },
+    "component.testimonial-panel": {
+      "contractFile": "components/testimonial-panel.json"
+    },
+    "component.bar-canvas": {
+      "contractFile": "components/bar-canvas.json"
+    },
+    "component.word-rotator": {
+      "contractFile": "components/word-rotator.json"
+    },
+    "component.typed-line": {
+      "contractFile": "components/typed-line.json"
+    },
+    "component.lines-divider": {
+      "contractFile": "components/lines-divider.json"
+    }
+  },
+  "sections": {
+    "section.shell.navbar": {
+      "contractFile": "sections/shell-navbar.json",
+      "nodeSection": "shell.navbar",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.hero.api-search": {
+      "contractFile": "sections/hero-api-search.json",
+      "nodeSection": "hero.api-search",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.proof.logo-grid": {
+      "contractFile": "sections/proof-logo-grid.json",
+      "nodeSection": "proof.logo-grid",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.shell.lines-divider": {
+      "contractFile": "sections/shell-lines-divider.json",
+      "nodeSection": "shell.lines-divider",
+      "pageLevelVariants": [
+        "base"
+      ]
+    },
+    "section.narrative.problem": {
+      "contractFile": "sections/narrative-problem.json",
+      "nodeSection": "narrative.problem",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.narrative.solution": {
+      "contractFile": "sections/narrative-solution.json",
+      "nodeSection": "narrative.solution",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.interactive.build-typed": {
+      "contractFile": "sections/interactive-build-typed.json",
+      "nodeSection": "interactive.build-typed",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.features.reliable": {
+      "contractFile": "sections/features-reliable.json",
+      "nodeSection": "features.reliable",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.features.benefits-tabs": {
+      "contractFile": "sections/features-benefits-tabs.json",
+      "nodeSection": "features.benefits-tabs",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.cta.free-trial": {
+      "contractFile": "sections/cta-free-trial.json",
+      "nodeSection": "cta.free-trial",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.features.industries-grid": {
+      "contractFile": "sections/features-industries-grid.json",
+      "nodeSection": "features.industries-grid",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.proof.testimonials": {
+      "contractFile": "sections/proof-testimonials.json",
+      "nodeSection": "proof.testimonials",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.content.faq": {
+      "contractFile": "sections/content-faq.json",
+      "nodeSection": "content.faq",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.cta.final": {
+      "contractFile": "sections/cta-final.json",
+      "nodeSection": "cta.final",
+      "pageLevelVariants": [
+        "default"
+      ]
+    },
+    "section.shell.footer": {
+      "contractFile": "sections/shell-footer.json",
+      "nodeSection": "shell.footer",
+      "pageLevelVariants": [
+        "default"
+      ]
+    }
+  },
+  "assetRoles": {
+    "brand-logo": {
+      "generation": "must-reuse-exact",
+      "guidance": "Datashake's own mark and wordmark. Reuse the exact file; never redraw, recolour, re-typeset or generate a look-alike, and never place it on a page that is not a Datashake page.",
+      "licensing": "Datashake trademark (real, live company).",
+      "knownAssets": [
+        "public/assets/693864b3bf7cdd4a83615647_Datashake-logo.svg",
+        "inline:src/components/svgs.js#logoMark",
+        "inline:src/components/svgs.js#logoText"
+      ],
+      "measuredFrom": [
+        "cite:footer-columns",
+        "cite:nav-menus"
+      ]
+    },
+    "customer-logo": {
+      "generation": "must-not-fabricate",
+      "guidance": "Real third-party brand logos (Qualtrics, Yext, The Home Depot, BrightLocal, Epicor, Talkwalker). Never generate, redraw, or imitate any real company's logo, and never add a company that was not supplied by Datashake with written permission. On a new page use 'placeholder:customer-logo' and leave the slot for a rights-cleared asset.",
+      "licensing": "Third-party trademarks; use implies an endorsement relationship Datashake must confirm. Not licensed for reuse in new pages.",
+      "knownAssets": [
+        "public/assets/695fde2155874d4fd12d0c4d_Qualtrics-Grey.svg",
+        "public/assets/695fdf576971eabc9e19d43a_Yext-Grey.svg",
+        "public/assets/695fd9af4bcc36dc8291d618_Yext-Logo.svg",
+        "public/assets/695fdfa1c2e0872bf1a3fae2_Home-Grey.svg",
+        "public/assets/6938845d5dc733d389b6a1ea_Logo-item.svg",
+        "public/assets/696a3746c87f28ab9e71429c_Bright-Logo.svg",
+        "public/assets/696a373d7cf15783304feb66_Bright-Color.svg",
+        "public/assets/696a36646b979b2b9ba7d7c1_Epicor-Logo.svg",
+        "public/assets/696a36ca255645d4685a09f1_Epicor-Color.svg",
+        "public/assets/695fdfe525c4cfc78899d65d_Talkwalker-Grey.svg",
+        "public/assets/695fd9e04757b43e0508f8c6_Talkwalker-Logo.svg"
+      ],
+      "measuredFrom": [
+        "cite:logos-data",
+        "cite:html-brightlocal"
+      ]
+    },
+    "product-screenshot": {
+      "generation": "must-not-fabricate",
+      "guidance": "The hero product image shows real third-party products (iPhone, Nike Air Max) and specific result counts. Never generate fake product UI, fake data counts, or imagery of real brands' products. New pages: 'placeholder:product-screenshot' to be replaced by a real, approved Datashake capture.",
+      "licensing": "Proprietary Datashake marketing asset depicting third-party brands.",
+      "knownAssets": [
+        "public/assets/6938803c45536fc95cbcf5fb_Hero-Image.webp"
+      ],
+      "measuredFrom": [
+        "cite:hero-poster"
+      ]
+    },
+    "product-lottie": {
+      "generation": "must-not-fabricate",
+      "guidance": "Proprietary Lottie illustrations (hero, problem, solution, 970-04, four benefit tabs). Do not reproduce them on new pages and do not generate imitations of them. New pages: 'placeholder:product-lottie' for a commissioned animation.",
+      "licensing": "Proprietary Datashake animation data.",
+      "knownAssets": [
+        "public/lottie/hero.json",
+        "public/lottie/problem.json",
+        "public/lottie/solution.json",
+        "public/lottie/970-04.json",
+        "public/lottie/970-15.json",
+        "public/lottie/970-16.json",
+        "public/lottie/970-17.json",
+        "public/lottie/970-18.json"
+      ],
+      "measuredFrom": [
+        "cite:hero-lottie",
+        "cite:problem-lottie",
+        "cite:solution-lottie",
+        "cite:reliable-lottie",
+        "cite:benefits-lottie-loop",
+        "cite:lottie-dir"
+      ]
+    },
+    "use-case-illustration": {
+      "generation": "must-not-fabricate",
+      "guidance": "Proprietary use-case illustrations; several depict real brands/products (e.g. an 'iPhone 17 face ID' comment). Never reproduce them in new pages or generate look-alikes that contain real brand names, real people or fabricated metrics. New pages: 'placeholder:use-case-illustration'.",
+      "licensing": "Proprietary Datashake artwork.",
+      "knownAssets": [
+        "public/assets/693b2752e7826c75201aa9c2_Crisis-Illustration.svg",
+        "public/assets/693aaa22543d41b64af90bdb_Benefit-Illustration.svg",
+        "public/assets/696a45da0f1229f20a28f1e4_RPFS-Illustration.webp",
+        "public/assets/693b280abb79699bcdc60aed_Deals-Illustration.svg",
+        "public/assets/693b283e2069033d2ea99e8f_Competitive-Illustration.svg",
+        "public/assets/695441357de4841a1da03c74_Retain-Illustration.webp",
+        "public/assets/69544152ed6bbdf3beee0095_Due-Illustration.webp",
+        "public/assets/693b2866ae8a9eeb03279bd4_Compliance-Illustration.svg",
+        "public/assets/695441741c57ad046429eddb_Client-Illustration.webp"
+      ],
+      "measuredFrom": [
+        "cite:industries-cards"
+      ]
+    },
+    "ui-icon": {
+      "generation": "may-generate-new",
+      "guidance": "Small line/fill UI icons (14px eyebrow caps, 40px menu/stat icons, 32px check and arrow chips). May be newly generated as 'generate:<description>' in the same style: square 0-radius frames, #3fe844 / #0d0d0d / #d9d9d9 only, no text, no brand marks.",
+      "licensing": "Existing icons are Datashake assets; newly generated icons must be original.",
+      "knownAssets": [
+        "public/assets/6939491eb3d2b172910b35cc_Eyebrow-Icon.svg",
+        "public/assets/693949364cde9b1d0482c0ed_Eyebrow-Icon-2.svg",
+        "public/assets/6969128626f2de4821c55b3c_Red-Eyebrow-left.svg",
+        "public/assets/6969128db4c4691effcdf50f_Red-eyebrow-right.svg",
+        "public/assets/6954225ff03c26feba9890d0_Uptime-Icon.svg",
+        "public/assets/69542268db277324767e7b27_Security-Icon.svg",
+        "public/assets/6954227c05f17176c82af1b1_Scale-Icon.svg",
+        "public/assets/6954228708675a34854006f1_Industry-Icon.svg",
+        "public/assets/69542291ef3d3221396413bf_Coverage-Icon.svg",
+        "public/assets/695f72f77ae84cbdda60514b_Frame-36432.svg",
+        "public/assets/695f73f4ecb0ad342279c6f9_Frame-36432.svg",
+        "public/assets/695fd6144754d3af93bf2522_Frame-36432.svg",
+        "public/assets/695f7508a1c44f588d5784eb_Frame-36432.svg",
+        "public/assets/695f7525f738456aed5590a9_tEMPLATE.svg",
+        "public/assets/69c3e9912c34b76aed113aad_Frame-36420.svg",
+        "public/assets/695fd665e46fe59b284adc9f_Frame-36432.svg",
+        "public/assets/695fd67c61a3dc10c5d8d68d_Frame-36432.svg",
+        "public/assets/695f7648758258315edacf34_Customer.svg",
+        "public/assets/695f76586e0697704383a7f8_Retail.svg",
+        "public/assets/695f76639705a8e5b6829eb5_Social.svg",
+        "public/assets/695f766f655fcc9f92cd97b0_Pharmaceutical.svg",
+        "public/assets/695f7679f97a0549faf533b3_Reputataion.svg",
+        "public/assets/695f76814598a49a990adb85_Finance.svg",
+        "public/assets/695f768c19761d095c55df4a_Marketing.svg",
+        "public/assets/695f7696f3954786e6327188_Agencies.svg",
+        "inline:src/components/svgs.js#arrow32",
+        "inline:src/components/svgs.js#arrow20",
+        "inline:src/components/svgs.js#checkGreen32",
+        "inline:src/components/svgs.js#checkGreenBox",
+        "inline:src/components/svgs.js#checkYellow",
+        "inline:src/components/svgs.js#checkBlue",
+        "inline:src/components/svgs.js#checkOrange",
+        "inline:src/components/svgs.js#checkPurple",
+        "inline:src/components/svgs.js#tabSpeed",
+        "inline:src/components/svgs.js#tabDepth",
+        "inline:src/components/svgs.js#tabCoverage",
+        "inline:src/components/svgs.js#tabRelevance",
+        "inline:src/components/svgs.js#subSpeed",
+        "inline:src/components/svgs.js#subDepth",
+        "inline:src/components/svgs.js#subCoverage",
+        "inline:src/components/svgs.js#subRelevance",
+        "inline:src/components/svgs.js#plus"
+      ],
+      "measuredFrom": [
+        "cite:ui-eyebrow",
+        "cite:solution-stats",
+        "cite:nav-menus"
+      ]
+    },
+    "social-icon": {
+      "generation": "must-reuse-exact",
+      "guidance": "Official platform marks (LinkedIn, Facebook, Instagram, X). Reuse the exact marks; never redraw or restyle beyond the #666 -> #3fe844 hover colour.",
+      "licensing": "Platform trademarks, used under each platform's brand guidelines.",
+      "knownAssets": [
+        "inline:src/components/svgs.js#linkedin",
+        "inline:src/components/svgs.js#facebook",
+        "inline:src/components/svgs.js#instagram",
+        "inline:src/components/svgs.js#x"
+      ],
+      "measuredFrom": [
+        "cite:footer-socials"
+      ]
+    },
+    "decorative-pattern": {
+      "generation": "may-generate-new",
+      "guidance": "Non-representational geometric backgrounds (hairline divider art, strip patterns, green squares, dashed CTA lattice, testimonial edge art). May be newly generated as 'generate:<description>' from the palette only (#3fe844, #d9d9d9, tints), 0-radius, no text or imagery.",
+      "licensing": "Existing patterns are Datashake assets.",
+      "knownAssets": [
+        "public/assets/6941785a4b1f2df4106341e2_Line-Divider.svg",
+        "public/assets/6939575c46881e7082982980_Divider-Horizontal.svg",
+        "public/assets/69398bd82470e86fed86a813_Squares-Background-Green.svg",
+        "public/assets/695442158ff7e237e5f5e875_CTA-Background.webp",
+        "public/assets/693b2bad262f15e43a700997_Testimonial-Background.svg",
+        "public/assets/693b30c87d7515b5b57b7614_Testimonial-Orange-BG.svg",
+        "public/assets/693b315a3bebea2f490621a6_Testimonial-Purple-BG.svg",
+        "public/assets/693b31cfb5fed498f4de1233_Testimonial-Yellow-BG.svg"
+      ],
+      "measuredFrom": [
+        "cite:ui-lines-divider",
+        "cite:freetrial-layout",
+        "cite:finalcta-bg",
+        "cite:testimonials-items"
+      ]
+    }
+  },
+  "assetRolePolicySummary": {
+    "mustReuseExact": [
+      "brand-logo",
+      "social-icon"
+    ],
+    "mayGenerateNew": [
+      "ui-icon",
+      "decorative-pattern"
+    ],
+    "mustNotFabricate": [
+      "customer-logo",
+      "product-screenshot",
+      "product-lottie",
+      "use-case-illustration"
+    ],
+    "forbiddenEverywhere": "Generating or reproducing real third-party logos, real people's names/quotes/photos, or proprietary Datashake illustrations/Lotties in a new page. No person-photo role exists by design."
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_proof-logo-grid (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.proof.logo-grid",
+  "nodeSection": "proof.logo-grid",
+  "category": "PROOF",
+  "purpose": "Social proof strip of customer/partner brands, each tile linking to its industry page.",
+  "sourceComponent": "src/components/LogoSection.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "caption",
+      "logos"
+    ],
+    "properties": {
+      "caption": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 12,
+        "x-observedMaxWords": 9
+      },
+      "logos": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 6,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "href",
+            "logo",
+            "logoHover"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 3,
+              "x-observedMaxWords": 2
+            },
+            "href": {
+              "$ref": "#/definitions/href"
+            },
+            "logo": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/media"
+                },
+                {
+                  "properties": {
+                    "assetRole": {
+                      "enum": [
+                        "customer-logo"
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "logoHover": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/media"
+                },
+                {
+                  "properties": {
+                    "assetRole": {
+                      "enum": [
+                        "customer-logo"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "logo-hover-crossfade"
+    ],
+    "reducedMotionFallback": "Hover swaps the grey logo for the colour logo and shows the arrow instantly, with no cross-fade or translate.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:logos-hover",
+      "cite:spec-logo-hover"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "6-column tile grid"
+      ],
+      "measuredFrom": [
+        "cite:logos-grid"
+      ],
+      "columns": 6
+    },
+    "tablet": {
+      "layout": "grid-collapse",
+      "changes": [
+        "2-column tile grid"
+      ],
+      "measuredFrom": [
+        "cite:logos-grid"
+      ],
+      "columns": 2
+    },
+    "mobileLandscape": {
+      "layout": "unchanged",
+      "changes": [],
+      "measuredFrom": [
+        "cite:logos-grid"
+      ],
+      "columns": 2
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "BrightLocal logo 28px tall"
+      ],
+      "measuredFrom": [
+        "cite:logos-hover"
+      ],
+      "columns": 2
+    }
+  },
+  "tokensUsed": [
+    "component.card.logoTile.minHeight",
+    "component.card.logoTile.hoverSurface",
+    "semantic.color.text.muted",
+    "semantic.typography.bodySmall"
+  ],
+  "accessibility": {
+    "note": "Each tile is a link; logo alt text names the company.",
+    "measuredFrom": [
+      "cite:logos-data"
+    ]
+  },
+  "measuredFrom": [
+    "cite:logos-data",
+    "cite:logos-caption",
+    "cite:logos-grid",
+    "cite:logos-hover",
+    "cite:html-brightlocal"
+  ],
+  "notes": [
+    "Logo-strip tile hover has no rotation (bg, cross-fade and arrow only, 300ms). The 360deg hover spin exists only on the navbar brand mark (section shell.navbar, pattern nav-logo-spin); never apply it here."
+  ]
+}

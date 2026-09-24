@@ -1,0 +1,169 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_proof-testimonials (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.proof.testimonials",
+  "nodeSection": "proof.testimonials",
+  "category": "PROOF",
+  "purpose": "Customer voice: four accent-coloured testimonial panels in a horizontal accordion.",
+  "sourceComponent": "src/components/Testimonials.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "items"
+    ],
+    "properties": {
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 4,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "role",
+            "quote",
+            "accent",
+            "attributionType"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 5,
+              "x-observedMaxWords": 4
+            },
+            "role": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 8,
+              "x-observedMaxWords": 6
+            },
+            "quote": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 60,
+              "x-observedMaxWords": 48
+            },
+            "accent": {
+              "enum": [
+                "blue",
+                "orange",
+                "purple",
+                "yellow"
+              ]
+            },
+            "attributionType": {
+              "enum": [
+                "source-verbatim",
+                "placeholder-pending-consent"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "testimonial-panel-switch"
+    ],
+    "reducedMotionFallback": "Panel switch is instant (no 0.8s width transition).",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:testimonials-desktop-only",
+      "cite:testimonials-transition"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "500px-tall horizontal accordion; vertical tab labels"
+      ],
+      "measuredFrom": [
+        "cite:testimonials-layout"
+      ]
+    },
+    "tablet": {
+      "layout": "stack",
+      "changes": [
+        "Tab links hidden; all panels stacked vertically; click switching disabled below 992px"
+      ],
+      "measuredFrom": [
+        "cite:testimonials-layout",
+        "cite:testimonials-desktop-only"
+      ],
+      "columns": 1
+    },
+    "mobileLandscape": {
+      "layout": "resize",
+      "changes": [
+        "Quote 1.5rem"
+      ],
+      "measuredFrom": [
+        "cite:testimonials-items"
+      ],
+      "columns": 1
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "Panel x-padding 1.5rem"
+      ],
+      "measuredFrom": [
+        "cite:testimonials-items"
+      ],
+      "columns": 1
+    }
+  },
+  "tokensUsed": [
+    "semantic.typography.quote",
+    "semantic.color.accent.blue.fg",
+    "semantic.color.accent.orange.fg",
+    "semantic.color.accent.purple.fg",
+    "semantic.color.accent.yellow.fg"
+  ],
+  "accessibility": {
+    "note": "Label text uses each card's own accent colour; check contrast of yellow #ffd521 on #fffbe9.",
+    "measuredFrom": [
+      "cite:testimonials-color"
+    ]
+  },
+  "measuredFrom": [
+    "cite:testimonials-items",
+    "cite:testimonials-color",
+    "cite:html-testimonial-colors",
+    "cite:testimonials-transition",
+    "cite:testimonials-desktop-only"
+  ],
+  "sourceRecords": [
+    {
+      "name": "Tech Lead",
+      "quote": "\"We’ve been using Datashake for over six years, and it’s been a big part of our business growth during that time. It has really helped improve our operations by providing consistent, reliable data that we can easily plug into our workflows.\""
+    },
+    {
+      "name": "Arkadiusz",
+      "quote": "“Datashake delivers exceptional value through their unique features and flexible APIs. Their team is highly collaborative and responsive, making them a pleasure to work with. I highly recommend their services.”"
+    },
+    {
+      "name": "Founder & Product Lead",
+      "quote": "“Working with Datashake has been a game-changer for our review management platform. Their review aggregation service covers 100+ sites and saves us a huge amount of development time and maintenance. Instead of constantly building and updating our own integrations, we can stay focused on making a great product.”"
+    },
+    {
+      "name": "Senior Technical Partner Manager",
+      "quote": "“Partnering with Datashake has been a great experience. Their customer success team is responsive, knowledgeable, and always quick to help. They’re open to evolving the product as our needs grow, and their framework makes scaling up or down extremely easy.”"
+    }
+  ],
+  "licensingNote": "Real testimonials attributed to real people/roles (e.g. 'Arkadiusz, Software Engineering Manager'). Reproduction only on a source-reproduction PageSpec; a new page must use attributionType 'placeholder-pending-consent' with non-source names/quotes and never invent a quote presented as genuine. There are no person photos in the source and no photo assetRole exists."
+}

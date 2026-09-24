@@ -1,0 +1,142 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_content-faq (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.content.faq",
+  "nodeSection": "content.faq",
+  "category": "FAQ",
+  "purpose": "Answer objections (coverage, pricing, compliance, setup) in a two-column accordion.",
+  "sourceComponent": "src/components/Faq.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "eyebrow",
+      "heading",
+      "items"
+    ],
+    "properties": {
+      "eyebrow": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 2,
+        "x-observedMaxWords": 1
+      },
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 4,
+        "x-observedMaxWords": 3
+      },
+      "items": {
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 14,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "question",
+            "answer"
+          ],
+          "properties": {
+            "question": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 12,
+              "x-observedMaxWords": 9
+            },
+            "answer": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 65,
+              "x-observedMaxWords": 52
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "faq-accordion"
+    ],
+    "reducedMotionFallback": "Answers expand/collapse instantly; plus icon swaps state without rotation.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:faq-icon",
+      "cite:faq-timing"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "1fr heading | 1.5fr accordion"
+      ],
+      "measuredFrom": [
+        "cite:faq-grid"
+      ],
+      "columns": 2
+    },
+    "tablet": {
+      "layout": "stack",
+      "changes": [
+        "1 column; question padding-left 1.5rem"
+      ],
+      "measuredFrom": [
+        "cite:faq-grid"
+      ],
+      "columns": 1
+    },
+    "mobileLandscape": {
+      "layout": "unchanged",
+      "changes": [],
+      "measuredFrom": [
+        "cite:faq-grid"
+      ],
+      "columns": 1
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "Question 1.125rem; icon 20px"
+      ],
+      "measuredFrom": [
+        "cite:faq-items"
+      ],
+      "columns": 1
+    }
+  },
+  "tokensUsed": [
+    "semantic.typography.h2",
+    "semantic.typography.lead20",
+    "semantic.typography.bodyRegular",
+    "semantic.color.border.default",
+    "foundation.border.styleDashed"
+  ],
+  "accessibility": {
+    "headingLevel": 2,
+    "keyboard": "Question rows are role=button with aria-expanded and Enter/Space.",
+    "structuredData": "Original embeds FAQPage JSON-LD.",
+    "measuredFrom": [
+      "cite:html-faq-jsonld"
+    ]
+  },
+  "measuredFrom": [
+    "cite:faq-items",
+    "cite:faq-heading",
+    "cite:faq-timing",
+    "cite:faq-icon",
+    "cite:faq-grid",
+    "cite:html-faq-jsonld"
+  ]
+}

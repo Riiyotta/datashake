@@ -1,0 +1,171 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_features-industries-grid (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.features.industries-grid",
+  "nodeSection": "features.industries-grid",
+  "category": "FEATURE",
+  "purpose": "Show nine concrete use cases as illustrated cards, closed by a full-width demo bar.",
+  "sourceComponent": "src/components/IndustriesSection.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "eyebrow",
+      "heading",
+      "intro",
+      "cards",
+      "cta"
+    ],
+    "properties": {
+      "eyebrow": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 4,
+        "x-observedMaxWords": 3
+      },
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 8,
+        "x-observedMaxWords": 6
+      },
+      "intro": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 33,
+        "x-observedMaxWords": 26
+      },
+      "cards": {
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 9,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "body",
+            "image"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 7,
+              "x-observedMaxWords": 5
+            },
+            "body": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 25,
+              "x-observedMaxWords": 20
+            },
+            "image": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/media"
+                },
+                {
+                  "properties": {
+                    "assetRole": {
+                      "enum": [
+                        "use-case-illustration",
+                        "decorative-pattern"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "cta": {
+        "$ref": "#/definitions/cta"
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "button-hover"
+    ],
+    "reducedMotionFallback": "Full-width CTA hover changes colour without the arrow rotation tween.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:html-arrow-rotate",
+      "cite:idx-dashed-button",
+      "cite:ui-arrow-rotate",
+      "cite:ui-arrow-variants"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "3rem strip | 3-column card grid | 3rem strip"
+      ],
+      "measuredFrom": [
+        "cite:industries-grid"
+      ],
+      "columns": 3
+    },
+    "tablet": {
+      "layout": "grid-collapse",
+      "changes": [
+        "Strips hidden; 2 columns"
+      ],
+      "measuredFrom": [
+        "cite:industries-grid",
+        "cite:ui-strip-dividers"
+      ],
+      "columns": 2
+    },
+    "mobileLandscape": {
+      "layout": "unchanged",
+      "changes": [],
+      "measuredFrom": [
+        "cite:industries-grid"
+      ],
+      "columns": 2
+    },
+    "mobilePortrait": {
+      "layout": "grid-collapse",
+      "changes": [
+        "1 column"
+      ],
+      "measuredFrom": [
+        "cite:industries-grid"
+      ],
+      "columns": 1
+    }
+  },
+  "tokensUsed": [
+    "component.card.useCase.imageHeight",
+    "component.card.useCase.padding",
+    "semantic.typography.lead24",
+    "semantic.typography.bodyRegular",
+    "component.button.arrow.fullWidth.background"
+  ],
+  "accessibility": {
+    "headingLevel": 2,
+    "note": "Card images need descriptive alt text.",
+    "measuredFrom": [
+      "cite:industries-cards"
+    ]
+  },
+  "measuredFrom": [
+    "cite:industries-cards",
+    "cite:industries-header",
+    "cite:industries-grid",
+    "cite:industries-cta"
+  ]
+}

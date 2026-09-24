@@ -1,0 +1,17 @@
+{
+  "id": "component.typed-line",
+  "kind": "component",
+  "description": "Typed.js phrase line with green left rule and CSS cursor.",
+  "composes": [],
+  "tokensUsed": [
+    "semantic.color.text.muted",
+    "foundation.border.accent"
+  ],
+  "motionPatterns": [
+    "typed-text-loop"
+  ],
+  "measuredFrom": [
+    "cite:build-typed-options",
+    "cite:idx-cursor-blink"
+  ]
+}

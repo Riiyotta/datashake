@@ -1,0 +1,208 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_hero-api-search (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.hero.api-search",
+  "nodeSection": "hero.api-search",
+  "category": "HERO",
+  "purpose": "Open the page with the core value proposition (one API across 150+ sources) and drive demo bookings.",
+  "sourceComponent": "src/components/Hero.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "announcement",
+      "headingLead",
+      "rotatingWords",
+      "subheading",
+      "primaryCta",
+      "secondaryCta",
+      "illustration",
+      "poster"
+    ],
+    "properties": {
+      "announcement": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "href"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxWords": 12,
+            "x-observedMaxWords": 9
+          },
+          "href": {
+            "$ref": "#/definitions/href"
+          }
+        }
+      },
+      "headingLead": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 13,
+        "x-observedMaxWords": 10
+      },
+      "rotatingWords": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 7,
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "maxWords": 3,
+          "x-observedMaxWords": 2
+        }
+      },
+      "subheading": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 23,
+        "x-observedMaxWords": 18
+      },
+      "primaryCta": {
+        "$ref": "#/definitions/cta"
+      },
+      "secondaryCta": {
+        "$ref": "#/definitions/cta"
+      },
+      "illustration": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/media"
+          },
+          {
+            "properties": {
+              "assetRole": {
+                "enum": [
+                  "product-lottie",
+                  "decorative-pattern"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "poster": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/media"
+          },
+          {
+            "properties": {
+              "assetRole": {
+                "enum": [
+                  "product-screenshot",
+                  "decorative-pattern"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hero-word-rotator",
+      "lottie-scroll-scrub",
+      "button-hover"
+    ],
+    "reducedMotionFallback": "Rotator stays on its first visible word (no timeline); hero Lottie renders a single static frame; button hovers change colour without the arrow rotation tween.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:hero-item-height",
+      "cite:hero-lottie",
+      "cite:hero-rotator-timing",
+      "cite:html-arrow-rotate",
+      "cite:html-rotator-script",
+      "cite:idx-dashed-button",
+      "cite:problem-lottie",
+      "cite:solution-lottie",
+      "cite:ui-arrow-rotate",
+      "cite:ui-arrow-variants",
+      "cite:ui-lottie"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "2 columns: copy | Lottie on #fafafa"
+      ],
+      "measuredFrom": [
+        "cite:hero-grid"
+      ],
+      "columns": 2
+    },
+    "tablet": {
+      "layout": "stack",
+      "changes": [
+        "1 column; H1 42px; rotator line 48px tall"
+      ],
+      "measuredFrom": [
+        "cite:hero-grid",
+        "cite:hero-copy"
+      ],
+      "columns": 1
+    },
+    "mobileLandscape": {
+      "layout": "resize",
+      "changes": [
+        "H1 38px; heading box 450px"
+      ],
+      "measuredFrom": [
+        "cite:hero-copy"
+      ],
+      "columns": 1
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "H1 2rem; rotator step 36px; content gap 2rem"
+      ],
+      "measuredFrom": [
+        "cite:hero-item-height"
+      ],
+      "columns": 1
+    }
+  },
+  "tokensUsed": [
+    "semantic.typography.h1",
+    "semantic.color.text.accent",
+    "semantic.color.surface.subtle",
+    "semantic.typography.lead20",
+    "component.button.arrow.base.background"
+  ],
+  "accessibility": {
+    "headingLevel": 1,
+    "note": "Rotating words are decorative continuation of the H1 sentence; keep the lead readable on its own.",
+    "measuredFrom": [
+      "cite:hero-copy"
+    ]
+  },
+  "measuredFrom": [
+    "cite:hero-copy",
+    "cite:hero-words",
+    "cite:hero-hidden-first",
+    "cite:html-rotate-hide",
+    "cite:hero-rotator-timing",
+    "cite:hero-lottie",
+    "cite:hero-poster"
+  ],
+  "notes": [
+    "The DOM rotate list begins with a hidden item ('customer conversations') that is never visible; rotatingWords lists only the 7 visible words (cite:hero-hidden-first, cite:html-rotate-hide)."
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "$comment": "Section contract. content is a JSON Schema fragment; every $ref (#/definitions/...) resolves inside schema/pagespec.schema.json, where this exact fragment is embedded as definitions.content_narrative-solution (verify_all.py checks they are identical). maxWords = ceil(1.25 x real observed max), min observed+1; x-observedMaxWords records the real observed count.",
+  "id": "section.narrative.solution",
+  "nodeSection": "narrative.solution",
+  "category": "NARRATIVE",
+  "purpose": "Answer the problem band with the unified-API solution, a CTA and five proof stats.",
+  "sourceComponent": "src/components/SolutionSection.jsx",
+  "variants": {
+    "default": {
+      "pageLevel": true,
+      "description": "The only variant observed."
+    }
+  },
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "eyebrow",
+      "heading",
+      "lead",
+      "body",
+      "cta",
+      "illustration",
+      "stats"
+    ],
+    "properties": {
+      "eyebrow": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 3,
+        "x-observedMaxWords": 2
+      },
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 12,
+        "x-observedMaxWords": 9
+      },
+      "lead": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 18,
+        "x-observedMaxWords": 14
+      },
+      "body": {
+        "type": "string",
+        "minLength": 1,
+        "maxWords": 57,
+        "x-observedMaxWords": 45
+      },
+      "cta": {
+        "$ref": "#/definitions/cta"
+      },
+      "illustration": {
+        "allOf": [
+          {
+            "$ref": "#/definitions/media"
+          },
+          {
+            "properties": {
+              "assetRole": {
+                "enum": [
+                  "product-lottie",
+                  "decorative-pattern"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "stats": {
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 5,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "icon",
+            "title",
+            "body"
+          ],
+          "properties": {
+            "icon": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/media"
+                },
+                {
+                  "properties": {
+                    "assetRole": {
+                      "enum": [
+                        "ui-icon"
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 4,
+              "x-observedMaxWords": 3
+            },
+            "body": {
+              "type": "string",
+              "minLength": 1,
+              "maxWords": 13,
+              "x-observedMaxWords": 10
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true
+  },
+  "motion": {
+    "allowedPatterns": [
+      "lottie-scroll-scrub",
+      "button-hover"
+    ],
+    "reducedMotionFallback": "Lottie renders one static frame instead of scrubbing 0->98%; CTA hover changes colour without the arrow rotation tween.",
+    "fallbackSource": "prescriptive-design-repo-policy",
+    "fallbackNote": "The original site has no prefers-reduced-motion handling (cite:spec-no-reduced-motion); this fallback is design-repo policy, not measured source behaviour.",
+    "measuredFrom": [
+      "cite:hero-lottie",
+      "cite:html-arrow-rotate",
+      "cite:idx-dashed-button",
+      "cite:problem-lottie",
+      "cite:solution-lottie",
+      "cite:ui-arrow-rotate",
+      "cite:ui-arrow-variants",
+      "cite:ui-lottie"
+    ]
+  },
+  "responsive": {
+    "desktop": {
+      "layout": "unchanged",
+      "changes": [
+        "Strip grid as Problem; stats 5 columns"
+      ],
+      "measuredFrom": [
+        "cite:solution-stats-grid"
+      ],
+      "columns": 5
+    },
+    "tablet": {
+      "layout": "grid-collapse",
+      "changes": [
+        "Strips hidden; stats 1 column"
+      ],
+      "measuredFrom": [
+        "cite:solution-stats-grid"
+      ],
+      "columns": 1
+    },
+    "mobileLandscape": {
+      "layout": "resize",
+      "changes": [
+        "Stat right borders removed"
+      ],
+      "measuredFrom": [
+        "cite:solution-stats-grid"
+      ],
+      "columns": 1
+    },
+    "mobilePortrait": {
+      "layout": "resize",
+      "changes": [
+        "Lead 1.25rem"
+      ],
+      "measuredFrom": [
+        "cite:solution-copy"
+      ],
+      "columns": 1
+    }
+  },
+  "tokensUsed": [
+    "semantic.typography.h2",
+    "semantic.typography.lead24",
+    "semantic.typography.bodyMedium",
+    "semantic.color.border.default"
+  ],
+  "accessibility": {
+    "headingLevel": 2,
+    "measuredFrom": [
+      "cite:solution-copy"
+    ]
+  },
+  "measuredFrom": [
+    "cite:solution-copy",
+    "cite:solution-body-cta",
+    "cite:solution-lottie",
+    "cite:solution-stats",
+    "cite:solution-stats-grid",
+    "cite:solution-shares-problem-grid"
+  ]
+}

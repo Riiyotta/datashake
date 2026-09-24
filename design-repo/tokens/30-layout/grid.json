@@ -1,0 +1,85 @@
+{
+  "$description": "Layout/grid tokens.",
+  "layout": {
+    "container": {
+      "maxWidth": {
+        "$type": "dimension",
+        "$value": "90rem",
+        "$description": "container-large.",
+        "measuredFrom": [
+          "cite:tw-maxwidth",
+          "cite:ui-layout-fragments"
+        ]
+      }
+    },
+    "gutter": {
+      "desktop": {
+        "$type": "dimension",
+        "$value": "2.5rem",
+        "$description": ".padding-global.",
+        "measuredFrom": [
+          "cite:ui-layout-fragments"
+        ]
+      },
+      "tablet": {
+        "$type": "dimension",
+        "$value": "1.25rem",
+        "$description": "<=991.",
+        "measuredFrom": [
+          "cite:ui-layout-fragments"
+        ]
+      },
+      "mobileLandscape": {
+        "$type": "dimension",
+        "$value": ".75rem",
+        "$description": "<=767.",
+        "measuredFrom": [
+          "cite:ui-layout-fragments"
+        ]
+      }
+    },
+    "sectionPadding": {
+      "desktop": {
+        "$type": "dimension",
+        "$value": "3rem",
+        "$description": "padding-3rem.",
+        "measuredFrom": [
+          "cite:ui-layout-fragments"
+        ]
+      },
+      "tablet": {
+        "$type": "dimension",
+        "$value": "2rem",
+        "$description": "<=991.",
+        "measuredFrom": [
+          "cite:ui-layout-fragments"
+        ]
+      },
+      "mobilePortrait": {
+        "$type": "dimension",
+        "$value": "1.5rem",
+        "$description": "<=479.",
+        "measuredFrom": [
+          "cite:ui-layout-fragments"
+        ]
+      }
+    },
+    "sideRails": {
+      "$type": "strokeStyle",
+      "$value": "0.5px solid #d9d9d9 left+right on every container",
+      "$description": "Every section sits between continuous vertical hairline rails.",
+      "measuredFrom": [
+        "cite:ui-lines-divider",
+        "cite:logos-grid"
+      ]
+    },
+    "navOffset": {
+      "$type": "dimension",
+      "$value": "4.5rem",
+      "$description": "Fixed navbar offset (hero top spacer).",
+      "measuredFrom": [
+        "cite:hero-copy"
+      ]
+    }
+  }
+}

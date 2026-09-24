@@ -1,0 +1,23 @@
+{
+  "id": "primitive.button-outline",
+  "kind": "primitive",
+  "description": "Secondary CTA with dashed-edge outline (base/small) or black fill (black/blackMobile).",
+  "variants": {
+    "base": "Explore the platform.",
+    "small": "Nav Login.",
+    "black": "Desktop nav Book a call.",
+    "blackMobile": "Tablet/mobile nav Book a call."
+  },
+  "tokensUsed": [
+    "component.button.outline.border",
+    "component.button.outline.label",
+    "component.button.outline.minHeight"
+  ],
+  "motionPatterns": [
+    "button-hover"
+  ],
+  "measuredFrom": [
+    "cite:ui-outline-variants",
+    "cite:idx-dashed-button"
+  ]
+}
